@@ -58,6 +58,42 @@ namespace SACCOPortal {
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
         
         /// <summary>
+        /// forgotPass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton forgotPass;
+        
+        /// <summary>
+        /// cptCaptcha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::MSCaptcha.CaptchaControl cptCaptcha;
+        
+        /// <summary>
+        /// txtCaptcha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCaptcha;
+        
+        /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
+        /// <summary>
         /// View2 control.
         /// </summary>
         /// <remarks>
@@ -103,6 +139,15 @@ namespace SACCOPortal {
         protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
+        /// btnSignup control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSignup;
+        
+        /// <summary>
         /// btnBack control.
         /// </summary>
         /// <remarks>
@@ -112,12 +157,12 @@ namespace SACCOPortal {
         protected global::System.Web.UI.WebControls.Button btnBack;
         
         /// <summary>
-        /// btnPassword control.
+        /// calculations control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPassword;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl calculations;
     }
 }

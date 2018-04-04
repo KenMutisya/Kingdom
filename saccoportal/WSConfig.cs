@@ -31,7 +31,8 @@ namespace SACCOPortal
                 }
                 return ws;
             }
-        }
+        }    
+     
 
         public static bool MailFunction(string body, string recepient, string subject)
         {
@@ -39,7 +40,7 @@ namespace SACCOPortal
 
             try
             {
-                const string fromAddress = "shirikanoreply@gmail.com";
+                const string fromAddress = "noreplynafakaportal@gmail.com";
                 string toAddress = recepient;
                 var mail = new MailMessage();
                 mail.To.Add(toAddress);
@@ -50,7 +51,7 @@ namespace SACCOPortal
                 var client = new SmtpClient
                 {
                     UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential("shirikanoreply@gmail.com", "IJustLikeIt16"),
+                    Credentials = new NetworkCredential("noreplynafakaportal@gmail.com", "nafaka@2017"),
                     Port = 587,
                     Host = "smtp.gmail.com",
                     DeliveryMethod = SmtpDeliveryMethod.Network,

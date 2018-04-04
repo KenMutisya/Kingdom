@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Net;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using SACCOPortal.NavOData;
 
 namespace SACCOPortal
 {
-    public partial class Atm : System.Web.UI.Page
+	public partial class Atm : System.Web.UI.Page
     {
         public NAV nav = new NAV(new Uri(ConfigurationManager.AppSettings["ODATA_URI"]))
         {
@@ -31,17 +28,18 @@ namespace SACCOPortal
             {
                 LoadFosaAccounts(nav,ddFosaAccount);
                 LoadFosaAccounts(nav,ddFosaAccount_);
-//                ATMstatusData(nav);
+                ATMstatusData(nav);
                 
             }
 
         }
 
-        protected void ReasonForBlocking__Click(object sender, EventArgs e)
+        protected void atmApplication__Click(object sender, EventArgs e)
         {
             try
             {
                 WSConfig.ObjNav.FnAtmApplications(account: ddFosaAccount_.SelectedValue);
+                SACCOFactory.ShowAlert("Atm Application for account: " + ddFosaAccount_.SelectedValue + "has been successfuly received");
             }
             catch (Exception exception)
             {
@@ -55,6 +53,7 @@ namespace SACCOPortal
             try
             {
                 WSConfig.ObjNav.FnAtmBlocking(ddFosaAccount.SelectedValue, txtreasonforblocking.Text.Trim());
+                SACCOFactory.ShowAlert("Blocking for account " + ddFosaAccount.SelectedValue + "request send succesfully");
             }
             catch (Exception exception)
             {
@@ -62,19 +61,21 @@ namespace SACCOPortal
             }
         }
 
-//        protected void ATMstatusData(NAV navData)
-//        {
-//            var objAtm = navData.UpdateAtmStatus.Where(r =>r.Account_No == ddFosaAccount_.SelectedValue) .ToList();
-//
-//            AtmStatus.DataSource = objAtm;
-//            AtmStatus.AutoGenerateColumns = false;
-//            AtmStatus.DataBind();
-//        }
+        protected void ATMstatusData(NAV navData)
+        {
+            //var objAtm = navData.UpdateAtmStatus.Where(r => r.Account_No == ddFosaAccount_.SelectedValue).ToList();
+            //AtmStatus.DataSource = objAtm;
+            //AtmStatus.AutoGenerateColumns = false;
+            //AtmStatus.AutoGenerateEditButton = false;
+            //AtmStatus.AutoGenerateSelectButton = false;
+            //AtmStatus.DataBind();
+     
+        }
 
         protected void LoadFosaAccounts(NAV navData,DropDownList ddList)
         {
             var objFosaAccount =
-                navData.FosaAccounts.Where(r => r.BOSA_Account_No == Session["username"].ToString()).ToList();
+                navData.FosaAccounts.Where(r => r.BOSA_Account_No == Session["username"].ToString() && r.Account_Type=="SAVINGS").ToList();
             ddList.DataSource = objFosaAccount;
             ddList.DataTextField = "No";
             ddList.DataValueField = "No";

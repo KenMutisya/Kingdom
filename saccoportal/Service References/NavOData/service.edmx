@@ -1,281 +1,54 @@
 ﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
   <edmx:DataServices m:DataServiceVersion="1.0" m:MaxDataServiceVersion="3.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
     <Schema Namespace="NAV" xmlns="http://schemas.microsoft.com/ado/2007/05/edm">
-      <EntityType Name="ACC_Schedules">
-        <Key>
-          <PropertyRef Name="Line_No" />
-          <PropertyRef Name="Schedule_Name" />
-        </Key>
-        <Property Name="Schedule_Name" Type="Edm.String" Nullable="false" />
-        <Property Name="Line_No" Type="Edm.Int32" Nullable="false" />
-        <Property Name="CurrentSchedName" Type="Edm.String" />
-        <Property Name="CurrentColumnName" Type="Edm.String" />
-        <Property Name="UseAmtsInAddCurr" Type="Edm.Boolean" />
-        <Property Name="PeriodType" Type="Edm.String" />
-        <Property Name="DateFilter" Type="Edm.String" />
-        <Property Name="Row_No" Type="Edm.String" />
-        <Property Name="Description" Type="Edm.String" />
-        <Property Name="ColumnValues1" Type="Edm.Decimal" />
-        <Property Name="ColumnValues2" Type="Edm.Decimal" />
-        <Property Name="ColumnValues3" Type="Edm.Decimal" />
-        <Property Name="ColumnValues4" Type="Edm.Decimal" />
-        <Property Name="ColumnValues5" Type="Edm.Decimal" />
-        <Property Name="ColumnValues6" Type="Edm.Decimal" />
-        <Property Name="ColumnValues7" Type="Edm.Decimal" />
-        <Property Name="ColumnValues8" Type="Edm.Decimal" />
-        <Property Name="ColumnValues9" Type="Edm.Decimal" />
-        <Property Name="ColumnValues10" Type="Edm.Decimal" />
-        <Property Name="ColumnValues11" Type="Edm.Decimal" />
-        <Property Name="ColumnValues12" Type="Edm.Decimal" />
-        <Property Name="Dim1Filter" Type="Edm.String" />
-        <Property Name="Dim2Filter" Type="Edm.String" />
-        <Property Name="Dim3Filter" Type="Edm.String" />
-        <Property Name="Dim4Filter" Type="Edm.String" />
-        <Property Name="CostCenterFilter" Type="Edm.String" />
-        <Property Name="CostObjectFilter" Type="Edm.String" />
-        <Property Name="CashFlowFilter" Type="Edm.String" />
-        <Property Name="G_LBudgetFilter" Type="Edm.String" />
-        <Property Name="CostBudgetFilter" Type="Edm.String" />
-        <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
-      </EntityType>
-      <EntityType Name="COA">
-        <Key>
-          <PropertyRef Name="No" />
-        </Key>
-        <Property Name="No" Type="Edm.String" Nullable="false" />
-        <Property Name="Old_Account_No" Type="Edm.String" />
-        <Property Name="Name" Type="Edm.String" />
-        <Property Name="GIFI_Code" Type="Edm.String" />
-        <Property Name="Income_Balance" Type="Edm.String" />
-        <Property Name="Account_Type" Type="Edm.String" />
-        <Property Name="Direct_Posting" Type="Edm.Boolean" />
-        <Property Name="Totaling" Type="Edm.String" />
-        <Property Name="Gen_Posting_Type" Type="Edm.String" />
-        <Property Name="Gen_Bus_Posting_Group" Type="Edm.String" />
-        <Property Name="Gen_Prod_Posting_Group" Type="Edm.String" />
-        <Property Name="VAT_Bus_Posting_Group" Type="Edm.String" />
-        <Property Name="VAT_Prod_Posting_Group" Type="Edm.String" />
-        <Property Name="Net_Change" Type="Edm.Decimal" />
-        <Property Name="Balance_at_Date" Type="Edm.Decimal" />
-        <Property Name="Balance" Type="Edm.Decimal" />
-        <Property Name="Additional_Currency_Net_Change" Type="Edm.Decimal" />
-        <Property Name="Add_Currency_Balance_at_Date" Type="Edm.Decimal" />
-        <Property Name="Additional_Currency_Balance" Type="Edm.Decimal" />
-        <Property Name="Consol_Debit_Acc" Type="Edm.String" />
-        <Property Name="Consol_Credit_Acc" Type="Edm.String" />
-        <Property Name="Cost_Type_No" Type="Edm.String" />
-        <Property Name="Consol_Translation_Method" Type="Edm.String" />
-        <Property Name="Default_IC_Partner_G_L_Acc_No" Type="Edm.String" />
-        <Property Name="Default_Deferral_Template_Code" Type="Edm.String" />
-        <Property Name="Business_Unit_Filter" Type="Edm.String" />
-        <Property Name="Global_Dimension_1_Filter" Type="Edm.String" />
-        <Property Name="Global_Dimension_2_Filter" Type="Edm.String" />
-        <Property Name="Date_Filter" Type="Edm.String" />
-        <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
-      </EntityType>
-      <EntityType Name="Loan_Products">
-        <Key>
-          <PropertyRef Name="Code" />
-        </Key>
-        <Property Name="Code" Type="Edm.String" Nullable="false" />
-        <Property Name="Product_Description" Type="Edm.String" />
-        <Property Name="Source" Type="Edm.String" />
-        <Property Name="Interest_rate" Type="Edm.Decimal" />
-        <Property Name="Repayment_Method" Type="Edm.String" />
-        <Property Name="Grace_Period_Principle_M" Type="Edm.Int32" />
-        <Property Name="Grace_Period_Interest_M" Type="Edm.Int32" />
-        <Property Name="Use_Cycles" Type="Edm.Boolean" />
-        <Property Name="Instalment_Period" Type="Edm.String" />
-        <Property Name="No_of_Installment" Type="Edm.Int32" />
-        <Property Name="Default_Installements" Type="Edm.Int32" />
-        <Property Name="Penalty_Calculation_Days" Type="Edm.String" />
-        <Property Name="Penalty_Percentage" Type="Edm.Decimal" />
-        <Property Name="Recovery_Priority" Type="Edm.Int32" />
-        <Property Name="Min_No_Of_Guarantors" Type="Edm.Int32" />
-        <Property Name="Min_Re_application_Period" Type="Edm.String" />
-        <Property Name="Shares_Multiplier" Type="Edm.Decimal" />
-        <Property Name="Penalty_Calculation_Method" Type="Edm.String" />
-        <Property Name="Penalty_Paid_Account" Type="Edm.String" />
-        <Property Name="Min_Loan_Amount" Type="Edm.Decimal" />
-        <Property Name="Max_Loan_Amount" Type="Edm.Decimal" />
-        <Property Name="Loan_Account" Type="Edm.String" />
-        <Property Name="Loan_Interest_Account" Type="Edm.String" />
-        <Property Name="Receivable_Interest_Account" Type="Edm.String" />
-        <Property Name="Action" Type="Edm.String" />
-        <Property Name="BOSA_Account" Type="Edm.String" />
-        <Property Name="BOSA_Personal_Loan_Account" Type="Edm.String" />
-        <Property Name="Top_Up_Commision_Account" Type="Edm.String" />
-        <Property Name="Top_Up_Commision" Type="Edm.Decimal" />
-        <Property Name="Check_Off_Loan_No" Type="Edm.Int32" />
-        <Property Name="Repayment_Frequency" Type="Edm.String" />
-        <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
-      </EntityType>
-      <EntityType Name="Members">
-        <Key>
-          <PropertyRef Name="No" />
-        </Key>
-        <Property Name="No" Type="Edm.String" Nullable="false" />
-        <Property Name="Old_Account_No" Type="Edm.String" />
-        <Property Name="Name" Type="Edm.String" />
-        <Property Name="Payroll_Staff_No" Type="Edm.String" />
-        <Property Name="ID_No" Type="Edm.String" />
-        <Property Name="Registration_Date" Type="Edm.DateTime" />
-        <Property Name="Phone_No" Type="Edm.String" />
-        <Property Name="E_Mail" Type="Edm.String" />
-        <Property Name="E_Mail_Personal" Type="Edm.String" />
-        <Property Name="FOSA_Account" Type="Edm.String" />
-        <Property Name="Employer_Code" Type="Edm.String" />
-        <Property Name="Date_Filter" Type="Edm.DateTime" />
-        <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
-      </EntityType>
-      <EntityType Name="PBIAccount_Types">
-        <Key>
-          <PropertyRef Name="Code" />
-        </Key>
-        <Property Name="Code" Type="Edm.String" Nullable="false" />
-        <Property Name="Description" Type="Edm.String" />
-        <Property Name="Dormancy_Period_M" Type="Edm.String" />
-        <Property Name="Entered_By" Type="Edm.String" />
-        <Property Name="Date_Entered" Type="Edm.DateTime" />
-        <Property Name="Time_Entered" Type="Edm.String" />
-        <Property Name="Last_Date_Modified" Type="Edm.DateTime" />
-        <Property Name="Modified_By" Type="Edm.String" />
-        <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
-      </EntityType>
-      <EntityType Name="PBIBankLedgerxz">
-        <Key>
-          <PropertyRef Name="Entry_No" />
-        </Key>
-        <Property Name="Entry_No" Type="Edm.Int32" Nullable="false" />
-        <Property Name="Bank_Account_No" Type="Edm.String" />
-        <Property Name="Posting_Date" Type="Edm.DateTime" />
-        <Property Name="Document_No" Type="Edm.String" />
-        <Property Name="Description" Type="Edm.String" />
-        <Property Name="Amount" Type="Edm.Decimal" />
-        <Property Name="Remaining_Amount" Type="Edm.Decimal" />
-        <Property Name="Amount_LCY" Type="Edm.Decimal" />
-        <Property Name="Bank_Acc_Posting_Group" Type="Edm.String" />
-        <Property Name="Global_Dimension_1_Code" Type="Edm.String" />
-        <Property Name="Global_Dimension_2_Code" Type="Edm.String" />
-        <Property Name="Our_Contact_Code" Type="Edm.String" />
-        <Property Name="User_ID" Type="Edm.String" />
-        <Property Name="Source_Code" Type="Edm.String" />
-        <Property Name="Open" Type="Edm.Boolean" />
-        <Property Name="Positive" Type="Edm.Boolean" />
-        <Property Name="Closed_by_Entry_No" Type="Edm.Int32" />
-        <Property Name="Closed_at_Date" Type="Edm.DateTime" />
-        <Property Name="Journal_Batch_Name" Type="Edm.String" />
-        <Property Name="Reason_Code" Type="Edm.String" />
-        <Property Name="Bal_Account_Type" Type="Edm.String" />
-        <Property Name="Bal_Account_No" Type="Edm.String" />
-        <Property Name="Transaction_No" Type="Edm.Int32" />
-        <Property Name="Statement_Status" Type="Edm.String" />
-        <Property Name="Statement_No" Type="Edm.String" />
-        <Property Name="Statement_Line_No" Type="Edm.Int32" />
-        <Property Name="Debit_Amount" Type="Edm.Decimal" />
-        <Property Name="Credit_Amount" Type="Edm.Decimal" />
-        <Property Name="Debit_Amount_LCY" Type="Edm.Decimal" />
-        <Property Name="Credit_Amount_LCY" Type="Edm.Decimal" />
-        <Property Name="Document_Date" Type="Edm.DateTime" />
-        <Property Name="External_Document_No" Type="Edm.String" />
-        <Property Name="Reversed" Type="Edm.Boolean" />
-        <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
-      </EntityType>
-      <EntityType Name="PBILoan_Register">
+      <EntityType Name="BOSAPostedLoans">
         <Key>
           <PropertyRef Name="Loan_No" />
         </Key>
         <Property Name="Loan_No" Type="Edm.String" Nullable="false" />
-        <Property Name="Posted" Type="Edm.Boolean" />
-        <Property Name="Fully_Disbursed" Type="Edm.Boolean" />
-        <Property Name="Total_Repayment" Type="Edm.Decimal" />
+        <Property Name="Loan_Product_Type" Type="Edm.String" />
+        <Property Name="Client_Code" Type="Edm.String" />
+        <Property Name="Client_Name" Type="Edm.String" />
+        <Property Name="ID_NO" Type="Edm.String" />
+        <Property Name="Staff_No" Type="Edm.String" />
+        <Property Name="Loan_Status" Type="Edm.String" />
+        <Property Name="Requested_Amount" Type="Edm.Decimal" />
+        <Property Name="Approved_Amount" Type="Edm.Decimal" />
+        <Property Name="Installments" Type="Edm.Int32" />
+        <Property Name="Loan_Principle_Repayment" Type="Edm.Decimal" />
+        <Property Name="Loan_Interest_Repayment" Type="Edm.Decimal" />
+        <Property Name="Repayment" Type="Edm.Decimal" />
+        <Property Name="Loan_Disbursement_Date" Type="Edm.DateTime" />
+        <Property Name="Reversed" Type="Edm.Boolean" />
+        <Property Name="Captured_By" Type="Edm.String" />
         <Property Name="Outstanding_Balance" Type="Edm.Decimal" />
-        <Property Name="Penalty_Charged" Type="Edm.Decimal" />
-        <Property Name="Loan_Amount" Type="Edm.Decimal" />
-        <Property Name="Current_Shares" Type="Edm.Decimal" />
+        <Property Name="Interest_Paid" Type="Edm.Decimal" />
+        <Property Name="Employer_Code" Type="Edm.String" />
+        <Property Name="Date_filter" Type="Edm.DateTime" />
+        <Property Name="Last_Pay_Date" Type="Edm.DateTime" />
+        <Property Name="Currency_Filter" Type="Edm.String" />
+        <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
+      </EntityType>
+      <EntityType Name="FOSAPostedLoans">
+        <Key>
+          <PropertyRef Name="Loan_No" />
+        </Key>
+        <Property Name="Loan_No" Type="Edm.String" Nullable="false" />
         <Property Name="Application_Date" Type="Edm.DateTime" />
         <Property Name="Loan_Product_Type" Type="Edm.String" />
         <Property Name="Client_Code" Type="Edm.String" />
+        <Property Name="Captured_By" Type="Edm.String" />
         <Property Name="Requested_Amount" Type="Edm.Decimal" />
         <Property Name="Approved_Amount" Type="Edm.Decimal" />
-        <Property Name="Interest" Type="Edm.Decimal" />
-        <Property Name="Insurance" Type="Edm.Decimal" />
-        <Property Name="Source_of_Funds" Type="Edm.String" />
-        <Property Name="Loan_Status" Type="Edm.String" />
-        <Property Name="Issued_Date" Type="Edm.DateTime" />
-        <Property Name="Installments" Type="Edm.Int32" />
-        <Property Name="Loan_Disbursement_Date" Type="Edm.DateTime" />
-        <Property Name="Mode_of_Disbursement" Type="Edm.String" />
-        <Property Name="Date_Approved" Type="Edm.DateTime" />
-        <Property Name="Repayment" Type="Edm.Decimal" />
-        <Property Name="Amount_Disbursed" Type="Edm.Decimal" />
-        <Property Name="Amount_Disburse" Type="Edm.Decimal" />
-        <Property Name="Employer_Code" Type="Edm.String" />
-        <Property Name="Source" Type="Edm.String" />
-        <Property Name="Repayment_Method" Type="Edm.String" />
-        <Property Name="Branch_Code" Type="Edm.String" />
-        <Property Name="Appraisal_Status" Type="Edm.String" />
-        <Property Name="Interest_Paid" Type="Edm.Decimal" />
-        <Property Name="Penalty_Paid" Type="Edm.Decimal" />
-        <Property Name="Loan_Repayment" Type="Edm.Decimal" />
-        <Property Name="Loan_Principle_Repayment" Type="Edm.Decimal" />
-        <Property Name="Loan_Interest_Repayment" Type="Edm.Decimal" />
-        <Property Name="Current_Repayment" Type="Edm.Decimal" />
-        <Property Name="Oustanding_Interest" Type="Edm.Decimal" />
-        <Property Name="Oustanding_Interest_to_Date" Type="Edm.Decimal" />
-        <Property Name="Outstanding_Balance_to_Date" Type="Edm.Decimal" />
-        <Property Name="Defaulted" Type="Edm.Boolean" />
-        <Property Name="Defaulter" Type="Edm.Boolean" />
-        <Property Name="RAmount" Type="Edm.Decimal" />
-        <Property Name="Total_Loan_Guaranted" Type="Edm.Decimal" />
-        <Property Name="Recommended_Amount" Type="Edm.Decimal" />
-        <Property Name="Total_Loans_Default" Type="Edm.Decimal" />
-        <Property Name="Date_filter" Type="Edm.String" />
-        <Property Name="Currency_Filter" Type="Edm.String" />
-        <Property Name="Period_Date_Filter" Type="Edm.String" />
-        <Property Name="Document_No_Filter" Type="Edm.String" />
-        <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
-        <NavigationProperty Name="Loan_Product_Type_Link" Relationship="NAV.PBILoan_Register_Loan_Product_Type_Link" ToRole="Loan_Product_Type_Link" FromRole="PBILoan_Register" />
-      </EntityType>
-      <EntityType Name="PBIMembers">
-        <Key>
-          <PropertyRef Name="No" />
-        </Key>
-        <Property Name="No" Type="Edm.String" Nullable="false" />
-        <Property Name="Name" Type="Edm.String" />
-        <Property Name="Search_Name" Type="Edm.String" />
-        <Property Name="Phone_No" Type="Edm.String" />
-        <Property Name="Our_Account_No" Type="Edm.String" />
-        <Property Name="Global_Dimension_1_Code" Type="Edm.String" />
-        <Property Name="Global_Dimension_2_Code" Type="Edm.String" />
-        <Property Name="Credit_Limit_LCY" Type="Edm.Decimal" />
-        <Property Name="Customer_Posting_Group" Type="Edm.String" />
-        <Property Name="Balance_LCY" Type="Edm.Decimal" />
-        <Property Name="Payments" Type="Edm.Decimal" />
-        <Property Name="Application_Method" Type="Edm.String" />
-        <Property Name="No_of_Members_Guaranteed" Type="Edm.Int32" />
-        <Property Name="Customer_Type" Type="Edm.String" />
-        <Property Name="Current_Loan" Type="Edm.Decimal" />
-        <Property Name="Current_Shares" Type="Edm.Decimal" />
-        <Property Name="Total_Repayments" Type="Edm.Decimal" />
-        <Property Name="Principal_Balance" Type="Edm.Decimal" />
-        <Property Name="Principal_Repayment" Type="Edm.Decimal" />
-        <Property Name="Debtors_Type" Type="Edm.String" />
         <Property Name="Outstanding_Balance" Type="Edm.Decimal" />
-        <Property Name="Status" Type="Edm.String" />
-        <Property Name="FOSA_Account" Type="Edm.String" />
-        <Property Name="Old_Account_No" Type="Edm.String" />
+        <Property Name="Interest" Type="Edm.Decimal" />
+        <Property Name="Client_Name" Type="Edm.String" />
+        <Property Name="Posted" Type="Edm.Boolean" />
+        <Property Name="Reversed" Type="Edm.Boolean" />
+        <Property Name="Interest_Paid" Type="Edm.Decimal" />
         <Property Name="Employer_Code" Type="Edm.String" />
-        <Property Name="FOSA_Outstanding_Balance" Type="Edm.Decimal" />
-        <Property Name="FOSA_Oustanding_Interest" Type="Edm.Decimal" />
-        <Property Name="FOSA_Account_Bal" Type="Edm.Decimal" />
-        <Property Name="Active_Loans_Guarantor" Type="Edm.Int32" />
-        <Property Name="Loans_Guaranteed" Type="Edm.Int32" />
-        <Property Name="Global_Dimension_1_Filter" Type="Edm.String" />
-        <Property Name="Global_Dimension_2_Filter" Type="Edm.String" />
-        <Property Name="Date_Filter" Type="Edm.String" />
         <Property Name="Currency_Filter" Type="Edm.String" />
-        <Property Name="Document_No_Filter" Type="Edm.String" />
+        <Property Name="Date_filter" Type="Edm.String" />
         <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
       </EntityType>
       <EntityType Name="powerbifinance">
@@ -307,22 +80,21 @@
         </Key>
         <Property Name="Document_Type" Type="Edm.String" Nullable="false" />
         <Property Name="No" Type="Edm.String" Nullable="false" />
-        <Property Name="Sell_to_Customer_No" Type="Edm.String" />
-        <Property Name="Sell_to_Contact_No" Type="Edm.String" />
         <Property Name="Sell_to_Customer_Name" Type="Edm.String" />
         <Property Name="Sell_to_Address" Type="Edm.String" />
         <Property Name="Sell_to_Address_2" Type="Edm.String" />
         <Property Name="Sell_to_City" Type="Edm.String" />
         <Property Name="Sell_to_County" Type="Edm.String" />
         <Property Name="Sell_to_Post_Code" Type="Edm.String" />
+        <Property Name="Sell_to_Contact_No" Type="Edm.String" />
         <Property Name="Sell_to_Contact" Type="Edm.String" />
         <Property Name="No_of_Archived_Versions" Type="Edm.Int32" />
+        <Property Name="Document_Date" Type="Edm.DateTime" />
         <Property Name="Posting_Date" Type="Edm.DateTime" />
         <Property Name="Order_Date" Type="Edm.DateTime" />
-        <Property Name="Document_Date" Type="Edm.DateTime" />
+        <Property Name="Due_Date" Type="Edm.DateTime" />
         <Property Name="Requested_Delivery_Date" Type="Edm.DateTime" />
         <Property Name="Promised_Delivery_Date" Type="Edm.DateTime" />
-        <Property Name="Quote_No" Type="Edm.String" />
         <Property Name="External_Document_No" Type="Edm.String" />
         <Property Name="Salesperson_Code" Type="Edm.String" />
         <Property Name="Campaign_No" Type="Edm.String" />
@@ -331,27 +103,26 @@
         <Property Name="Assigned_User_ID" Type="Edm.String" />
         <Property Name="Job_Queue_Status" Type="Edm.String" />
         <Property Name="Status" Type="Edm.String" />
-        <Property Name="Bill_to_Customer_No" Type="Edm.String" />
-        <Property Name="Bill_to_Contact_No" Type="Edm.String" />
-        <Property Name="Bill_to_Name" Type="Edm.String" />
-        <Property Name="Bill_to_Address" Type="Edm.String" />
-        <Property Name="Bill_to_Address_2" Type="Edm.String" />
-        <Property Name="Bill_to_City" Type="Edm.String" />
-        <Property Name="Bill_to_County" Type="Edm.String" />
-        <Property Name="Bill_to_Post_Code" Type="Edm.String" />
-        <Property Name="Bill_to_Contact" Type="Edm.String" />
-        <Property Name="Shortcut_Dimension_1_Code" Type="Edm.String" />
-        <Property Name="Shortcut_Dimension_2_Code" Type="Edm.String" />
+        <Property Name="Currency_Code" Type="Edm.String" />
+        <Property Name="Shipment_Date" Type="Edm.DateTime" />
+        <Property Name="Quote_No" Type="Edm.String" />
         <Property Name="Payment_Terms_Code" Type="Edm.String" />
-        <Property Name="Due_Date" Type="Edm.DateTime" />
-        <Property Name="Payment_Discount_Percent" Type="Edm.Decimal" />
-        <Property Name="Pmt_Discount_Date" Type="Edm.DateTime" />
         <Property Name="Payment_Method_Code" Type="Edm.String" />
         <Property Name="Tax_Liable" Type="Edm.Boolean" />
         <Property Name="Tax_Area_Code" Type="Edm.String" />
+        <Property Name="SelectedPayments" Type="Edm.String" />
+        <Property Name="Transaction_Type" Type="Edm.String" />
+        <Property Name="Shortcut_Dimension_1_Code" Type="Edm.String" />
+        <Property Name="Shortcut_Dimension_2_Code" Type="Edm.String" />
+        <Property Name="Payment_Discount_Percent" Type="Edm.Decimal" />
+        <Property Name="Pmt_Discount_Date" Type="Edm.DateTime" />
         <Property Name="Direct_Debit_Mandate_ID" Type="Edm.String" />
-        <Property Name="Credit_Card_No" Type="Edm.String" />
-        <Property Name="GetCreditcardNumber" Type="Edm.String" />
+        <Property Name="Location_Code" Type="Edm.String" />
+        <Property Name="Shipping_Time" Type="Edm.String" />
+        <Property Name="Late_Order_Shipping" Type="Edm.Boolean" />
+        <Property Name="Shipping_Advice" Type="Edm.String" />
+        <Property Name="Outbound_Whse_Handling_Time" Type="Edm.String" />
+        <Property Name="ShippingOptions" Type="Edm.String" />
         <Property Name="Ship_to_Code" Type="Edm.String" />
         <Property Name="Ship_to_Name" Type="Edm.String" />
         <Property Name="Ship_to_Address" Type="Edm.String" />
@@ -359,20 +130,23 @@
         <Property Name="Ship_to_City" Type="Edm.String" />
         <Property Name="Ship_to_County" Type="Edm.String" />
         <Property Name="Ship_to_Post_Code" Type="Edm.String" />
+        <Property Name="Ship_to_Country_Region_Code" Type="Edm.String" />
         <Property Name="Ship_to_Contact" Type="Edm.String" />
-        <Property Name="Location_Code" Type="Edm.String" />
-        <Property Name="Outbound_Whse_Handling_Time" Type="Edm.String" />
+        <Property Name="Ship_to_UPS_Zone" Type="Edm.String" />
         <Property Name="Shipment_Method_Code" Type="Edm.String" />
         <Property Name="Shipping_Agent_Code" Type="Edm.String" />
         <Property Name="Shipping_Agent_Service_Code" Type="Edm.String" />
-        <Property Name="Shipping_Time" Type="Edm.String" />
-        <Property Name="Late_Order_Shipping" Type="Edm.Boolean" />
         <Property Name="Package_Tracking_No" Type="Edm.String" />
-        <Property Name="Shipment_Date" Type="Edm.DateTime" />
-        <Property Name="Shipping_Advice" Type="Edm.String" />
-        <Property Name="Currency_Code" Type="Edm.String" />
+        <Property Name="BillToOptions" Type="Edm.String" />
+        <Property Name="Bill_to_Name" Type="Edm.String" />
+        <Property Name="Bill_to_Address" Type="Edm.String" />
+        <Property Name="Bill_to_Address_2" Type="Edm.String" />
+        <Property Name="Bill_to_City" Type="Edm.String" />
+        <Property Name="Bill_to_County" Type="Edm.String" />
+        <Property Name="Bill_to_Post_Code" Type="Edm.String" />
+        <Property Name="Bill_to_Contact_No" Type="Edm.String" />
+        <Property Name="Bill_to_Contact" Type="Edm.String" />
         <Property Name="EU_3_Party_Trade" Type="Edm.Boolean" />
-        <Property Name="Transaction_Type" Type="Edm.String" />
         <Property Name="Transaction_Specification" Type="Edm.String" />
         <Property Name="Transport_Method" Type="Edm.String" />
         <Property Name="Exit_Point" Type="Edm.String" />
@@ -383,6 +157,7 @@
         <Property Name="Prepayment_Due_Date" Type="Edm.DateTime" />
         <Property Name="Prepmt_Payment_Discount_Percent" Type="Edm.Decimal" />
         <Property Name="Prepmt_Pmt_Discount_Date" Type="Edm.DateTime" />
+        <Property Name="Prepmt_Include_Tax" Type="Edm.Boolean" />
         <Property Name="Date_Filter" Type="Edm.String" />
         <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
         <NavigationProperty Name="SalesOrderSalesLines" Relationship="NAV.SalesOrder_SalesOrderSalesLines" ToRole="SalesOrderSalesLines" FromRole="SalesOrder" />
@@ -411,6 +186,7 @@
         <Property Name="Drop_Shipment" Type="Edm.Boolean" />
         <Property Name="Special_Order" Type="Edm.Boolean" />
         <Property Name="Return_Reason_Code" Type="Edm.String" />
+        <Property Name="Package_Tracking_No" Type="Edm.String" />
         <Property Name="Location_Code" Type="Edm.String" />
         <Property Name="Bin_Code" Type="Edm.String" />
         <Property Name="Reserve" Type="Edm.String" />
@@ -467,6 +243,7 @@
         <Property Name="Duplicate_in_Depreciation_Book" Type="Edm.String" />
         <Property Name="Appl_from_Item_Entry" Type="Edm.Int32" />
         <Property Name="Appl_to_Item_Entry" Type="Edm.Int32" />
+        <Property Name="Deferral_Code" Type="Edm.String" />
         <Property Name="Shortcut_Dimension_1_Code" Type="Edm.String" />
         <Property Name="Shortcut_Dimension_2_Code" Type="Edm.String" />
         <Property Name="ShortcutDimCode_x005B_3_x005D_" Type="Edm.String" />
@@ -475,29 +252,20 @@
         <Property Name="ShortcutDimCode_x005B_6_x005D_" Type="Edm.String" />
         <Property Name="ShortcutDimCode_x005B_7_x005D_" Type="Edm.String" />
         <Property Name="ShortcutDimCode_x005B_8_x005D_" Type="Edm.String" />
+        <Property Name="TotalSalesLine_Line_Amount" Type="Edm.Decimal" />
         <Property Name="Invoice_Discount_Amount" Type="Edm.Decimal" />
         <Property Name="Invoice_Disc_Pct" Type="Edm.Decimal" />
         <Property Name="Total_Amount_Excl_VAT" Type="Edm.Decimal" />
         <Property Name="Total_VAT_Amount" Type="Edm.Decimal" />
         <Property Name="Total_Amount_Incl_VAT" Type="Edm.Decimal" />
-        <Property Name="RefreshTotals" Type="Edm.String" />
         <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
       </EntityType>
-      <EntityType Name="bankdetails">
+      <EntityType Name="FosaAcc">
         <Key>
-          <PropertyRef Name="No" />
+          <PropertyRef Name="Count_Emp" />
         </Key>
-        <Property Name="No" Type="Edm.String" Nullable="false" />
-        <Property Name="Name" Type="Edm.String" />
-        <Property Name="Search_Name" Type="Edm.String" />
-        <Property Name="Name_2" Type="Edm.String" />
-        <Property Name="Address" Type="Edm.String" />
-        <Property Name="Address_2" Type="Edm.String" />
-        <Property Name="City" Type="Edm.String" />
-        <Property Name="Contact" Type="Edm.String" />
-        <Property Name="Phone_No" Type="Edm.String" />
-        <Property Name="Telex_No" Type="Edm.String" />
-        <Property Name="Bank_Account_No" Type="Edm.String" />
+        <Property Name="Count_Emp" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Status_FilterOnly" Type="Edm.String" />
       </EntityType>
       <EntityType Name="FosaAccounts">
         <Key>
@@ -507,6 +275,10 @@
         <Property Name="Name" Type="Edm.String" />
         <Property Name="BOSA_Account_No" Type="Edm.String" />
         <Property Name="Blocked" Type="Edm.String" />
+        <Property Name="Account_Type" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" />
+        <Property Name="Balance" Type="Edm.Decimal" />
+        <Property Name="Account_Book_Balance" Type="Edm.Decimal" />
       </EntityType>
       <EntityType Name="ItemSalesAndProfit">
         <Key>
@@ -549,6 +321,7 @@
         <Property Name="Posting_Date" Type="Edm.DateTime" />
         <Property Name="Item_No" Type="Edm.String" />
         <Property Name="Item_Ledger_Entry_Quantity" Type="Edm.Decimal" />
+        <Property Name="Dimension_Set_ID" Type="Edm.Int32" />
         <Property Name="CustomerNo" Type="Edm.String" Nullable="false" />
         <Property Name="Name" Type="Edm.String" />
         <Property Name="Description" Type="Edm.String" />
@@ -563,7 +336,6 @@
           <PropertyRef Name="Name" />
         </Key>
         <Property Name="Name" Type="Edm.String" Nullable="false" />
-        <Property Name="Relationship" Type="Edm.String" />
         <Property Name="Beneficiary" Type="Edm.Boolean" />
         <Property Name="Date_of_Birth" Type="Edm.DateTime" />
         <Property Name="Address" Type="Edm.String" />
@@ -572,10 +344,11 @@
         <Property Name="Account_No" Type="Edm.String" Nullable="false" />
         <Property Name="ID_No" Type="Edm.String" />
         <Property Name="Allocation" Type="Edm.Decimal" />
-        <Property Name="AuxiliaryIndex1" Type="Edm.String" Nullable="false" />
+        <Property Name="Relationship" Type="Edm.String" />
+        <Property Name="AuxiliaryIndex1" Type="Edm.Int32" Nullable="false" />
         <Property Name="AuxiliaryIndex2" Type="Edm.String" Nullable="false" />
       </EntityType>
-      <EntityType Name="kinsdetail">
+      <EntityType Name="kins_detail">
         <Key>
           <PropertyRef Name="Account_No" />
           <PropertyRef Name="Name" />
@@ -591,24 +364,128 @@
         <Property Name="Email" Type="Edm.String" />
         <Property Name="ID_No" Type="Edm.String" />
       </EntityType>
-      <EntityType Name="LoansReg">
+      <EntityType Name="LoanSetup">
+        <Key>
+          <PropertyRef Name="Code" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="false" />
+        <Property Name="Product_Description" Type="Edm.String" />
+        <Property Name="Source" Type="Edm.String" />
+        <Property Name="No_of_Installment" Type="Edm.Int32" />
+        <Property Name="Interest_rate" Type="Edm.Decimal" />
+        <Property Name="Max_Loan_Amount" Type="Edm.Decimal" />
+        <Property Name="Repayment_Method" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="LoansProductSetUp">
+        <Key>
+          <PropertyRef Name="Code" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="false" />
+        <Property Name="Product_Description" Type="Edm.String" />
+        <Property Name="Source_of_Financing" Type="Edm.String" />
+        <Property Name="Interest_rate" Type="Edm.Decimal" />
+        <Property Name="Interest_Calculation_Method" Type="Edm.String" />
+        <Property Name="Insurance" Type="Edm.Decimal" />
+        <Property Name="No_Series" Type="Edm.String" />
+        <Property Name="Grace_Period" Type="Edm.String" />
+        <Property Name="Name_of_Source_of_Funding" Type="Edm.String" />
+        <Property Name="Rounding" Type="Edm.String" />
+        <Property Name="Rounding_Precision" Type="Edm.Decimal" />
+        <Property Name="Loan_Appraisal" Type="Edm.Decimal" />
+        <Property Name="No_of_Installment" Type="Edm.Int32" />
+        <Property Name="Loan_No_Series" Type="Edm.String" />
+        <Property Name="New_Numbers" Type="Edm.String" />
+        <Property Name="Instalment_Period" Type="Edm.String" />
+        <Property Name="Loan_to_Share_Ratio" Type="Edm.Decimal" />
+        <Property Name="Penalty_Calculation_Days" Type="Edm.String" />
+        <Property Name="Penalty_Percentage" Type="Edm.Decimal" />
+        <Property Name="Penalty_Calculation_Method" Type="Edm.String" />
+        <Property Name="Penalty_Paid_Account" Type="Edm.String" />
+        <Property Name="Use_Cycles" Type="Edm.Boolean" />
+        <Property Name="Max_Loan_Amount" Type="Edm.Decimal" />
+        <Property Name="Penalty_Posted_Reporting_Date" Type="Edm.DateTime" />
+        <Property Name="Penalty_Posted_Last_Calc_Date" Type="Edm.DateTime" />
+        <Property Name="Compulsary_Savings" Type="Edm.Decimal" />
+        <Property Name="Repayment_Method" Type="Edm.String" />
+        <Property Name="Grace_Period_Principle_M" Type="Edm.Int32" />
+        <Property Name="Grace_Period_Interest_M" Type="Edm.Int32" />
+        <Property Name="Min_Loan_Amount" Type="Edm.Decimal" />
+        <Property Name="Bank_Account_Details" Type="Edm.String" />
+        <Property Name="BacK_Code" Type="Edm.String" />
+        <Property Name="Loan_Account" Type="Edm.String" />
+        <Property Name="Loan_Interest_Account" Type="Edm.String" />
+        <Property Name="Receivable_Interest_Account" Type="Edm.String" />
+        <Property Name="BOSA_Account" Type="Edm.String" />
+        <Property Name="Action" Type="Edm.String" />
+        <Property Name="BOSA_Personal_Loan_Account" Type="Edm.String" />
+        <Property Name="Top_Up_Commision_Account" Type="Edm.String" />
+        <Property Name="Top_Up_Commision" Type="Edm.Decimal" />
+        <Property Name="Source" Type="Edm.String" />
+        <Property Name="Recovery_Priority" Type="Edm.Int32" />
+        <Property Name="Check_Off_Recovery" Type="Edm.Boolean" />
+        <Property Name="SMS_Description" Type="Edm.String" />
+        <Property Name="Default_Installements" Type="Edm.Int32" />
+        <Property Name="Applications" Type="Edm.Decimal" />
+        <Property Name="Issued_Amount" Type="Edm.Decimal" />
+        <Property Name="Min_No_Of_Guarantors" Type="Edm.Int32" />
+        <Property Name="Min_Re_application_Period" Type="Edm.String" />
+        <Property Name="Check_Off_Loan_No" Type="Edm.Int32" />
+        <Property Name="Bridged_Topped" Type="Edm.Boolean" />
+        <Property Name="Affect_Deposits_Qualification" Type="Edm.Boolean" />
+        <Property Name="Shares_Multiplier" Type="Edm.Decimal" />
+        <Property Name="Mode_of_Qualification" Type="Edm.String" />
+        <Property Name="Product_Currency_Code" Type="Edm.String" />
+        <Property Name="Loan_Product_Expiry_Date" Type="Edm.DateTime" />
+        <Property Name="Appln_between_Currencies" Type="Edm.String" />
+        <Property Name="Repayment_Frequency" Type="Edm.String" />
+        <Property Name="Appraise_Deposits" Type="Edm.Boolean" />
+        <Property Name="Appraise_Shares" Type="Edm.Boolean" />
+        <Property Name="Appraise_Salary" Type="Edm.Boolean" />
+        <Property Name="Appraise_Guarantors" Type="Edm.Boolean" />
+        <Property Name="Appraise_Business" Type="Edm.Boolean" />
+        <Property Name="Recovery_Mode" Type="Edm.String" />
+        <Property Name="Deposits_Multiplier" Type="Edm.Decimal" />
+        <Property Name="Appraise_Collateral" Type="Edm.Decimal" />
+        <Property Name="Appraise_Dividend" Type="Edm.Boolean" />
+        <Property Name="Penalty_Charged_Account" Type="Edm.String" />
+        <Property Name="Interest_Rate_Outstanding_1_5" Type="Edm.Decimal" />
+        <Property Name="Maximum_No_Of_Runing_Loans" Type="Edm.Decimal" />
+        <Property Name="Self_guaranteed_Multiplier" Type="Edm.Decimal" />
+        <Property Name="Dont_Recover_Repayment" Type="Edm.Boolean" />
+        <Property Name="Loan_Insurance_Accounts" Type="Edm.String" />
+        <Property Name="Receivable_Insurance_Accounts" Type="Edm.String" />
+        <Property Name="Special_Code" Type="Edm.String" />
+        <Property Name="Interest_In_Arrears_Account" Type="Edm.String" />
+        <Property Name="Deposit_Multiplier_1st_Loan" Type="Edm.Decimal" />
+        <Property Name="Loan_Partial_Disburesment_A_C" Type="Edm.String" />
+        <Property Name="Loan_Due_Account" Type="Edm.String" />
+        <Property Name="Appraise_Bank_Statement" Type="Edm.Boolean" />
+        <Property Name="Is_Staff_Loan" Type="Edm.Boolean" />
+      </EntityType>
+      <EntityType Name="LoansPurpose">
+        <Key>
+          <PropertyRef Name="Code" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="LoansR">
         <Key>
           <PropertyRef Name="Loan_No" />
         </Key>
         <Property Name="Loan_No" Type="Edm.String" Nullable="false" />
         <Property Name="Application_Date" Type="Edm.DateTime" />
-        <Property Name="Loan_Product_Type" Type="Edm.String" />
-        <Property Name="Client_Code" Type="Edm.String" />
-        <Property Name="Group_Code" Type="Edm.String" />
-        <Property Name="Savings" Type="Edm.Decimal" />
-        <Property Name="Approved_Amount" Type="Edm.Decimal" />
-        <Property Name="Interest" Type="Edm.Decimal" />
-        <Property Name="LastPayDateImport" Type="Edm.DateTime" />
-        <Property Name="Total_Loans_Default" Type="Edm.Decimal" />
-        <Property Name="old_no" Type="Edm.String" />
-        <Property Name="Approval_Status" Type="Edm.String" />
         <Property Name="Loan_Product_Type_Name" Type="Edm.String" />
-        <Property Name="Totals_Loan_Outstanding" Type="Edm.Decimal" />
+        <Property Name="Client_Code" Type="Edm.String" />
+        <Property Name="Approved_Amount" Type="Edm.Decimal" />
+        <Property Name="BOSA_No" Type="Edm.String" />
+        <Property Name="Loan_Status" Type="Edm.String" />
+        <Property Name="Repayment_Method" Type="Edm.String" />
+        <Property Name="Requested_Amount" Type="Edm.Decimal" />
+        <Property Name="Source" Type="Edm.String" />
+        <Property Name="Mode_of_Disbursement" Type="Edm.String" />
+        <Property Name="Outstanding_Balance" Type="Edm.Decimal" />
+        <Property Name="Loan_Amount" Type="Edm.Decimal" />
       </EntityType>
       <EntityType Name="MemberList">
         <Key>
@@ -616,24 +493,32 @@
         </Key>
         <Property Name="No" Type="Edm.String" Nullable="false" />
         <Property Name="Name" Type="Edm.String" />
-        <Property Name="Address_2" Type="Edm.String" />
+        <Property Name="Address" Type="Edm.String" />
         <Property Name="Phone_No" Type="Edm.String" />
-        <Property Name="Payroll_Staff_No" Type="Edm.String" />
+        <Property Name="Personal_No" Type="Edm.String" />
         <Property Name="Account_Category" Type="Edm.String" />
         <Property Name="E_Mail_Personal" Type="Edm.String" />
         <Property Name="ID_No" Type="Edm.String" />
         <Property Name="Bank_Account_No" Type="Edm.String" />
         <Property Name="E_Mail" Type="Edm.String" />
-        <Property Name="password" Type="Edm.String" />
+        <Property Name="Group_Account_No" Type="Edm.String" />
         <Property Name="Old_Account_No" Type="Edm.String" />
-        <Property Name="Dividend_Amount" Type="Edm.Decimal" />
+        <Property Name="FOSA_Account_No" Type="Edm.String" />
+        <Property Name="Total_Repayments" Type="Edm.Decimal" />
+        <Property Name="FOSA_Account_Bal" Type="Edm.Decimal" />
+        <Property Name="Password" Type="Edm.String" />
+        <Property Name="BOSA_Account_No" Type="Edm.String" />
+        <Property Name="Monthly_Contribution" Type="Edm.Decimal" />
+        <Property Name="Total_Loans_Outstanding" Type="Edm.Decimal" />
         <Property Name="Shares_Retained" Type="Edm.Decimal" />
         <Property Name="Current_Shares" Type="Edm.Decimal" />
         <Property Name="Un_allocated_Funds" Type="Edm.Decimal" />
-        <Property Name="Benevolent_Fund" Type="Edm.Decimal" />
+        <Property Name="Dividend_Amount" Type="Edm.Decimal" />
         <Property Name="Outstanding_Balance" Type="Edm.Decimal" />
         <Property Name="Outstanding_Interest" Type="Edm.Decimal" />
-        <Property Name="FOSA_Account_Bal" Type="Edm.Decimal" />
+        <Property Name="Current_Loan" Type="Edm.Decimal" />
+        <Property Name="Current_Savings" Type="Edm.Decimal" />
+        <Property Name="Accrued_Interest" Type="Edm.Decimal" />
       </EntityType>
       <EntityType Name="ministatement">
         <Key>
@@ -652,445 +537,58 @@
         <Property Name="External_Document_No" Type="Edm.String" />
         <Property Name="AuxiliaryIndex1" Type="Edm.Int32" Nullable="false" />
       </EntityType>
-      <EntityType Name="PBIATMTransactions">
+      <EntityType Name="myGuarantors">
         <Key>
-          <PropertyRef Name="Entry_No" />
+          <PropertyRef Name="AuxiliaryIndex1" />
+          <PropertyRef Name="AuxiliaryIndex2" />
+          <PropertyRef Name="Loan_No" />
+          <PropertyRef Name="Member_No" />
         </Key>
-        <Property Name="Trace_ID" Type="Edm.String" />
-        <Property Name="Posting_Date" Type="Edm.DateTime" />
-        <Property Name="Account_No" Type="Edm.String" />
-        <Property Name="Description" Type="Edm.String" />
-        <Property Name="Amount" Type="Edm.Decimal" />
-        <Property Name="Posting_S" Type="Edm.String" />
-        <Property Name="Posted" Type="Edm.Boolean" />
-        <Property Name="Unit_ID" Type="Edm.String" />
-        <Property Name="Transaction_Type" Type="Edm.String" />
-        <Property Name="Trans_Time" Type="Edm.String" />
-        <Property Name="Transaction_Time" Type="Edm.String" />
-        <Property Name="Transaction_Date" Type="Edm.DateTime" />
-        <Property Name="Source" Type="Edm.String" />
-        <Property Name="Reversed" Type="Edm.Boolean" />
-        <Property Name="Reversed_Posted" Type="Edm.Boolean" />
-        <Property Name="Reversal_Trace_ID" Type="Edm.String" />
-        <Property Name="Transaction_Description" Type="Edm.String" />
-        <Property Name="Withdrawal_Location" Type="Edm.String" />
-        <Property Name="Entry_No" Type="Edm.Int32" Nullable="false" />
-        <Property Name="Transaction_Type_Charges" Type="Edm.String" />
-        <Property Name="Card_Acceptor_Terminal_ID" Type="Edm.String" />
-        <Property Name="ATM_Card_No" Type="Edm.String" />
-        <Property Name="Customer_Names" Type="Edm.String" />
-        <Property Name="Process_Code" Type="Edm.String" />
-        <Property Name="Reference_No" Type="Edm.String" />
-        <Property Name="Is_Coop_Bank" Type="Edm.Boolean" />
-        <Property Name="POS_Vendor" Type="Edm.String" />
-        <Property Name="Account_Name" Type="Edm.String" />
-      </EntityType>
-      <EntityType Name="PBICASHIERTransactions">
-        <Key>
-          <PropertyRef Name="No" />
-        </Key>
-        <Property Name="No" Type="Edm.String" Nullable="false" />
-        <Property Name="Account_No" Type="Edm.String" />
-        <Property Name="Account_Name" Type="Edm.String" />
-        <Property Name="Transaction_Type" Type="Edm.String" />
-        <Property Name="Amount" Type="Edm.Decimal" />
-        <Property Name="Cashier" Type="Edm.String" />
-        <Property Name="Transaction_Date" Type="Edm.DateTime" />
-        <Property Name="Transaction_Time" Type="Edm.String" />
-        <Property Name="Posted" Type="Edm.Boolean" />
-        <Property Name="No_Series" Type="Edm.String" />
-        <Property Name="Account_Type" Type="Edm.String" />
-        <Property Name="Account_Description" Type="Edm.String" />
-        <Property Name="Denomination_Total" Type="Edm.Decimal" />
-        <Property Name="Cheque_Type" Type="Edm.String" />
-        <Property Name="Cheque_No" Type="Edm.String" />
-        <Property Name="Cheque_Date" Type="Edm.DateTime" />
-        <Property Name="Payee" Type="Edm.String" />
-        <Property Name="Bank_No" Type="Edm.String" />
-        <Property Name="Branch_No" Type="Edm.String" />
-        <Property Name="Clearing_Charges" Type="Edm.Decimal" />
-        <Property Name="Clearing_Days" Type="Edm.String" />
-        <Property Name="Description" Type="Edm.String" />
-        <Property Name="Bank_Name" Type="Edm.String" />
-        <Property Name="Branch_Name" Type="Edm.String" />
-        <Property Name="Transaction_Mode" Type="Edm.String" />
-        <Property Name="Type" Type="Edm.String" />
-        <Property Name="Transaction_Description" Type="Edm.String" />
-        <Property Name="Minimum_Account_Balance" Type="Edm.Decimal" />
-        <Property Name="Fee_Below_Minimum_Balance" Type="Edm.Decimal" />
-        <Property Name="Normal_Withdrawal_Charge" Type="Edm.Decimal" />
-        <Property Name="Authorised" Type="Edm.String" />
-        <Property Name="Checked_By" Type="Edm.String" />
-        <Property Name="Fee_on_Withdrawal_Interval" Type="Edm.Decimal" />
-        <Property Name="Remarks" Type="Edm.String" />
-        <Property Name="Status" Type="Edm.String" />
-        <Property Name="Date_Posted" Type="Edm.DateTime" />
-        <Property Name="Time_Posted" Type="Edm.String" />
-        <Property Name="Posted_By" Type="Edm.String" />
-        <Property Name="Expected_Maturity_Date" Type="Edm.DateTime" />
-        <Property Name="Currency_Code" Type="Edm.String" />
-        <Property Name="Transaction_Category" Type="Edm.String" />
-        <Property Name="Deposited" Type="Edm.Boolean" />
-        <Property Name="Date_Deposited" Type="Edm.DateTime" />
-        <Property Name="Time_Deposited" Type="Edm.String" />
-        <Property Name="Deposited_By" Type="Edm.String" />
-        <Property Name="Post_Dated" Type="Edm.Boolean" />
-        <Property Name="Select" Type="Edm.Boolean" />
-        <Property Name="Status_Date" Type="Edm.DateTime" />
-        <Property Name="Status_Time" Type="Edm.String" />
-        <Property Name="Supervisor_Checked" Type="Edm.Boolean" />
-        <Property Name="Book_Balance" Type="Edm.Decimal" />
-        <Property Name="Notice_No" Type="Edm.String" />
-        <Property Name="Notice_Cleared" Type="Edm.String" />
-        <Property Name="Schedule_Amount" Type="Edm.Decimal" />
-        <Property Name="Has_Schedule" Type="Edm.Boolean" />
-        <Property Name="Requested" Type="Edm.Boolean" />
-        <Property Name="Date_Requested" Type="Edm.DateTime" />
-        <Property Name="Time_Requested" Type="Edm.String" />
-        <Property Name="Requested_By" Type="Edm.String" />
-        <Property Name="Overdraft" Type="Edm.Boolean" />
-        <Property Name="Cheque_Processed" Type="Edm.Boolean" />
-        <Property Name="Staff_Payroll_No" Type="Edm.String" />
-        <Property Name="Cheque_Transferred" Type="Edm.String" />
-        <Property Name="Expected_Amount" Type="Edm.Decimal" />
-        <Property Name="Line_Totals" Type="Edm.Decimal" />
-        <Property Name="Transfer_Date" Type="Edm.DateTime" />
-        <Property Name="BIH_No" Type="Edm.String" />
-        <Property Name="Transfer_No" Type="Edm.String" />
-        <Property Name="Attached" Type="Edm.Boolean" />
-        <Property Name="BOSA_Account_No" Type="Edm.String" />
-        <Property Name="Salary_Processing" Type="Edm.String" />
-        <Property Name="Expense_Account" Type="Edm.String" />
-        <Property Name="Expense_Description" Type="Edm.String" />
-        <Property Name="Company_Code" Type="Edm.String" />
-        <Property Name="Schedule_Type" Type="Edm.String" />
-        <Property Name="Banked_By" Type="Edm.String" />
-        <Property Name="Date_Banked" Type="Edm.DateTime" />
-        <Property Name="Time_Banked" Type="Edm.String" />
-        <Property Name="Banking_Posted" Type="Edm.Boolean" />
-        <Property Name="Cleared_By" Type="Edm.String" />
-        <Property Name="Date_Cleared" Type="Edm.DateTime" />
-        <Property Name="Time_Cleared" Type="Edm.String" />
-        <Property Name="Clearing_Posted" Type="Edm.Boolean" />
-        <Property Name="Needs_Approval" Type="Edm.String" />
-        <Property Name="ID_Type" Type="Edm.String" />
-        <Property Name="ID_No" Type="Edm.String" />
-        <Property Name="Reference_No" Type="Edm.String" />
-        <Property Name="Refund_Cheque" Type="Edm.Boolean" />
-        <Property Name="Imported" Type="Edm.Boolean" />
-        <Property Name="External_Account_No" Type="Edm.String" />
-        <Property Name="BOSA_Transactions" Type="Edm.Decimal" />
-        <Property Name="Bank_Account" Type="Edm.String" />
-        <Property Name="Savers_Total" Type="Edm.Decimal" />
-        <Property Name="Mustaafu_Total" Type="Edm.Decimal" />
-        <Property Name="Junior_Star_Total" Type="Edm.Decimal" />
-        <Property Name="Printed" Type="Edm.Boolean" />
-        <Property Name="Withdrawal_FrequencyAuthorised" Type="Edm.String" />
-        <Property Name="Frequency_Needs_Approval" Type="Edm.String" />
-        <Property Name="Special_Advance_No" Type="Edm.String" />
-        <Property Name="Bankers_Cheque_Type" Type="Edm.String" />
-        <Property Name="Suspended_Amount" Type="Edm.Decimal" />
-        <Property Name="Transferred_By_EFT" Type="Edm.Boolean" />
-        <Property Name="Banking_User" Type="Edm.String" />
-        <Property Name="Company_Text_Name" Type="Edm.String" />
-        <Property Name="Total_Salaries" Type="Edm.Int32" />
-        <Property Name="EFT_Transferred" Type="Edm.Boolean" />
-        <Property Name="ATM_Transactions_Total" Type="Edm.Decimal" />
-        <Property Name="Bank_Code" Type="Edm.String" />
-        <Property Name="External_Account_Name" Type="Edm.String" />
-        <Property Name="Overdraft_Limit" Type="Edm.Decimal" />
-        <Property Name="Overdraft_Allowed" Type="Edm.Boolean" />
-        <Property Name="Available_Balance" Type="Edm.Decimal" />
-        <Property Name="Authorisation_Requirement" Type="Edm.String" />
-        <Property Name="Bankers_Cheque_No" Type="Edm.String" />
-        <Property Name="Transaction_Span" Type="Edm.String" />
-        <Property Name="Transaction_Available_Balance" Type="Edm.Decimal" />
-        <Property Name="Branch_Account" Type="Edm.String" />
-        <Property Name="Branch_Transaction" Type="Edm.Boolean" />
-        <Property Name="FOSA_Branch_Name" Type="Edm.String" />
-        <Property Name="Branch_Refference" Type="Edm.String" />
-        <Property Name="Branch_Account_No" Type="Edm.String" />
-        <Property Name="Branch_Transaction_Date" Type="Edm.DateTime" />
-        <Property Name="Post_Attempted" Type="Edm.Boolean" />
-        <Property Name="Transacting_Branch" Type="Edm.String" />
-        <Property Name="Amount_Discounted" Type="Edm.Decimal" />
-        <Property Name="Dont_Clear" Type="Edm.Boolean" />
-        <Property Name="Other_Bankers_No" Type="Edm.String" />
-        <Property Name="N_A_H_Balance" Type="Edm.Decimal" />
-        <Property Name="Cheque_Deposit_Remarks" Type="Edm.String" />
-        <Property Name="Balancing_Account" Type="Edm.String" />
-        <Property Name="Balancing_Account_Name" Type="Edm.String" />
-        <Property Name="Bankers_Cheque_Payee" Type="Edm.String" />
-        <Property Name="Atm_Number" Type="Edm.String" />
-        <Property Name="Member_Name" Type="Edm.String" />
-        <Property Name="Savings_Product" Type="Edm.String" />
-        <Property Name="Member_No" Type="Edm.String" />
-        <Property Name="Withdarawal" Type="Edm.Boolean" />
-        <Property Name="Uncleared_Cheques" Type="Edm.Decimal" />
-        <Property Name="Allocated_Amount" Type="Edm.Decimal" />
-      </EntityType>
-      <EntityType Name="PBIVendors">
-        <Key>
-          <PropertyRef Name="No" />
-        </Key>
-        <Property Name="No" Type="Edm.String" Nullable="false" />
+        <Property Name="Member_No" Type="Edm.String" Nullable="false" />
         <Property Name="Name" Type="Edm.String" />
-        <Property Name="Search_Name" Type="Edm.String" />
-        <Property Name="Name_2" Type="Edm.String" />
-        <Property Name="Address" Type="Edm.String" />
-        <Property Name="Address_2" Type="Edm.String" />
-        <Property Name="City" Type="Edm.String" />
-        <Property Name="Contact" Type="Edm.String" />
-        <Property Name="Phone_No" Type="Edm.String" />
-        <Property Name="Telex_No" Type="Edm.String" />
-        <Property Name="Our_Account_No" Type="Edm.String" />
-        <Property Name="Territory_Code" Type="Edm.String" />
-        <Property Name="Global_Dimension_1_Code" Type="Edm.String" />
-        <Property Name="Global_Dimension_2_Code" Type="Edm.String" />
-        <Property Name="Budgeted_Amount" Type="Edm.Decimal" />
-        <Property Name="Vendor_Posting_Group" Type="Edm.String" />
-        <Property Name="Currency_Code" Type="Edm.String" />
-        <Property Name="Language_Code" Type="Edm.String" />
-        <Property Name="Statistics_Group" Type="Edm.Int32" />
-        <Property Name="Payment_Terms_Code" Type="Edm.String" />
-        <Property Name="Fin_Charge_Terms_Code" Type="Edm.String" />
-        <Property Name="Purchaser_Code" Type="Edm.String" />
-        <Property Name="Shipment_Method_Code" Type="Edm.String" />
-        <Property Name="Shipping_Agent_Code" Type="Edm.String" />
-        <Property Name="Invoice_Disc_Code" Type="Edm.String" />
+        <Property Name="Loan_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Loanees_No" Type="Edm.String" />
+        <Property Name="AuxiliaryIndex1" Type="Edm.String" Nullable="false" />
+        <Property Name="AuxiliaryIndex2" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="numberofguarantors">
+        <Key>
+          <PropertyRef Name="AuxiliaryIndex1" />
+          <PropertyRef Name="AuxiliaryIndex2" />
+          <PropertyRef Name="Loan_No" />
+          <PropertyRef Name="Member_No" />
+        </Key>
+        <Property Name="Member_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Loan_No" Type="Edm.String" Nullable="false" />
+        <Property Name="AuxiliaryIndex1" Type="Edm.String" Nullable="false" />
+        <Property Name="AuxiliaryIndex2" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="postalcodes">
+        <Key>
+          <PropertyRef Name="City" />
+          <PropertyRef Name="Code" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="false" />
+        <Property Name="City" Type="Edm.String" Nullable="false" />
         <Property Name="Country_Region_Code" Type="Edm.String" />
-        <Property Name="Blocked" Type="Edm.String" />
-        <Property Name="Pay_to_Vendor_No" Type="Edm.String" />
-        <Property Name="Priority" Type="Edm.Int32" />
-        <Property Name="Payment_Method_Code" Type="Edm.String" />
-        <Property Name="Last_Date_Modified" Type="Edm.DateTime" />
-        <Property Name="Application_Method" Type="Edm.String" />
-        <Property Name="Prices_Including_VAT" Type="Edm.Boolean" />
-        <Property Name="Fax_No" Type="Edm.String" />
-        <Property Name="Telex_Answer_Back" Type="Edm.String" />
-        <Property Name="VAT_Registration_No" Type="Edm.String" />
-        <Property Name="Gen_Bus_Posting_Group" Type="Edm.String" />
-        <Property Name="GLN" Type="Edm.String" />
-        <Property Name="Post_Code" Type="Edm.String" />
-        <Property Name="County" Type="Edm.String" />
-        <Property Name="E_Mail" Type="Edm.String" />
-        <Property Name="Home_Page" Type="Edm.String" />
-        <Property Name="No_Series" Type="Edm.String" />
-        <Property Name="Tax_Area_Code" Type="Edm.String" />
-        <Property Name="Tax_Liable" Type="Edm.Boolean" />
-        <Property Name="VAT_Bus_Posting_Group" Type="Edm.String" />
-        <Property Name="Block_Payment_Tolerance" Type="Edm.Boolean" />
-        <Property Name="IC_Partner_Code" Type="Edm.String" />
-        <Property Name="Prepayment" Type="Edm.Decimal" />
-        <Property Name="Partner_Type" Type="Edm.String" />
-        <Property Name="Creditor_No" Type="Edm.String" />
-        <Property Name="Preferred_Bank_Account" Type="Edm.String" />
-        <Property Name="Cash_Flow_Payment_Terms_Code" Type="Edm.String" />
-        <Property Name="Primary_Contact_No" Type="Edm.String" />
-        <Property Name="Responsibility_Center" Type="Edm.String" />
-        <Property Name="Location_Code" Type="Edm.String" />
-        <Property Name="Lead_Time_Calculation" Type="Edm.String" />
-        <Property Name="Base_Calendar_Code" Type="Edm.String" />
-        <Property Name="UPS_Zone" Type="Edm.String" />
-        <Property Name="Federal_ID_No" Type="Edm.String" />
-        <Property Name="Bank_Communication" Type="Edm.String" />
-        <Property Name="Check_Date_Format" Type="Edm.String" />
-        <Property Name="Check_Date_Separator" Type="Edm.String" />
-        <Property Name="IRS_1099_Code" Type="Edm.String" />
-        <Property Name="RFC_No" Type="Edm.String" />
-        <Property Name="CURP_No" Type="Edm.String" />
-        <Property Name="State_Inscription" Type="Edm.String" />
-        <Property Name="Tax_Identification_Type" Type="Edm.String" />
-        <Property Name="Creditor_Type" Type="Edm.String" />
-        <Property Name="Staff_No" Type="Edm.String" />
-        <Property Name="ID_No" Type="Edm.String" />
-        <Property Name="Last_Maintenance_Date" Type="Edm.DateTime" />
-        <Property Name="Activate_Sweeping_Arrangement" Type="Edm.Boolean" />
-        <Property Name="Sweeping_Balance" Type="Edm.Decimal" />
-        <Property Name="Sweep_To_Account" Type="Edm.String" />
-        <Property Name="Fixed_Deposit_Status" Type="Edm.String" />
-        <Property Name="Call_Deposit" Type="Edm.Boolean" />
-        <Property Name="Mobile_Phone_No" Type="Edm.String" />
-        <Property Name="Marital_Status" Type="Edm.String" />
-        <Property Name="Registration_Date" Type="Edm.DateTime" />
-        <Property Name="BOSA_Account_No" Type="Edm.String" />
-        <Property Name="Passport_No" Type="Edm.String" />
-        <Property Name="Company_Code" Type="Edm.String" />
-        <Property Name="Status" Type="Edm.String" />
-        <Property Name="Account_Type" Type="Edm.String" />
-        <Property Name="Account_Category" Type="Edm.String" />
-        <Property Name="FD_Marked_for_Closure" Type="Edm.Boolean" />
-        <Property Name="Last_Withdrawal_Date" Type="Edm.DateTime" />
-        <Property Name="Last_Overdraft_Date" Type="Edm.DateTime" />
-        <Property Name="Last_Min_Balance_Date" Type="Edm.DateTime" />
-        <Property Name="Last_Deposit_Date" Type="Edm.DateTime" />
-        <Property Name="Last_Transaction_Posting_Date" Type="Edm.DateTime" />
-        <Property Name="Date_Closed" Type="Edm.DateTime" />
-        <Property Name="Expected_Maturity_Date" Type="Edm.DateTime" />
-        <Property Name="Date_of_Birth" Type="Edm.DateTime" />
-        <Property Name="E_Mail_Personal" Type="Edm.String" />
-        <Property Name="Section" Type="Edm.String" />
-        <Property Name="Card_No" Type="Edm.String" />
-        <Property Name="Home_Address" Type="Edm.String" />
-        <Property Name="Location" Type="Edm.String" />
-        <Property Name="Sub_Location" Type="Edm.String" />
-        <Property Name="District" Type="Edm.String" />
-        <Property Name="Resons_for_Status_Change" Type="Edm.String" />
-        <Property Name="Closure_Notice_Date" Type="Edm.DateTime" />
-        <Property Name="Fixed_Deposit_Type" Type="Edm.String" />
-        <Property Name="FD_Maturity_Date" Type="Edm.DateTime" />
-        <Property Name="Savings_Account_No" Type="Edm.String" />
-        <Property Name="Old_Account_No" Type="Edm.String" />
-        <Property Name="Salary_Processing" Type="Edm.Boolean" />
-        <Property Name="Amount_to_Transfer" Type="Edm.Decimal" />
-        <Property Name="Proffesion" Type="Edm.String" />
-        <Property Name="Signing_Instructions" Type="Edm.String" />
-        <Property Name="Hide" Type="Edm.Boolean" />
-        <Property Name="Monthly_Contribution" Type="Edm.Decimal" />
-        <Property Name="Not_Qualify_for_Interest" Type="Edm.Boolean" />
-        <Property Name="Gender" Type="Edm.String" />
-        <Property Name="Fixed_Duration" Type="Edm.String" />
-        <Property Name="System_Created" Type="Edm.Boolean" />
-        <Property Name="External_Account_No" Type="Edm.String" />
-        <Property Name="Bank_Code" Type="Edm.String" />
-        <Property Name="Enabled" Type="Edm.Boolean" />
-        <Property Name="Defaulted_Loans_Recovered" Type="Edm.Boolean" />
-        <Property Name="Formation_Province" Type="Edm.String" />
-        <Property Name="Division_Department" Type="Edm.String" />
-        <Property Name="Station_Sections" Type="Edm.String" />
-        <Property Name="Neg_Interest_Rate" Type="Edm.Decimal" />
-        <Property Name="Date_Renewed" Type="Edm.DateTime" />
-        <Property Name="Don_t_Transfer_to_Savings" Type="Edm.Boolean" />
-        <Property Name="Type_Of_Organisation" Type="Edm.String" />
-        <Property Name="Source_Of_Funds" Type="Edm.String" />
-        <Property Name="MPESA_Mobile_No" Type="Edm.String" />
-        <Property Name="ATM_Prov_No" Type="Edm.String" />
-        <Property Name="ATM_Approve" Type="Edm.Boolean" />
-        <Property Name="Force_No" Type="Edm.String" />
-        <Property Name="Card_Expiry_Date" Type="Edm.DateTime" />
-        <Property Name="Card_Valid_From" Type="Edm.DateTime" />
-        <Property Name="Card_Valid_To" Type="Edm.DateTime" />
-        <Property Name="Service" Type="Edm.String" />
-        <Property Name="Reconciled" Type="Edm.Boolean" />
-        <Property Name="FD_Duration" Type="Edm.Int32" />
-        <Property Name="Employer_P_F" Type="Edm.String" />
-        <Property Name="Outstanding_Balance" Type="Edm.Decimal" />
-        <Property Name="Atm_card_ready" Type="Edm.Boolean" />
-        <Property Name="Current_Shares" Type="Edm.Decimal" />
-        <Property Name="Debtor_Type" Type="Edm.String" />
-        <Property Name="Group_Code" Type="Edm.String" />
-        <Property Name="Group_Account" Type="Edm.Boolean" />
-        <Property Name="Shares_Recovered" Type="Edm.Boolean" />
-        <Property Name="Group_Balance" Type="Edm.Decimal" />
-        <Property Name="Old_Bosa_Acc_no" Type="Edm.String" />
-        <Property Name="ContactPerson_Relation" Type="Edm.String" />
-        <Property Name="ContactPerson_Occupation" Type="Edm.String" />
-        <Property Name="ContacPerson_Phone" Type="Edm.String" />
-        <Property Name="Recruited_By" Type="Edm.String" />
-        <Property Name="ClassB_Shares" Type="Edm.Decimal" />
-        <Property Name="Date_ATM_Linked" Type="Edm.DateTime" />
-        <Property Name="ATM_No" Type="Edm.String" />
-        <Property Name="Reason_For_Blocking_Account" Type="Edm.String" />
-        <Property Name="Transfer_Amount_to_Savings" Type="Edm.Decimal" />
-        <Property Name="Notice_Date" Type="Edm.DateTime" />
-        <Property Name="Account_Frozen" Type="Edm.Boolean" />
-        <Property Name="Interest_rate" Type="Edm.Decimal" />
-        <Property Name="Fixed_duration2" Type="Edm.Int32" />
-        <Property Name="FDR_Deposit_Status_Type" Type="Edm.String" />
-        <Property Name="ATM_Expiry_Date" Type="Edm.DateTime" />
-        <Property Name="Net_Salary" Type="Edm.Decimal" />
-        <Property Name="FD_Maturity_Instructions" Type="Edm.String" />
-        <Property Name="ATM_Card_Approved_by" Type="Edm.String" />
-        <Property Name="Disabled_ATM_Card_No" Type="Edm.String" />
-        <Property Name="Reason_For_Disabling_ATM_Card" Type="Edm.String" />
-        <Property Name="Disable_ATM_Card" Type="Edm.Boolean" />
-        <Property Name="Disabled_By" Type="Edm.String" />
-        <Property Name="Transfer_Type" Type="Edm.String" />
-        <Property Name="ATM_Alert_Sent" Type="Edm.Boolean" />
-        <Property Name="Old_Vendor_No" Type="Edm.String" />
-        <Property Name="Loan_No" Type="Edm.String" />
-        <Property Name="Principle_Amount" Type="Edm.Decimal" />
-        <Property Name="Interest_Amount" Type="Edm.Decimal" />
-        <Property Name="Bankers_Cheque_Amount" Type="Edm.Decimal" />
-        <Property Name="Registered_M_Sacco" Type="Edm.Boolean" />
-        <Property Name="Sms_Notification" Type="Edm.Boolean" />
-        <Property Name="Parent_Account" Type="Edm.String" />
-        <Property Name="Comment" Type="Edm.Boolean" />
-        <Property Name="Balance" Type="Edm.Decimal" />
-        <Property Name="Balance_LCY" Type="Edm.Decimal" />
-        <Property Name="Net_Change" Type="Edm.Decimal" />
-        <Property Name="Net_Change_LCY" Type="Edm.Decimal" />
-        <Property Name="Purchases_LCY" Type="Edm.Decimal" />
-        <Property Name="Inv_Discounts_LCY" Type="Edm.Decimal" />
-        <Property Name="Pmt_Discounts_LCY" Type="Edm.Decimal" />
-        <Property Name="Balance_Due" Type="Edm.Decimal" />
-        <Property Name="Balance_Due_LCY" Type="Edm.Decimal" />
-        <Property Name="Payments" Type="Edm.Decimal" />
-        <Property Name="Invoice_Amounts" Type="Edm.Decimal" />
-        <Property Name="Cr_Memo_Amounts" Type="Edm.Decimal" />
-        <Property Name="Finance_Charge_Memo_Amounts" Type="Edm.Decimal" />
-        <Property Name="Payments_LCY" Type="Edm.Decimal" />
-        <Property Name="Inv_Amounts_LCY" Type="Edm.Decimal" />
-        <Property Name="Cr_Memo_Amounts_LCY" Type="Edm.Decimal" />
-        <Property Name="Fin_Charge_Memo_Amounts_LCY" Type="Edm.Decimal" />
-        <Property Name="Outstanding_Orders" Type="Edm.Decimal" />
-        <Property Name="Amt_Rcd_Not_Invoiced" Type="Edm.Decimal" />
-        <Property Name="Debit_Amount" Type="Edm.Decimal" />
-        <Property Name="Credit_Amount" Type="Edm.Decimal" />
-        <Property Name="Debit_Amount_LCY" Type="Edm.Decimal" />
-        <Property Name="Credit_Amount_LCY" Type="Edm.Decimal" />
-        <Property Name="Reminder_Amounts" Type="Edm.Decimal" />
-        <Property Name="Reminder_Amounts_LCY" Type="Edm.Decimal" />
-        <Property Name="Outstanding_Orders_LCY" Type="Edm.Decimal" />
-        <Property Name="Amt_Rcd_Not_Invoiced_LCY" Type="Edm.Decimal" />
-        <Property Name="Pmt_Disc_Tolerance_LCY" Type="Edm.Decimal" />
-        <Property Name="Pmt_Tolerance_LCY" Type="Edm.Decimal" />
-        <Property Name="Refunds" Type="Edm.Decimal" />
-        <Property Name="Refunds_LCY" Type="Edm.Decimal" />
-        <Property Name="Other_Amounts" Type="Edm.Decimal" />
-        <Property Name="Other_Amounts_LCY" Type="Edm.Decimal" />
-        <Property Name="Outstanding_Invoices" Type="Edm.Decimal" />
-        <Property Name="Outstanding_Invoices_LCY" Type="Edm.Decimal" />
-        <Property Name="Pay_to_No_Of_Archived_Doc" Type="Edm.Int32" />
-        <Property Name="Buy_from_No_Of_Archived_Doc" Type="Edm.Int32" />
-        <Property Name="No_of_Pstd_Receipts" Type="Edm.Int32" />
-        <Property Name="No_of_Pstd_Invoices" Type="Edm.Int32" />
-        <Property Name="No_of_Pstd_Return_Shipments" Type="Edm.Int32" />
-        <Property Name="No_of_Pstd_Credit_Memos" Type="Edm.Int32" />
-        <Property Name="Pay_to_No_of_Orders" Type="Edm.Int32" />
-        <Property Name="Pay_to_No_of_Invoices" Type="Edm.Int32" />
-        <Property Name="Pay_to_No_of_Return_Orders" Type="Edm.Int32" />
-        <Property Name="Pay_to_No_of_Credit_Memos" Type="Edm.Int32" />
-        <Property Name="Pay_to_No_of_Pstd_Receipts" Type="Edm.Int32" />
-        <Property Name="Pay_to_No_of_Pstd_Invoices" Type="Edm.Int32" />
-        <Property Name="Pay_to_No_of_Pstd_Return_S" Type="Edm.Int32" />
-        <Property Name="Pay_to_No_of_Pstd_Cr_Memos" Type="Edm.Int32" />
-        <Property Name="No_of_Quotes" Type="Edm.Int32" />
-        <Property Name="No_of_Blanket_Orders" Type="Edm.Int32" />
-        <Property Name="No_of_Orders" Type="Edm.Int32" />
-        <Property Name="No_of_Invoices" Type="Edm.Int32" />
-        <Property Name="No_of_Return_Orders" Type="Edm.Int32" />
-        <Property Name="No_of_Credit_Memos" Type="Edm.Int32" />
-        <Property Name="No_of_Order_Addresses" Type="Edm.Int32" />
-        <Property Name="Pay_to_No_of_Quotes" Type="Edm.Int32" />
-        <Property Name="Pay_to_No_of_Blanket_Orders" Type="Edm.Int32" />
-        <Property Name="Balance_on_Date" Type="Edm.Decimal" />
-        <Property Name="Balance_on_Date_LCY" Type="Edm.Decimal" />
-        <Property Name="Uncleared_Cheques" Type="Edm.Decimal" />
-        <Property Name="ATM_Transactions" Type="Edm.Decimal" />
-        <Property Name="Last_Transaction_Date" Type="Edm.DateTime" />
-        <Property Name="Interest_Earned" Type="Edm.Decimal" />
-        <Property Name="Untranfered_Interest" Type="Edm.Decimal" />
-        <Property Name="Current_Salary" Type="Edm.Decimal" />
-        <Property Name="EFT_Transactions" Type="Edm.Decimal" />
-        <Property Name="Last_Interest_Date" Type="Edm.DateTime" />
-        <Property Name="FOSA_Default_Dimension" Type="Edm.Int32" />
-        <Property Name="Dividend_Paid" Type="Edm.Decimal" />
-        <Property Name="Group_Loan_Balance" Type="Edm.Decimal" />
-        <Property Name="Uncleared_Loans" Type="Edm.Decimal" />
-        <Property Name="NetDis" Type="Edm.Decimal" />
-        <Property Name="Authorised_Over_Draft" Type="Edm.Decimal" />
-        <Property Name="Change_Log" Type="Edm.Int32" />
+      </EntityType>
+      <EntityType Name="profile_Pics">
+        <Key>
+          <PropertyRef Name="AuxiliaryIndex1" />
+        </Key>
+        <Property Name="Customer_Number" Type="Edm.String" />
+        <Property Name="Pic_Name" Type="Edm.String" />
+        <Property Name="link" Type="Edm.String" />
+        <Property Name="Signature_Filename" Type="Edm.String" />
+        <Property Name="Signature_Link" Type="Edm.String" />
+        <Property Name="AuxiliaryIndex1" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="relationships">
+        <Key>
+          <PropertyRef Name="code" />
+        </Key>
+        <Property Name="code" Type="Edm.String" Nullable="false" />
+        <Property Name="Describution" Type="Edm.String" />
       </EntityType>
       <EntityType Name="SalesDashboard">
         <Key>
@@ -1105,6 +603,7 @@
         <Property Name="Posting_Date" Type="Edm.DateTime" />
         <Property Name="Entry_Type" Type="Edm.String" />
         <Property Name="Quantity" Type="Edm.Decimal" />
+        <Property Name="Dimension_Set_ID" Type="Edm.Int32" />
         <Property Name="Sales_Amount_Actual" Type="Edm.Decimal" />
         <Property Name="Sales_Amount_Expected" Type="Edm.Decimal" />
         <Property Name="Cost_Amount_Actual" Type="Edm.Decimal" />
@@ -1157,6 +656,7 @@
         <Property Name="Document_No" Type="Edm.String" Nullable="false" />
         <Property Name="Amount" Type="Edm.Decimal" />
         <Property Name="Line_No" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Dimension_Set_ID" Type="Edm.Int32" />
         <Property Name="Posting_Date" Type="Edm.DateTime" />
         <Property Name="CurrenyDescription" Type="Edm.String" />
         <Property Name="Currency_Code" Type="Edm.String" />
@@ -1166,6 +666,26 @@
         <Property Name="AuxiliaryIndex2" Type="Edm.String" Nullable="false" />
         <Property Name="AuxiliaryIndex3" Type="Edm.String" Nullable="false" />
         <Property Name="AuxiliaryIndex4" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="StandingOrders">
+        <Key>
+          <PropertyRef Name="No" />
+          <PropertyRef Name="Source_Account_No" />
+        </Key>
+        <Property Name="No" Type="Edm.String" Nullable="false" />
+        <Property Name="BOSA_Account_No" Type="Edm.String" />
+        <Property Name="Source_Account_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Account_Name" Type="Edm.String" />
+        <Property Name="Destination_Account_Type" Type="Edm.String" />
+        <Property Name="Destination_Account_No" Type="Edm.String" />
+        <Property Name="Destination_Account_Name" Type="Edm.String" />
+        <Property Name="Effective_Start_Date" Type="Edm.DateTime" />
+        <Property Name="End_Date" Type="Edm.DateTime" />
+        <Property Name="Duration" Type="Edm.String" />
+        <Property Name="Frequency" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" />
+        <Property Name="Amount" Type="Edm.Decimal" />
+        <Property Name="Remarks" Type="Edm.String" />
       </EntityType>
       <EntityType Name="TopCustomerOverview">
         <Key>
@@ -1187,77 +707,65 @@
         <Property Name="AuxiliaryIndex1" Type="Edm.String" Nullable="false" />
         <Property Name="AuxiliaryIndex2" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <EntityType Name="UpdateAtmStatus">
+        <Key>
+          <PropertyRef Name="AuxiliaryIndex1" />
+          <PropertyRef Name="AuxiliaryIndex2" />
+          <PropertyRef Name="No" />
+        </Key>
+        <Property Name="ATM_Expiry_Date" Type="Edm.DateTime" />
+        <Property Name="Date_Issued" Type="Edm.DateTime" />
+        <Property Name="Card_Status" Type="Edm.String" />
+        <Property Name="Card_No" Type="Edm.String" />
+        <Property Name="Account_No" Type="Edm.String" />
+        <Property Name="No" Type="Edm.String" Nullable="false" />
+        <Property Name="AuxiliaryIndex1" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="AuxiliaryIndex2" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
       <EntityType Name="Company">
         <Key>
           <PropertyRef Name="Name" />
         </Key>
         <Property Name="Name" Type="Edm.String" Nullable="false" />
-        <NavigationProperty Name="ACC_Schedules" Relationship="NAV.Company_ACC_Schedules" ToRole="ACC_Schedules" FromRole="Company" />
-        <NavigationProperty Name="COA" Relationship="NAV.Company_COA" ToRole="COA" FromRole="Company" />
-        <NavigationProperty Name="Loan_Products" Relationship="NAV.Company_Loan_Products" ToRole="Loan_Products" FromRole="Company" />
-        <NavigationProperty Name="Members" Relationship="NAV.Company_Members" ToRole="Members" FromRole="Company" />
-        <NavigationProperty Name="PBIAccount_Types" Relationship="NAV.Company_PBIAccount_Types" ToRole="PBIAccount_Types" FromRole="Company" />
-        <NavigationProperty Name="PBIBankLedgerxz" Relationship="NAV.Company_PBIBankLedgerxz" ToRole="PBIBankLedgerxz" FromRole="Company" />
-        <NavigationProperty Name="PBILoan_Register" Relationship="NAV.Company_PBILoan_Register" ToRole="PBILoan_Register" FromRole="Company" />
-        <NavigationProperty Name="PBIMembers" Relationship="NAV.Company_PBIMembers" ToRole="PBIMembers" FromRole="Company" />
+        <NavigationProperty Name="BOSAPostedLoans" Relationship="NAV.Company_BOSAPostedLoans" ToRole="BOSAPostedLoans" FromRole="Company" />
+        <NavigationProperty Name="FOSAPostedLoans" Relationship="NAV.Company_FOSAPostedLoans" ToRole="FOSAPostedLoans" FromRole="Company" />
         <NavigationProperty Name="powerbifinance" Relationship="NAV.Company_powerbifinance" ToRole="powerbifinance" FromRole="Company" />
         <NavigationProperty Name="SalesOrder" Relationship="NAV.Company_SalesOrder" ToRole="SalesOrder" FromRole="Company" />
         <NavigationProperty Name="SalesOrderSalesLines" Relationship="NAV.Company_SalesOrderSalesLines" ToRole="SalesOrderSalesLines" FromRole="Company" />
-        <NavigationProperty Name="bankdetails" Relationship="NAV.Company_bankdetails" ToRole="bankdetails" FromRole="Company" />
+        <NavigationProperty Name="FosaAcc" Relationship="NAV.Company_FosaAcc" ToRole="FosaAcc" FromRole="Company" />
         <NavigationProperty Name="FosaAccounts" Relationship="NAV.Company_FosaAccounts" ToRole="FosaAccounts" FromRole="Company" />
         <NavigationProperty Name="ItemSalesAndProfit" Relationship="NAV.Company_ItemSalesAndProfit" ToRole="ItemSalesAndProfit" FromRole="Company" />
         <NavigationProperty Name="ItemSalesByCustomer" Relationship="NAV.Company_ItemSalesByCustomer" ToRole="ItemSalesByCustomer" FromRole="Company" />
         <NavigationProperty Name="KeensDetails" Relationship="NAV.Company_KeensDetails" ToRole="KeensDetails" FromRole="Company" />
-        <NavigationProperty Name="kinsdetail" Relationship="NAV.Company_kinsdetail" ToRole="kinsdetail" FromRole="Company" />
-        <NavigationProperty Name="LoansReg" Relationship="NAV.Company_LoansReg" ToRole="LoansReg" FromRole="Company" />
+        <NavigationProperty Name="kins_detail" Relationship="NAV.Company_kins_detail" ToRole="kins_detail" FromRole="Company" />
+        <NavigationProperty Name="LoanSetup" Relationship="NAV.Company_LoanSetup" ToRole="LoanSetup" FromRole="Company" />
+        <NavigationProperty Name="LoansProductSetUp" Relationship="NAV.Company_LoansProductSetUp" ToRole="LoansProductSetUp" FromRole="Company" />
+        <NavigationProperty Name="LoansPurpose" Relationship="NAV.Company_LoansPurpose" ToRole="LoansPurpose" FromRole="Company" />
+        <NavigationProperty Name="LoansR" Relationship="NAV.Company_LoansR" ToRole="LoansR" FromRole="Company" />
         <NavigationProperty Name="MemberList" Relationship="NAV.Company_MemberList" ToRole="MemberList" FromRole="Company" />
         <NavigationProperty Name="ministatement" Relationship="NAV.Company_ministatement" ToRole="ministatement" FromRole="Company" />
-        <NavigationProperty Name="PBIATMTransactions" Relationship="NAV.Company_PBIATMTransactions" ToRole="PBIATMTransactions" FromRole="Company" />
-        <NavigationProperty Name="PBICASHIERTransactions" Relationship="NAV.Company_PBICASHIERTransactions" ToRole="PBICASHIERTransactions" FromRole="Company" />
-        <NavigationProperty Name="PBIVendors" Relationship="NAV.Company_PBIVendors" ToRole="PBIVendors" FromRole="Company" />
+        <NavigationProperty Name="myGuarantors" Relationship="NAV.Company_myGuarantors" ToRole="myGuarantors" FromRole="Company" />
+        <NavigationProperty Name="numberofguarantors" Relationship="NAV.Company_numberofguarantors" ToRole="numberofguarantors" FromRole="Company" />
+        <NavigationProperty Name="postalcodes" Relationship="NAV.Company_postalcodes" ToRole="postalcodes" FromRole="Company" />
+        <NavigationProperty Name="profile_Pics" Relationship="NAV.Company_profile_Pics" ToRole="profile_Pics" FromRole="Company" />
+        <NavigationProperty Name="relationships" Relationship="NAV.Company_relationships" ToRole="relationships" FromRole="Company" />
         <NavigationProperty Name="SalesDashboard" Relationship="NAV.Company_SalesDashboard" ToRole="SalesDashboard" FromRole="Company" />
         <NavigationProperty Name="SalesOpportunities" Relationship="NAV.Company_SalesOpportunities" ToRole="SalesOpportunities" FromRole="Company" />
         <NavigationProperty Name="SalesOrdersBySalesPerson" Relationship="NAV.Company_SalesOrdersBySalesPerson" ToRole="SalesOrdersBySalesPerson" FromRole="Company" />
+        <NavigationProperty Name="StandingOrders" Relationship="NAV.Company_StandingOrders" ToRole="StandingOrders" FromRole="Company" />
         <NavigationProperty Name="TopCustomerOverview" Relationship="NAV.Company_TopCustomerOverview" ToRole="TopCustomerOverview" FromRole="Company" />
+        <NavigationProperty Name="UpdateAtmStatus" Relationship="NAV.Company_UpdateAtmStatus" ToRole="UpdateAtmStatus" FromRole="Company" />
       </EntityType>
-      <Association Name="PBILoan_Register_Loan_Product_Type_Link">
-        <End Type="NAV.PBILoan_Register" Role="PBILoan_Register" Multiplicity="*" />
-        <End Type="NAV.Loan_Products" Role="Loan_Product_Type_Link" Multiplicity="0..1" />
-      </Association>
       <Association Name="SalesOrder_SalesOrderSalesLines">
         <End Type="NAV.SalesOrderSalesLines" Role="SalesOrderSalesLines" Multiplicity="*" />
         <End Type="NAV.SalesOrder" Role="SalesOrder" Multiplicity="*" />
       </Association>
-      <Association Name="Company_ACC_Schedules">
+      <Association Name="Company_BOSAPostedLoans">
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
-        <End Type="NAV.ACC_Schedules" Role="ACC_Schedules" Multiplicity="*" />
+        <End Type="NAV.BOSAPostedLoans" Role="BOSAPostedLoans" Multiplicity="*" />
       </Association>
-      <Association Name="Company_COA">
-        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
-        <End Type="NAV.COA" Role="COA" Multiplicity="*" />
-      </Association>
-      <Association Name="Company_Loan_Products">
-        <End Type="NAV.Loan_Products" Role="Loan_Products" Multiplicity="*" />
-        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
-      </Association>
-      <Association Name="Company_Members">
-        <End Type="NAV.Members" Role="Members" Multiplicity="*" />
-        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
-      </Association>
-      <Association Name="Company_PBIAccount_Types">
-        <End Type="NAV.PBIAccount_Types" Role="PBIAccount_Types" Multiplicity="*" />
-        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
-      </Association>
-      <Association Name="Company_PBIBankLedgerxz">
-        <End Type="NAV.PBIBankLedgerxz" Role="PBIBankLedgerxz" Multiplicity="*" />
-        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
-      </Association>
-      <Association Name="Company_PBILoan_Register">
-        <End Type="NAV.PBILoan_Register" Role="PBILoan_Register" Multiplicity="*" />
-        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
-      </Association>
-      <Association Name="Company_PBIMembers">
-        <End Type="NAV.PBIMembers" Role="PBIMembers" Multiplicity="*" />
+      <Association Name="Company_FOSAPostedLoans">
+        <End Type="NAV.FOSAPostedLoans" Role="FOSAPostedLoans" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_powerbifinance">
@@ -1272,8 +780,8 @@
         <End Type="NAV.SalesOrderSalesLines" Role="SalesOrderSalesLines" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
-      <Association Name="Company_bankdetails">
-        <End Type="NAV.bankdetails" Role="bankdetails" Multiplicity="*" />
+      <Association Name="Company_FosaAcc">
+        <End Type="NAV.FosaAcc" Role="FosaAcc" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_FosaAccounts">
@@ -1292,12 +800,24 @@
         <End Type="NAV.KeensDetails" Role="KeensDetails" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
-      <Association Name="Company_kinsdetail">
-        <End Type="NAV.kinsdetail" Role="kinsdetail" Multiplicity="*" />
+      <Association Name="Company_kins_detail">
+        <End Type="NAV.kins_detail" Role="kins_detail" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
-      <Association Name="Company_LoansReg">
-        <End Type="NAV.LoansReg" Role="LoansReg" Multiplicity="*" />
+      <Association Name="Company_LoanSetup">
+        <End Type="NAV.LoanSetup" Role="LoanSetup" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_LoansProductSetUp">
+        <End Type="NAV.LoansProductSetUp" Role="LoansProductSetUp" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_LoansPurpose">
+        <End Type="NAV.LoansPurpose" Role="LoansPurpose" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_LoansR">
+        <End Type="NAV.LoansR" Role="LoansR" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_MemberList">
@@ -1308,16 +828,24 @@
         <End Type="NAV.ministatement" Role="ministatement" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
-      <Association Name="Company_PBIATMTransactions">
-        <End Type="NAV.PBIATMTransactions" Role="PBIATMTransactions" Multiplicity="*" />
+      <Association Name="Company_myGuarantors">
+        <End Type="NAV.myGuarantors" Role="myGuarantors" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
-      <Association Name="Company_PBICASHIERTransactions">
-        <End Type="NAV.PBICASHIERTransactions" Role="PBICASHIERTransactions" Multiplicity="*" />
+      <Association Name="Company_numberofguarantors">
+        <End Type="NAV.numberofguarantors" Role="numberofguarantors" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
-      <Association Name="Company_PBIVendors">
-        <End Type="NAV.PBIVendors" Role="PBIVendors" Multiplicity="*" />
+      <Association Name="Company_postalcodes">
+        <End Type="NAV.postalcodes" Role="postalcodes" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_profile_Pics">
+        <End Type="NAV.profile_Pics" Role="profile_Pics" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_relationships">
+        <End Type="NAV.relationships" Role="relationships" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_SalesDashboard">
@@ -1332,78 +860,59 @@
         <End Type="NAV.SalesOrdersBySalesPerson" Role="SalesOrdersBySalesPerson" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_StandingOrders">
+        <End Type="NAV.StandingOrders" Role="StandingOrders" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_TopCustomerOverview">
         <End Type="NAV.TopCustomerOverview" Role="TopCustomerOverview" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_UpdateAtmStatus">
+        <End Type="NAV.UpdateAtmStatus" Role="UpdateAtmStatus" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <EntityContainer Name="NAV" m:IsDefaultEntityContainer="true">
-        <EntitySet Name="ACC_Schedules" EntityType="NAV.ACC_Schedules" />
-        <EntitySet Name="COA" EntityType="NAV.COA" />
-        <EntitySet Name="Loan_Products" EntityType="NAV.Loan_Products" />
-        <EntitySet Name="Members" EntityType="NAV.Members" />
-        <EntitySet Name="PBIAccount_Types" EntityType="NAV.PBIAccount_Types" />
-        <EntitySet Name="PBIBankLedgerxz" EntityType="NAV.PBIBankLedgerxz" />
-        <EntitySet Name="PBILoan_Register" EntityType="NAV.PBILoan_Register" />
-        <EntitySet Name="PBIMembers" EntityType="NAV.PBIMembers" />
+        <EntitySet Name="BOSAPostedLoans" EntityType="NAV.BOSAPostedLoans" />
+        <EntitySet Name="FOSAPostedLoans" EntityType="NAV.FOSAPostedLoans" />
         <EntitySet Name="powerbifinance" EntityType="NAV.powerbifinance" />
         <EntitySet Name="SalesOrder" EntityType="NAV.SalesOrder" />
         <EntitySet Name="SalesOrderSalesLines" EntityType="NAV.SalesOrderSalesLines" />
-        <EntitySet Name="bankdetails" EntityType="NAV.bankdetails" />
+        <EntitySet Name="FosaAcc" EntityType="NAV.FosaAcc" />
         <EntitySet Name="FosaAccounts" EntityType="NAV.FosaAccounts" />
         <EntitySet Name="ItemSalesAndProfit" EntityType="NAV.ItemSalesAndProfit" />
         <EntitySet Name="ItemSalesByCustomer" EntityType="NAV.ItemSalesByCustomer" />
         <EntitySet Name="KeensDetails" EntityType="NAV.KeensDetails" />
-        <EntitySet Name="kinsdetail" EntityType="NAV.kinsdetail" />
-        <EntitySet Name="LoansReg" EntityType="NAV.LoansReg" />
+        <EntitySet Name="kins_detail" EntityType="NAV.kins_detail" />
+        <EntitySet Name="LoanSetup" EntityType="NAV.LoanSetup" />
+        <EntitySet Name="LoansProductSetUp" EntityType="NAV.LoansProductSetUp" />
+        <EntitySet Name="LoansPurpose" EntityType="NAV.LoansPurpose" />
+        <EntitySet Name="LoansR" EntityType="NAV.LoansR" />
         <EntitySet Name="MemberList" EntityType="NAV.MemberList" />
         <EntitySet Name="ministatement" EntityType="NAV.ministatement" />
-        <EntitySet Name="PBIATMTransactions" EntityType="NAV.PBIATMTransactions" />
-        <EntitySet Name="PBICASHIERTransactions" EntityType="NAV.PBICASHIERTransactions" />
-        <EntitySet Name="PBIVendors" EntityType="NAV.PBIVendors" />
+        <EntitySet Name="myGuarantors" EntityType="NAV.myGuarantors" />
+        <EntitySet Name="numberofguarantors" EntityType="NAV.numberofguarantors" />
+        <EntitySet Name="postalcodes" EntityType="NAV.postalcodes" />
+        <EntitySet Name="profile_Pics" EntityType="NAV.profile_Pics" />
+        <EntitySet Name="relationships" EntityType="NAV.relationships" />
         <EntitySet Name="SalesDashboard" EntityType="NAV.SalesDashboard" />
         <EntitySet Name="SalesOpportunities" EntityType="NAV.SalesOpportunities" />
         <EntitySet Name="SalesOrdersBySalesPerson" EntityType="NAV.SalesOrdersBySalesPerson" />
+        <EntitySet Name="StandingOrders" EntityType="NAV.StandingOrders" />
         <EntitySet Name="TopCustomerOverview" EntityType="NAV.TopCustomerOverview" />
+        <EntitySet Name="UpdateAtmStatus" EntityType="NAV.UpdateAtmStatus" />
         <EntitySet Name="Company" EntityType="NAV.Company" />
-        <AssociationSet Name="PBILoan_Register_Loan_Product_Type_Link_Loan_Products" Association="NAV.PBILoan_Register_Loan_Product_Type_Link">
-          <End Role="PBILoan_Register" EntitySet="PBILoan_Register" />
-          <End Role="Loan_Product_Type_Link" EntitySet="Loan_Products" />
-        </AssociationSet>
         <AssociationSet Name="SalesOrder_SalesOrderSalesLines_SalesOrderSalesLines" Association="NAV.SalesOrder_SalesOrderSalesLines">
           <End Role="SalesOrder" EntitySet="SalesOrder" />
           <End Role="SalesOrderSalesLines" EntitySet="SalesOrderSalesLines" />
         </AssociationSet>
-        <AssociationSet Name="Company_ACC_Schedules_ACC_Schedules" Association="NAV.Company_ACC_Schedules">
+        <AssociationSet Name="Company_BOSAPostedLoans_BOSAPostedLoans" Association="NAV.Company_BOSAPostedLoans">
           <End Role="Company" EntitySet="Company" />
-          <End Role="ACC_Schedules" EntitySet="ACC_Schedules" />
+          <End Role="BOSAPostedLoans" EntitySet="BOSAPostedLoans" />
         </AssociationSet>
-        <AssociationSet Name="Company_COA_COA" Association="NAV.Company_COA">
+        <AssociationSet Name="Company_FOSAPostedLoans_FOSAPostedLoans" Association="NAV.Company_FOSAPostedLoans">
           <End Role="Company" EntitySet="Company" />
-          <End Role="COA" EntitySet="COA" />
-        </AssociationSet>
-        <AssociationSet Name="Company_Loan_Products_Loan_Products" Association="NAV.Company_Loan_Products">
-          <End Role="Company" EntitySet="Company" />
-          <End Role="Loan_Products" EntitySet="Loan_Products" />
-        </AssociationSet>
-        <AssociationSet Name="Company_Members_Members" Association="NAV.Company_Members">
-          <End Role="Company" EntitySet="Company" />
-          <End Role="Members" EntitySet="Members" />
-        </AssociationSet>
-        <AssociationSet Name="Company_PBIAccount_Types_PBIAccount_Types" Association="NAV.Company_PBIAccount_Types">
-          <End Role="Company" EntitySet="Company" />
-          <End Role="PBIAccount_Types" EntitySet="PBIAccount_Types" />
-        </AssociationSet>
-        <AssociationSet Name="Company_PBIBankLedgerxz_PBIBankLedgerxz" Association="NAV.Company_PBIBankLedgerxz">
-          <End Role="Company" EntitySet="Company" />
-          <End Role="PBIBankLedgerxz" EntitySet="PBIBankLedgerxz" />
-        </AssociationSet>
-        <AssociationSet Name="Company_PBILoan_Register_PBILoan_Register" Association="NAV.Company_PBILoan_Register">
-          <End Role="Company" EntitySet="Company" />
-          <End Role="PBILoan_Register" EntitySet="PBILoan_Register" />
-        </AssociationSet>
-        <AssociationSet Name="Company_PBIMembers_PBIMembers" Association="NAV.Company_PBIMembers">
-          <End Role="Company" EntitySet="Company" />
-          <End Role="PBIMembers" EntitySet="PBIMembers" />
+          <End Role="FOSAPostedLoans" EntitySet="FOSAPostedLoans" />
         </AssociationSet>
         <AssociationSet Name="Company_powerbifinance_powerbifinance" Association="NAV.Company_powerbifinance">
           <End Role="Company" EntitySet="Company" />
@@ -1417,9 +926,9 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="SalesOrderSalesLines" EntitySet="SalesOrderSalesLines" />
         </AssociationSet>
-        <AssociationSet Name="Company_bankdetails_bankdetails" Association="NAV.Company_bankdetails">
+        <AssociationSet Name="Company_FosaAcc_FosaAcc" Association="NAV.Company_FosaAcc">
           <End Role="Company" EntitySet="Company" />
-          <End Role="bankdetails" EntitySet="bankdetails" />
+          <End Role="FosaAcc" EntitySet="FosaAcc" />
         </AssociationSet>
         <AssociationSet Name="Company_FosaAccounts_FosaAccounts" Association="NAV.Company_FosaAccounts">
           <End Role="Company" EntitySet="Company" />
@@ -1437,13 +946,25 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="KeensDetails" EntitySet="KeensDetails" />
         </AssociationSet>
-        <AssociationSet Name="Company_kinsdetail_kinsdetail" Association="NAV.Company_kinsdetail">
+        <AssociationSet Name="Company_kins_detail_kins_detail" Association="NAV.Company_kins_detail">
           <End Role="Company" EntitySet="Company" />
-          <End Role="kinsdetail" EntitySet="kinsdetail" />
+          <End Role="kins_detail" EntitySet="kins_detail" />
         </AssociationSet>
-        <AssociationSet Name="Company_LoansReg_LoansReg" Association="NAV.Company_LoansReg">
+        <AssociationSet Name="Company_LoanSetup_LoanSetup" Association="NAV.Company_LoanSetup">
           <End Role="Company" EntitySet="Company" />
-          <End Role="LoansReg" EntitySet="LoansReg" />
+          <End Role="LoanSetup" EntitySet="LoanSetup" />
+        </AssociationSet>
+        <AssociationSet Name="Company_LoansProductSetUp_LoansProductSetUp" Association="NAV.Company_LoansProductSetUp">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="LoansProductSetUp" EntitySet="LoansProductSetUp" />
+        </AssociationSet>
+        <AssociationSet Name="Company_LoansPurpose_LoansPurpose" Association="NAV.Company_LoansPurpose">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="LoansPurpose" EntitySet="LoansPurpose" />
+        </AssociationSet>
+        <AssociationSet Name="Company_LoansR_LoansR" Association="NAV.Company_LoansR">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="LoansR" EntitySet="LoansR" />
         </AssociationSet>
         <AssociationSet Name="Company_MemberList_MemberList" Association="NAV.Company_MemberList">
           <End Role="Company" EntitySet="Company" />
@@ -1453,17 +974,25 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="ministatement" EntitySet="ministatement" />
         </AssociationSet>
-        <AssociationSet Name="Company_PBIATMTransactions_PBIATMTransactions" Association="NAV.Company_PBIATMTransactions">
+        <AssociationSet Name="Company_myGuarantors_myGuarantors" Association="NAV.Company_myGuarantors">
           <End Role="Company" EntitySet="Company" />
-          <End Role="PBIATMTransactions" EntitySet="PBIATMTransactions" />
+          <End Role="myGuarantors" EntitySet="myGuarantors" />
         </AssociationSet>
-        <AssociationSet Name="Company_PBICASHIERTransactions_PBICASHIERTransactions" Association="NAV.Company_PBICASHIERTransactions">
+        <AssociationSet Name="Company_numberofguarantors_numberofguarantors" Association="NAV.Company_numberofguarantors">
           <End Role="Company" EntitySet="Company" />
-          <End Role="PBICASHIERTransactions" EntitySet="PBICASHIERTransactions" />
+          <End Role="numberofguarantors" EntitySet="numberofguarantors" />
         </AssociationSet>
-        <AssociationSet Name="Company_PBIVendors_PBIVendors" Association="NAV.Company_PBIVendors">
+        <AssociationSet Name="Company_postalcodes_postalcodes" Association="NAV.Company_postalcodes">
           <End Role="Company" EntitySet="Company" />
-          <End Role="PBIVendors" EntitySet="PBIVendors" />
+          <End Role="postalcodes" EntitySet="postalcodes" />
+        </AssociationSet>
+        <AssociationSet Name="Company_profile_Pics_profile_Pics" Association="NAV.Company_profile_Pics">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="profile_Pics" EntitySet="profile_Pics" />
+        </AssociationSet>
+        <AssociationSet Name="Company_relationships_relationships" Association="NAV.Company_relationships">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="relationships" EntitySet="relationships" />
         </AssociationSet>
         <AssociationSet Name="Company_SalesDashboard_SalesDashboard" Association="NAV.Company_SalesDashboard">
           <End Role="Company" EntitySet="Company" />
@@ -1477,9 +1006,17 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="SalesOrdersBySalesPerson" EntitySet="SalesOrdersBySalesPerson" />
         </AssociationSet>
+        <AssociationSet Name="Company_StandingOrders_StandingOrders" Association="NAV.Company_StandingOrders">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="StandingOrders" EntitySet="StandingOrders" />
+        </AssociationSet>
         <AssociationSet Name="Company_TopCustomerOverview_TopCustomerOverview" Association="NAV.Company_TopCustomerOverview">
           <End Role="Company" EntitySet="Company" />
           <End Role="TopCustomerOverview" EntitySet="TopCustomerOverview" />
+        </AssociationSet>
+        <AssociationSet Name="Company_UpdateAtmStatus_UpdateAtmStatus" Association="NAV.Company_UpdateAtmStatus">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="UpdateAtmStatus" EntitySet="UpdateAtmStatus" />
         </AssociationSet>
       </EntityContainer>
     </Schema>

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Net;
+using System.Linq;
+using System.Web.Providers.Entities;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Web;
@@ -10,6 +12,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using SACCOPortal.NavOData;
+
 
 namespace SACCOPortal
 {
@@ -77,20 +80,49 @@ namespace SACCOPortal
         };
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["username"] != null)
+          if (Session["username"] != null)
             {
                 ReturnMember();
+                loadProfPic();
             }
-
+            HttpContext.Current.Response.Cache.SetExpires(DateTime.UtcNow.AddMinutes(-1));
+            HttpContext.Current.Response.Cache.SetValidUntilExpires(false);
+            HttpContext.Current.Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches);
+            HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            HttpContext.Current.Response.Cache.SetNoStore();
         }
         protected Member ReturnMember()
         {
             return new Member(Session["username"].ToString());
         }
 
-        protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
+        protected void loadProfPic()
         {
-            Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            try
+            {
+                var pic =
+                nav.profile_Pics.ToList()
+                    .Where(sn => sn.Customer_Number == Session["username"].ToString())
+                    .Select(l => l.Pic_Name)
+                    .SingleOrDefault();
+
+                if (pic == null)
+                {
+                    // SACCOFactory.ShowAlert("Upload a profile picture");
+                }
+                else
+                {
+                    profPic.ImageUrl = "ProfilePics/" + pic;
+                    profPic1.ImageUrl = "ProfilePics/" + pic;
+                    HttpResponse.RemoveOutputCacheItem("/Dashboard.aspx");
+                }
+            }
+            catch (Exception ex)
+            {
+
+
+            }
+
         }
     }
 

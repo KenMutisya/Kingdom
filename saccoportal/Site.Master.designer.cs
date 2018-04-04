@@ -13,6 +13,24 @@ namespace SACCOPortal {
     public partial class SiteMaster {
         
         /// <summary>
+        /// profPic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image profPic;
+        
+        /// <summary>
+        /// profPic1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image profPic1;
+        
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>

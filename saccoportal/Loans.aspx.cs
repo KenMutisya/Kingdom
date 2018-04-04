@@ -33,10 +33,11 @@ namespace SACCOPortal
 
         protected void LoadApprovedLoans(NAV navData)
         {
-            var objRecords = navData.LoansReg.Where(r=>r.Client_Code==Session["username"].ToString()).ToList();
+            var objRecords = navData.LoansR.Where(r=>r.Client_Code==Session["username"].ToString()).ToList();
             gvLoans.DataSource = objRecords;
             gvLoans.AutoGenerateColumns = false;
             gvLoans.DataBind();
+
 
         }
 

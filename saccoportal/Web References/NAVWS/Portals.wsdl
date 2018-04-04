@@ -50,6 +50,7 @@
           <sequence>
             <element minOccurs="1" maxOccurs="1" name="account_No" type="string" />
             <element minOccurs="1" maxOccurs="1" name="path" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="dateFilter" type="string" />
           </sequence>
         </complexType>
       </element>
@@ -151,6 +152,340 @@
           </sequence>
         </complexType>
       </element>
+      <element name="FnTotalRepaidGraph">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="mno" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="year" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnTotalRepaidGraph_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnCurrentShareGraph">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="mno" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="year" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnCurrentShareGraph_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnTotalDepositsGraph">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="mno" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="year" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnTotalDepositsGraph_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnRegisterKin">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="full_Names" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="relationship" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="iD_Number" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="phone_Contact" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="address" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="idnomemberapp" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnRegisterKin_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnMemberApply">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="first_Name" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="mid_Name" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="last_Name" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="pO_Box" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="residence" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="postal_Code" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="town" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="phone_Number" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="email" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="iD_Number" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="branch_Code" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="branch_Name" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="account_Number" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="gender" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="marital_Status" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="account_Category" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="application_Category" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="customer_Group" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employer_Name" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="date_of_Birth" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnMemberApply_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnStandingOrders">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="bosaAcNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="sourceAcc" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="frequency" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="duration" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="destAccNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="startDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="amount" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnStandingOrders_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnUpdateMonthlyContrib">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="member_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="updated_Fig" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnUpdateMonthlyContrib_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnSMSMessage">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="accfrom" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="phone" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="message" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnSMSMessage_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnLoanApplication">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="member" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnLoanApplication_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnDepositsStatement">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="account_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="path" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnDepositsStatement_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnEditStandingOrder">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="sTONo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="frequency" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="duration" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="startDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="amount" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnEditStandingOrder_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnCreateLoan">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="member_No" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnCreateLoan_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnloansStats">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="member_no" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="path" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="loan_no" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnloansStats_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Fnloanbalances">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="memberNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Fnloanbalances_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnFosaloanStatmt">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="member_no" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="path" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnFosaloanStatmt_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnloanStatmt">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="member_no" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="path" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnloanStatmt_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnNewLoanDetails">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="loan_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="loan_Product" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="loan_Amount" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="loan_Purpose" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="mode_of_Disbursement" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="repayment_Frequency" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnNewLoanDetails_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnSalaryDetails">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="loan_no" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="basic_salary" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="med_allowance" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="house_allowance" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="commuter_allowance" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="other_allowance" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="gross_pay" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="net_pay" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="other_nontaxable" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="other_taxrelief" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="pAYE" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="nSSF" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="nHIF" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="medical_insurance" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="sacco_deductions" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="total_deductions" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnSalaryDetails_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnSaveGuarantor">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="loan_number" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="guarantor_number" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnSaveGuarantor_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnSaveProfP">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="username" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="link" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="filename" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnSaveProfP_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnSaveSignature">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="member_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="sign_Filename" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="sign_Link" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnSaveSignature_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
     </schema>
   </types>
   <message name="FnUpdatePassword">
@@ -219,6 +554,132 @@
   <message name="FnChangePassword_Result">
     <part name="parameters" element="tns:FnChangePassword_Result" />
   </message>
+  <message name="FnTotalRepaidGraph">
+    <part name="parameters" element="tns:FnTotalRepaidGraph" />
+  </message>
+  <message name="FnTotalRepaidGraph_Result">
+    <part name="parameters" element="tns:FnTotalRepaidGraph_Result" />
+  </message>
+  <message name="FnCurrentShareGraph">
+    <part name="parameters" element="tns:FnCurrentShareGraph" />
+  </message>
+  <message name="FnCurrentShareGraph_Result">
+    <part name="parameters" element="tns:FnCurrentShareGraph_Result" />
+  </message>
+  <message name="FnTotalDepositsGraph">
+    <part name="parameters" element="tns:FnTotalDepositsGraph" />
+  </message>
+  <message name="FnTotalDepositsGraph_Result">
+    <part name="parameters" element="tns:FnTotalDepositsGraph_Result" />
+  </message>
+  <message name="FnRegisterKin">
+    <part name="parameters" element="tns:FnRegisterKin" />
+  </message>
+  <message name="FnRegisterKin_Result">
+    <part name="parameters" element="tns:FnRegisterKin_Result" />
+  </message>
+  <message name="FnMemberApply">
+    <part name="parameters" element="tns:FnMemberApply" />
+  </message>
+  <message name="FnMemberApply_Result">
+    <part name="parameters" element="tns:FnMemberApply_Result" />
+  </message>
+  <message name="FnStandingOrders">
+    <part name="parameters" element="tns:FnStandingOrders" />
+  </message>
+  <message name="FnStandingOrders_Result">
+    <part name="parameters" element="tns:FnStandingOrders_Result" />
+  </message>
+  <message name="FnUpdateMonthlyContrib">
+    <part name="parameters" element="tns:FnUpdateMonthlyContrib" />
+  </message>
+  <message name="FnUpdateMonthlyContrib_Result">
+    <part name="parameters" element="tns:FnUpdateMonthlyContrib_Result" />
+  </message>
+  <message name="FnSMSMessage">
+    <part name="parameters" element="tns:FnSMSMessage" />
+  </message>
+  <message name="FnSMSMessage_Result">
+    <part name="parameters" element="tns:FnSMSMessage_Result" />
+  </message>
+  <message name="FnLoanApplication">
+    <part name="parameters" element="tns:FnLoanApplication" />
+  </message>
+  <message name="FnLoanApplication_Result">
+    <part name="parameters" element="tns:FnLoanApplication_Result" />
+  </message>
+  <message name="FnDepositsStatement">
+    <part name="parameters" element="tns:FnDepositsStatement" />
+  </message>
+  <message name="FnDepositsStatement_Result">
+    <part name="parameters" element="tns:FnDepositsStatement_Result" />
+  </message>
+  <message name="FnEditStandingOrder">
+    <part name="parameters" element="tns:FnEditStandingOrder" />
+  </message>
+  <message name="FnEditStandingOrder_Result">
+    <part name="parameters" element="tns:FnEditStandingOrder_Result" />
+  </message>
+  <message name="FnCreateLoan">
+    <part name="parameters" element="tns:FnCreateLoan" />
+  </message>
+  <message name="FnCreateLoan_Result">
+    <part name="parameters" element="tns:FnCreateLoan_Result" />
+  </message>
+  <message name="FnloansStats">
+    <part name="parameters" element="tns:FnloansStats" />
+  </message>
+  <message name="FnloansStats_Result">
+    <part name="parameters" element="tns:FnloansStats_Result" />
+  </message>
+  <message name="Fnloanbalances">
+    <part name="parameters" element="tns:Fnloanbalances" />
+  </message>
+  <message name="Fnloanbalances_Result">
+    <part name="parameters" element="tns:Fnloanbalances_Result" />
+  </message>
+  <message name="FnFosaloanStatmt">
+    <part name="parameters" element="tns:FnFosaloanStatmt" />
+  </message>
+  <message name="FnFosaloanStatmt_Result">
+    <part name="parameters" element="tns:FnFosaloanStatmt_Result" />
+  </message>
+  <message name="FnloanStatmt">
+    <part name="parameters" element="tns:FnloanStatmt" />
+  </message>
+  <message name="FnloanStatmt_Result">
+    <part name="parameters" element="tns:FnloanStatmt_Result" />
+  </message>
+  <message name="FnNewLoanDetails">
+    <part name="parameters" element="tns:FnNewLoanDetails" />
+  </message>
+  <message name="FnNewLoanDetails_Result">
+    <part name="parameters" element="tns:FnNewLoanDetails_Result" />
+  </message>
+  <message name="FnSalaryDetails">
+    <part name="parameters" element="tns:FnSalaryDetails" />
+  </message>
+  <message name="FnSalaryDetails_Result">
+    <part name="parameters" element="tns:FnSalaryDetails_Result" />
+  </message>
+  <message name="FnSaveGuarantor">
+    <part name="parameters" element="tns:FnSaveGuarantor" />
+  </message>
+  <message name="FnSaveGuarantor_Result">
+    <part name="parameters" element="tns:FnSaveGuarantor_Result" />
+  </message>
+  <message name="FnSaveProfP">
+    <part name="parameters" element="tns:FnSaveProfP" />
+  </message>
+  <message name="FnSaveProfP_Result">
+    <part name="parameters" element="tns:FnSaveProfP_Result" />
+  </message>
+  <message name="FnSaveSignature">
+    <part name="parameters" element="tns:FnSaveSignature" />
+  </message>
+  <message name="FnSaveSignature_Result">
+    <part name="parameters" element="tns:FnSaveSignature_Result" />
+  </message>
   <portType name="Portals_Port">
     <operation name="FnUpdatePassword">
       <input name="FnUpdatePassword" message="tns:FnUpdatePassword" />
@@ -263,6 +724,90 @@
     <operation name="FnChangePassword">
       <input name="FnChangePassword" message="tns:FnChangePassword" />
       <output name="FnChangePassword_Result" message="tns:FnChangePassword_Result" />
+    </operation>
+    <operation name="FnTotalRepaidGraph">
+      <input name="FnTotalRepaidGraph" message="tns:FnTotalRepaidGraph" />
+      <output name="FnTotalRepaidGraph_Result" message="tns:FnTotalRepaidGraph_Result" />
+    </operation>
+    <operation name="FnCurrentShareGraph">
+      <input name="FnCurrentShareGraph" message="tns:FnCurrentShareGraph" />
+      <output name="FnCurrentShareGraph_Result" message="tns:FnCurrentShareGraph_Result" />
+    </operation>
+    <operation name="FnTotalDepositsGraph">
+      <input name="FnTotalDepositsGraph" message="tns:FnTotalDepositsGraph" />
+      <output name="FnTotalDepositsGraph_Result" message="tns:FnTotalDepositsGraph_Result" />
+    </operation>
+    <operation name="FnRegisterKin">
+      <input name="FnRegisterKin" message="tns:FnRegisterKin" />
+      <output name="FnRegisterKin_Result" message="tns:FnRegisterKin_Result" />
+    </operation>
+    <operation name="FnMemberApply">
+      <input name="FnMemberApply" message="tns:FnMemberApply" />
+      <output name="FnMemberApply_Result" message="tns:FnMemberApply_Result" />
+    </operation>
+    <operation name="FnStandingOrders">
+      <input name="FnStandingOrders" message="tns:FnStandingOrders" />
+      <output name="FnStandingOrders_Result" message="tns:FnStandingOrders_Result" />
+    </operation>
+    <operation name="FnUpdateMonthlyContrib">
+      <input name="FnUpdateMonthlyContrib" message="tns:FnUpdateMonthlyContrib" />
+      <output name="FnUpdateMonthlyContrib_Result" message="tns:FnUpdateMonthlyContrib_Result" />
+    </operation>
+    <operation name="FnSMSMessage">
+      <input name="FnSMSMessage" message="tns:FnSMSMessage" />
+      <output name="FnSMSMessage_Result" message="tns:FnSMSMessage_Result" />
+    </operation>
+    <operation name="FnLoanApplication">
+      <input name="FnLoanApplication" message="tns:FnLoanApplication" />
+      <output name="FnLoanApplication_Result" message="tns:FnLoanApplication_Result" />
+    </operation>
+    <operation name="FnDepositsStatement">
+      <input name="FnDepositsStatement" message="tns:FnDepositsStatement" />
+      <output name="FnDepositsStatement_Result" message="tns:FnDepositsStatement_Result" />
+    </operation>
+    <operation name="FnEditStandingOrder">
+      <input name="FnEditStandingOrder" message="tns:FnEditStandingOrder" />
+      <output name="FnEditStandingOrder_Result" message="tns:FnEditStandingOrder_Result" />
+    </operation>
+    <operation name="FnCreateLoan">
+      <input name="FnCreateLoan" message="tns:FnCreateLoan" />
+      <output name="FnCreateLoan_Result" message="tns:FnCreateLoan_Result" />
+    </operation>
+    <operation name="FnloansStats">
+      <input name="FnloansStats" message="tns:FnloansStats" />
+      <output name="FnloansStats_Result" message="tns:FnloansStats_Result" />
+    </operation>
+    <operation name="Fnloanbalances">
+      <input name="Fnloanbalances" message="tns:Fnloanbalances" />
+      <output name="Fnloanbalances_Result" message="tns:Fnloanbalances_Result" />
+    </operation>
+    <operation name="FnFosaloanStatmt">
+      <input name="FnFosaloanStatmt" message="tns:FnFosaloanStatmt" />
+      <output name="FnFosaloanStatmt_Result" message="tns:FnFosaloanStatmt_Result" />
+    </operation>
+    <operation name="FnloanStatmt">
+      <input name="FnloanStatmt" message="tns:FnloanStatmt" />
+      <output name="FnloanStatmt_Result" message="tns:FnloanStatmt_Result" />
+    </operation>
+    <operation name="FnNewLoanDetails">
+      <input name="FnNewLoanDetails" message="tns:FnNewLoanDetails" />
+      <output name="FnNewLoanDetails_Result" message="tns:FnNewLoanDetails_Result" />
+    </operation>
+    <operation name="FnSalaryDetails">
+      <input name="FnSalaryDetails" message="tns:FnSalaryDetails" />
+      <output name="FnSalaryDetails_Result" message="tns:FnSalaryDetails_Result" />
+    </operation>
+    <operation name="FnSaveGuarantor">
+      <input name="FnSaveGuarantor" message="tns:FnSaveGuarantor" />
+      <output name="FnSaveGuarantor_Result" message="tns:FnSaveGuarantor_Result" />
+    </operation>
+    <operation name="FnSaveProfP">
+      <input name="FnSaveProfP" message="tns:FnSaveProfP" />
+      <output name="FnSaveProfP_Result" message="tns:FnSaveProfP_Result" />
+    </operation>
+    <operation name="FnSaveSignature">
+      <input name="FnSaveSignature" message="tns:FnSaveSignature" />
+      <output name="FnSaveSignature_Result" message="tns:FnSaveSignature_Result" />
     </operation>
   </portType>
   <binding name="Portals_Binding" type="tns:Portals_Port">
@@ -366,10 +911,199 @@
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </output>
     </operation>
+    <operation name="FnTotalRepaidGraph">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnTotalRepaidGraph" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnTotalRepaidGraph">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnTotalRepaidGraph_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnCurrentShareGraph">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnCurrentShareGraph" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnCurrentShareGraph">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnCurrentShareGraph_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnTotalDepositsGraph">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnTotalDepositsGraph" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnTotalDepositsGraph">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnTotalDepositsGraph_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnRegisterKin">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnRegisterKin" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnRegisterKin">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnRegisterKin_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnMemberApply">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnMemberApply" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnMemberApply">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnMemberApply_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnStandingOrders">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnStandingOrders" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnStandingOrders">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnStandingOrders_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnUpdateMonthlyContrib">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnUpdateMonthlyContrib" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnUpdateMonthlyContrib">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnUpdateMonthlyContrib_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnSMSMessage">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnSMSMessage" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnSMSMessage">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnSMSMessage_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnLoanApplication">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnLoanApplication" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnLoanApplication">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnLoanApplication_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnDepositsStatement">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnDepositsStatement" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnDepositsStatement">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnDepositsStatement_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnEditStandingOrder">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnEditStandingOrder" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnEditStandingOrder">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnEditStandingOrder_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnCreateLoan">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnCreateLoan" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnCreateLoan">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnCreateLoan_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnloansStats">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnloansStats" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnloansStats">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnloansStats_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Fnloanbalances">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:Fnloanbalances" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Fnloanbalances">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Fnloanbalances_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnFosaloanStatmt">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnFosaloanStatmt" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnFosaloanStatmt">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnFosaloanStatmt_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnloanStatmt">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnloanStatmt" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnloanStatmt">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnloanStatmt_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnNewLoanDetails">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnNewLoanDetails" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnNewLoanDetails">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnNewLoanDetails_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnSalaryDetails">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnSalaryDetails" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnSalaryDetails">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnSalaryDetails_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnSaveGuarantor">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnSaveGuarantor" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnSaveGuarantor">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnSaveGuarantor_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnSaveProfP">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnSaveProfP" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnSaveProfP">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnSaveProfP_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnSaveSignature">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnSaveSignature" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnSaveSignature">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnSaveSignature_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
   </binding>
   <service name="Portals">
     <port name="Portals_Port" binding="tns:Portals_Binding">
-      <address location="http://com26:7047/DynamicsNAV90/WS/Shirika%20Sacco%20Ltd./Codeunit/Portals" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <address location="http://192.168.9.210:7047/DynamicsNAV100/WS/Nafaka%20Sacco%20Ltd/Codeunit/Portals" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
     </port>
   </service>
 </definitions>

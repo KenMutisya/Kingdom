@@ -11,7 +11,19 @@ namespace SACCOPortal
     {
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkID=303951
         public static void RegisterBundles(BundleCollection bundles)
+
         {
+            BundleTable.EnableOptimizations = true;
+
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                "~/Content/bootstrap.css",
+                "~/Content/bootstrap-theme.css",
+                "~/Content/elegant-icons-style.css",
+                "~/Content/font-awesome.css",
+                "~/Content/style.css",
+                "~/Content/style-responsive.css"
+                ));
+
             bundles.Add(new ScriptBundle("~/bundles/WebFormsJs").Include(
                             "~/Scripts/WebForms/WebForms.js",
                             "~/Scripts/WebForms/WebUIValidation.js",

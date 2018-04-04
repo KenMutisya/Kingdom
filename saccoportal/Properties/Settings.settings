@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="SACCOPortal_NAVWS_Portals" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://victor:7778/shirika/WS/Shirika%20Sacco%20Ltd./Codeunit/Portals</Value>
+      <Value Profile="(Default)">http://sngutu:4812/NAFAKA/WS/Nafaka%20Sacco%20Ltd/Codeunit/Portals</Value>
     </Setting>
   </Settings>
 </SettingsFile>

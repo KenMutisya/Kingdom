@@ -18,37 +18,58 @@ namespace SACCOPortal
             }
         }
 
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Dashboard");
+        }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            //string userName = Session["username"].ToString();
+            //string curPass= txtPasswordOld.Text.Trim();
+            //var navCurPass = nav.HR_Employees.Where(r=>r.No==userName).Select(r => r.Password).ToString();
+
+            //if (curPass != navCurPass) {
+            //    HRFactory.ShowAlert("Wrong current password!!");
+            //    lblError.Text = "Wrong current password!!";
+            //    return;
+            //}
+
             if (String.IsNullOrEmpty(txtPasswordOld.Text.Trim()) && String.IsNullOrEmpty(txtPasswordNew.Text.Trim()) &&
                 String.IsNullOrEmpty(txtPasswordConfirm.Text))
             {
                 SACCOFactory.ShowAlert("You must fill-in all the fields to continue");
                 return;
             }
-            if (String.IsNullOrEmpty(txtPasswordNew.Text.Trim()) !=String.IsNullOrEmpty(txtPasswordConfirm.Text))
+            if (String.IsNullOrEmpty(txtPasswordNew.Text.Trim()) != String.IsNullOrEmpty(txtPasswordConfirm.Text))
             {
-                SACCOFactory.ShowAlert("New password is not equal to the confirm password field");
+                SACCOFactory.ShowAlert("New password is not matching the confirmed password field");
                 return;
             }
-            try
+            if (txtPasswordNew.Text.Trim() != txtPasswordConfirm.Text.Trim())
             {
-                if (WSConfig.ObjNav.FnChangePassword(Session["username"].ToString(), txtPasswordOld.Text.Trim(),
-                    txtPasswordConfirm.Text.Trim()))
+                SACCOFactory.ShowAlert("Password mismatch");
+                lblError.Text = "Password Mismatch, please try again!";
+                return;
+            }
+            else
+            {
+                try
                 {
-                    SACCOFactory.ShowAlert("Password was succesfully changed");
+                    if (WSConfig.ObjNav.FnChangePassword(Session["username"].ToString(), txtPasswordOld.Text.Trim(),
+                        txtPasswordConfirm.Text.Trim()))
+                    {
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "myFunction();", true);
+                    }
+                    else
+                    {
+                        SACCOFactory.ShowAlert("Password could not be changed, kindly contact ICT Admin for assistance");
+                    }
                 }
-                else
+                catch (Exception exception)
                 {
-                    SACCOFactory.ShowAlert("Your password cannot be changed at the moment. Kindly contact your Sacco Helpdesk");
+                    SACCOFactory.ShowAlert(exception.Message);
                 }
             }
-            catch (Exception exception)
-            {
-                SACCOFactory.ShowAlert(exception.Message);
-            }
-
-            
         }
     }
 }

@@ -7,11 +7,11 @@
         <div class="col-md-6">
             
             <div class="panel panel-default">
-                <div class="navbar">Request New ATM Card</div>
+                <div class="panel-heading">Request New ATM Card</div>
                 <div class="panel-body">
-                    Select Fosa Account <asp:DropDownList ID="ddFosaAccount_" runat="server"></asp:DropDownList>
+                    Select Fosa Account <asp:DropDownList ID="ddFosaAccount_" runat="server" AppendDataBoundItems="true"></asp:DropDownList>
 
-                    <asp:Button ID="ReasonForBlocking_" runat="server" Text="Send" CssClass="btn btn-warning btn-sm" OnClick="ReasonForBlocking__Click" />
+                    <asp:Button ID="atmApplications" runat="server" Text="Send" CssClass="btn btn-info btn-sm" OnClick="atmApplication__Click" />
                     <p></p>
                  <asp:GridView ID="AtmStatus" runat="server" CssClass="table table-condensed table-responsive table-striped" Width="100%">
                 <Columns>
@@ -36,7 +36,7 @@
                     <p></p>
                     <asp:TextBox ID="txtreasonforblocking" runat="server"  Height="87px" TextMode="MultiLine" Width="416px" CssClass="form-control resize_d"></asp:TextBox>
                     <p></p>
-                    <asp:Button ID="ReasonForBlocking" runat="server" Text="Block ATM" CssClass="btn btn-warning btn-sm" OnClick="ReasonForBlocking_Click" />
+                    <asp:Button ID="ReasonForBlocking" runat="server" Text="Block ATM" CssClass="btn btn-info btn-lg" OnClick="ReasonForBlocking_Click" />
                 </div>
             </div>
         </div>

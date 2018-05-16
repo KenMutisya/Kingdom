@@ -328,7 +328,6 @@
     <Content Include="kinsdata.aspx" />
     <Content Include="FosaStats.aspx" />
     <Content Include="LoanApplication.aspx" />
-    <Content Include="LoanCalculator.aspx" />
     <Content Include="Loans.aspx" />
     <Content Include="Loans_BOSA.aspx" />
     <Content Include="Loans_FOSA.aspx" />
@@ -337,6 +336,7 @@
     <Content Include="Loans_List_New.aspx" />
     <Content Include="Loans_List_Running.aspx" />
     <Content Include="Loans_Microfinace.aspx" />
+    <Content Include="MemberReg.Master" />
     <Content Include="MyLoansList.aspx" />
     <Content Include="NewLoanApplication.aspx" />
     <Content Include="obj\debug\TempPE\Service References.NavOData.Reference.cs.dll" />
@@ -377,18 +377,24 @@
     <Content Include="profile.aspx" />
     <Content Include="queries.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="RegisterMemberForm.aspx" />
+    <Content Include="Registration.Master" />
+    <Content Include="RegistrationForm.aspx" />
     <Content Include="Reports.aspx" />
     <Content Include="Scripts\additional-methods.min.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap-switch.js" />
     <Content Include="Scripts\bootstrap-wysiwyg-custom.js" />
     <Content Include="Scripts\bootstrap-wysiwyg.js" />
     <Content Include="Scripts\calendar-custom.js" />
     <Content Include="Scripts\canvasjs.js" />
     <Content Include="Scripts\canvasjs.min.js" />
+    <Content Include="Scripts\Chart.bundle.min.js" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\Chart.min.js" />
     <Content Include="Content\Scss\FontAwesome\font-awesome.scss" />
@@ -432,8 +438,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Registration.Master" />
-    <Content Include="MemberReg.Master" />
     <Content Include="obj\release\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\release\package\PackageTmp\Account\Web.config" />
     <Content Include="obj\release\package\PackageTmp\Content\Fonts\fontawesome-webfont.eot" />
@@ -488,6 +492,7 @@
     <Content Include="DatePicker\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="DatePicker\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="DatePicker\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Compile Include="..\..\MemberRegistration.aspx.designer" />
     <None Include="Properties\PublishProfiles\NafakaPortal.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\chartjs-custom.js" />
@@ -592,6 +597,7 @@
     </None>
     <Content Include="Settings.aspx" />
     <Content Include="siteimages\favicon.ico" />
+    <Content Include="siteimages\kingdomlogo.ico" />
     <Content Include="StandingOrders.aspx" />
     <Content Include="Survey.aspx" />
     <Content Include="UploadFiles.aspx" />
@@ -867,13 +873,6 @@
     <Compile Include="LoanApplication.aspx.designer.cs">
       <DependentUpon>LoanApplication.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LoanCalculator.aspx.cs">
-      <DependentUpon>LoanCalculator.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LoanCalculator.aspx.designer.cs">
-      <DependentUpon>LoanCalculator.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Loans.aspx.cs">
       <DependentUpon>Loans.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1004,12 +1003,26 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="RegisterMemberForm.aspx.cs">
+      <DependentUpon>RegisterMemberForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterMemberForm.aspx.designer.cs">
+      <DependentUpon>RegisterMemberForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Registration.Master.cs">
       <DependentUpon>Registration.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Registration.Master.designer.cs">
       <DependentUpon>Registration.Master</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationForm.aspx.cs">
+      <DependentUpon>RegistrationForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrationForm.aspx.designer.cs">
+      <DependentUpon>RegistrationForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reports.aspx.cs">
       <DependentUpon>Reports.aspx</DependentUpon>
@@ -1115,10 +1128,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://192.168.9.210:7047/DynamicsNAV100/WS/Nafaka%2520Sacco%2520Ltd/Codeunit/Portals">
+    <WebReferenceUrl Include="http://mutinda-19:7047/DynamicsNAV110/WS/Kingdom%2520Sacco%2520Ltd./Codeunit/Portals">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\NAVWS\</RelPath>
-      <UpdateFromURL>http://192.168.9.210:7047/DynamicsNAV100/WS/Nafaka%2520Sacco%2520Ltd/Codeunit/Portals</UpdateFromURL>
+      <UpdateFromURL>http://mutinda-19:7047/DynamicsNAV110/WS/Kingdom%2520Sacco%2520Ltd./Codeunit/Portals</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -1146,16 +1159,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50562</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50562/</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

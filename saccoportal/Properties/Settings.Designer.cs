@@ -26,10 +26,28 @@ namespace SACCOPortal.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://sngutu:4812/NAFAKA/WS/Nafaka%20Sacco%20Ltd/Codeunit/Portals")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://mutinda-19:7047/DynamicsNAV110/WS/Kingdom%20Sacco%20Ltd./Codeunit/Portals")]
         public string SACCOPortal_NAVWS_Portals {
             get {
                 return ((string)(this["SACCOPortal_NAVWS_Portals"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("D:\\portals\\Kingdom\\saccoportal\\IPRS\\Passport\\")]
+        public string IPRS_Photo_File {
+            get {
+                return ((string)(this["IPRS_Photo_File"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("D:\\\\portals\\\\Kingdom\\\\saccoportal\\\\IPRS\\\\Signature\\\\")]
+        public string IPRS_Signature_File {
+            get {
+                return ((string)(this["IPRS_Signature_File"]));
             }
         }
     }

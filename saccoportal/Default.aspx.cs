@@ -14,6 +14,7 @@ using SACCOPortal.NavOData;
 using SACCOPortal.NAVWS;
 using Microsoft.VisualBasic;
 using SACCOPortal;
+using System.Data.SqlClient;
 
 namespace SACCOPortal
 {
@@ -25,27 +26,23 @@ namespace SACCOPortal
                new NetworkCredential(ConfigurationManager.AppSettings["W_USER"], ConfigurationManager.AppSettings["W_PWD"],
                    ConfigurationManager.AppSettings["DOMAIN"])
         };
-   
+        public string strSQLConn = @"Server=" + ConfigurationManager.AppSettings["DB_INSTANCE"] + ";Database=" +
+                                 ConfigurationManager.AppSettings["DB_NAME"] + "; User ID=" +
+                                 ConfigurationManager.AppSettings["DB_USER"] + "; Password=" +
+                                 ConfigurationManager.AppSettings["DB_PWD"] + "; MultipleActiveResultSets=true";
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            MultiView1.SetActiveView(View1);
+            //MultiView1.SetActiveView(View1);
             btnBack.Visible = false;
-            btnSubmit.Visible = false;
+           // btnSubmit.Visible = false;
             if (!IsPostBack)
             {
-               // this.loanProduct.Items.Clear();
                 NAV nav = new Config().ReturnNav();
-                var loans = nav.LoansProductSetUp;
-                //loanProduct.DataSource = loans;
-                //loanProduct.DataTextField = "Product_Description";
-                //loanProduct.DataValueField = "Code";
-                //loanProduct.DataBind();
-                //loanProduct.SelectedIndex = 1;
-                //ChangeInstallment(loanProduct.SelectedValue);
-                //UpdateDetails(loanProduct.SelectedValue);
+               
             }
         }
-      
+
         //protected override void CreateChildControls()
         //{
         //    base.CreateChildControls();
@@ -55,74 +52,63 @@ namespace SACCOPortal
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            cptCaptcha.ValidateCaptcha(txtCaptcha.Text.Trim());
-            if (cptCaptcha.UserValidated)
-                {
+            //cptCaptcha.ValidateCaptcha(txtCaptcha.Text.Trim());
+            //if (cptCaptcha.UserValidated)
+            //{
                 string userName = txtStaffNo.Text.Trim().Replace("'", "");
                 string userPassword = txtPassword.Text.Trim().Replace("'", "");
 
-                if (string.IsNullOrEmpty(userPassword) && string.IsNullOrEmpty(userName))
-                {
-                    lblError.Text = "Username or Password Empty!";
-                    return;
-                }
                 try
                 {
-                    if (nav.MemberList.Where(r => r.No == userName && r.Password == userPassword).FirstOrDefault() != null)
+                    if (string.IsNullOrWhiteSpace(userPassword))
+                    {
+                        lblError.Text = "Password Empty!";
+                        SACCOFactory.ShowAlert("Password Empty!");
+                        return;
+                    }
+
+                    if (MyValidationFunction(userName, userPassword))
                     {
                         Session["username"] = userName;
-                        Session["pwd"] = userPassword;
-                        Response.Redirect("Dashboard");
-                    }
-                    else if (nav.MemberList.Where(r => r.ID_No == userName && r.Password == userPassword).FirstOrDefault() != null)
-                    {
-
-                        var objMembers = nav.MemberList.Where(r =>r.ID_No == userName);
-                        foreach (var objMember in objMembers)
-                        {
-                            Session["username"] = objMember.No;
-                        }
-
                         Session["pwd"] = userPassword;
                         Response.Redirect("Dashboard");
                     }
                     else
                     {
                         lblError.Text = "Authentication failed!";
-                        return;
+                        SACCOFactory.ShowAlert("Authentication failed!, Try Again");
                     }
-            }
+                }
                 catch (Exception exception)
-            {
-                lblError.Text = exception.Message;
-                return;
-            }
-          }
-            else
-            {
-                lblError.Text = "Invalid Captcha. Try again!";
-            }
-            
-        }
+                {
+                    lblError.Text = exception.Message;
+                    return;
+                }
+            //}
+            //else
+            //{
+            //    lblError.Text = "Invalid Captcha.Try again!!";
+            //}
 
+        }
         protected void btnPassword_Click(object sender, EventArgs e)
         {
-            btnSignup.Visible = false;
+            //btnSignup.Visible = false;
             btnLogin.Visible = false;
             MultiView1.SetActiveView(View2);
            
-            btnSubmit.Visible = true;
+           // btnSubmit.Visible = true;
             btnBack.Visible = true;
             lblError.Text = "";
         }
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            btnSubmit.Visible = false;
+            //btnSubmit.Visible = false;
             btnBack.Visible = false;
            
-            MultiView1.SetActiveView(View1);
-            btnSignup.Visible = true;
+            //MultiView1.SetActiveView(View1);
+            //btnSignup.Visible = true;
             btnLogin.Visible = true;
             lblError.Text = "";
         }
@@ -139,9 +125,9 @@ namespace SACCOPortal
             if (string.IsNullOrEmpty(userPassword) && string.IsNullOrEmpty(userName))
             {
                 lblError.Text = "Member No or National ID Empty!";
-                btnSubmit.Visible = true;
+                //btnSubmit.Visible = true;
                 btnBack.Visible = true;
-                btnSignup.Visible = false;
+                //btnSignup.Visible = false;
                 btnLogin.Visible = false;
                 MultiView1.SetActiveView(View2);
                 return;
@@ -158,12 +144,12 @@ namespace SACCOPortal
                     {
                         SACCOFactory.ShowAlert(
                             "A New Password has been generated and sent to your Personal mail and Mobile Phone.Kindly use to it to login to your Member portal");
-                        btnSubmit.Visible = false;
+                        //btnSubmit.Visible = false;
                         txtEmployeeNo.Enabled = false;
                         idNo.Enabled = false;
                         btnBack.Visible = false;
-                        MultiView1.SetActiveView(View1);
-                        btnSignup.Visible = true;
+                        //MultiView1.SetActiveView(View1);
+                        //btnSignup.Visible = true;
                         btnLogin.Visible = true;
                         lblError.Text = "";
                     }
@@ -171,9 +157,9 @@ namespace SACCOPortal
                     {
                         SACCOFactory.ShowAlert(
                            "Your Password could not be reset. Member number does not match your ID number!");
-                        btnSubmit.Visible = true;
+                      //  btnSubmit.Visible = true;
                         btnBack.Visible = true;
-                        btnSignup.Visible = false;
+                        //btnSignup.Visible = false;
                         btnLogin.Visible = false;
                         MultiView1.SetActiveView(View2);
                     }
@@ -181,12 +167,12 @@ namespace SACCOPortal
                     {
                         SACCOFactory.ShowAlert(
                           "Your Password was send to your Phone Number");
-                        btnSubmit.Visible = false;
+                      // btnSubmit.Visible = false;
                         txtEmployeeNo.Enabled = false;
                         idNo.Enabled = false;
                         btnBack.Visible = false;
-                        MultiView1.SetActiveView(View1);
-                        btnSignup.Visible = true;
+                      //  MultiView1.SetActiveView(View1);
+                        //btnSignup.Visible = true;
                         btnLogin.Visible = true;
                         lblError.Text = "";
                     }
@@ -197,9 +183,9 @@ namespace SACCOPortal
                     SACCOFactory.ShowAlert(exception.Message);
                 }
             }
-            btnSubmit.Visible = true;
+            //btnSubmit.Visible = true;
             btnBack.Visible = true;
-            btnSignup.Visible = false;
+            //btnSignup.Visible = false;
             btnLogin.Visible = false;
             MultiView1.SetActiveView(View2);
 
@@ -219,88 +205,7 @@ namespace SACCOPortal
         {
             Response.Redirect("#");
         }
-        protected void loanProduct_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        //    ChangeInstallment(loanProduct.SelectedValue);
-        //    UpdateDetails(loanProduct.SelectedValue);
-        }
-
-        public void ChangeInstallment(String mycode)
-        {
-            //NAV nav = new Config().ReturnNav();
-            //var maxPeriod = nav.LoansProductSetUp.Where(r => r.Code == mycode);
-            //this.installments.Items.Clear();
-            //foreach (var period in maxPeriod)
-            //{
-            //    var seq = Enumerable.Range(1, Convert.ToInt32(period.No_of_Installment)).Reverse();
-            //    installments.DataSource = seq;
-            //    installments.DataBind();
-            //}
-
-        }
-
-        public void UpdateDetails(String loan)
-        {
-            NAV nav = new Config().ReturnNav();
-            var loanDetails = nav.LoansProductSetUp.Where(r => r.Code == loan);
-            foreach (var loandetail in loanDetails)
-            {
-            //    String loanLimit = String.Format("{0:n}", Convert.ToDouble(loandetail.Max_Loan_Amount));
-            //    details.InnerHtml = "<tr><td>Loan Product</td><td>" + loandetail.Product_Description + "</td></tr>" +
-            //                        "<tr><td>Interest Rate</td><td>" + (loandetail.Interest_rate)/12 + "</td></tr>" +
-            //                        "<tr><td>Minimum Loan Amount</td><td>" + loandetail.Min_Loan_Amount + "</td></tr>" +
-            //                        "<tr><td>Maximum Installments</td><td>" + loandetail.No_of_Installment + "</td></tr>" +
-            //                        "<tr><td>Maximum Loan Amount</td><td>" + loanLimit + "</td></tr>" +
-            //                        "<tr><td>Repayment Method</td><td>" + loandetail.Repayment_Method + "</td></tr>" +
-            //                        "<tr><td>Repayment Frequency</td><td>" + loandetail.Repayment_Frequency + "</td></tr>" +
-            //                        "<tr><td>Source</td><td>" + loandetail.Source + "</td></tr>" +
-            //                        "<tr><td>Recovery Method</td><td>" + loandetail.Repayment_Method + "</td></tr>";
-                // "<tr><td>Max Shares Cap</td><td>" + loandetail.Max_Share_Cap+"</td></tr>" +
-                // "<tr><td>Bank Commission %</td><td>" + loandetail.Bank_Comm+"</td></tr>" ;
-            }
-        }
-
-        protected void Unnamed2_Click(object sender, EventArgs e)
-        {
-
-            //Double minimumAmount = 0, maximumAmount = 0, intrestRate = 0, myInstallments = 0;
-            //String repaymentMethod = "";
-            //String myLoanProduct = loanProduct.SelectedValue;
-            //NAV nav = new Config().ReturnNav();
-            //var loanDetails = nav.LoansProductSetUp.Where(r => r.Code == myLoanProduct);
-            //foreach (var loandetail in loanDetails)
-            //{
-            //    minimumAmount = Convert.ToDouble(loandetail.Min_Loan_Amount);
-            //    maximumAmount = Convert.ToDouble(loandetail.Max_Loan_Amount);
-            //    intrestRate = Convert.ToDouble(loandetail.Interest_rate);
-            //    repaymentMethod = loandetail.Repayment_Method;
-            //}
-            //myInstallments = Convert.ToDouble(installments.SelectedValue);
-            //Double myLoanAmount = Convert.ToDouble(loanAmount.Text.Trim());
-            ////lblError.InnerHtml = "";
-            //calculations.InnerHtml = "";
-            //if (minimumAmount < 1 && maximumAmount < 1)//no validation required
-            //{
-            //    Calculate(repaymentMethod, myLoanAmount, intrestRate, myInstallments);
-            //}
-            //else if (myLoanAmount < minimumAmount)
-            //{
-            //    //lblError.InnerHtml = "<div class='alert alert-danger'>The amount you entered is less than the minimum Amount<button class='close' data-dismiss='alert' type='button'>&times;</button></div>";
-            //}
-            //else if (myLoanAmount > maximumAmount)
-            //{
-            //    //lblError.InnerHtml = "<div class='alert alert-danger'>The amount you entered is more than the maximum Amount<button class='close' data-dismiss='alert' type='button'>&times;</button></div>";
-            //}
-            //else
-            //{
-            //    Calculate(repaymentMethod, myLoanAmount, intrestRate, myInstallments);
-            //}
-
-        }
-
-
-
+    
         public void Calculate(String newRepaymentMethod, Double newLoanAmount, Double newIntrestRate, Double newInstallments)
         {
             int count = 1;
@@ -372,6 +277,62 @@ namespace SACCOPortal
             calculations.InnerHtml = html;
 
         }
-     
+
+        private bool MyValidationFunction(string myusername, string mypassword)
+        {
+            bool boolReturnValue = false;
+            string SQLRQST = @"select [No_], Password from [Kingdom Sacco Ltd_$Members Register]";
+            SqlConnection con = new SqlConnection(strSQLConn);
+            SqlCommand command = new SqlCommand(SQLRQST, con);
+            SqlDataReader Dr;
+            try
+            {
+                con.Open();
+                Dr = command.ExecuteReader();
+                while (Dr.Read())
+                {
+                    if ((myusername == Dr["No_"].ToString()) && (mypassword == Dr["Password"].ToString()))
+                    {
+                        boolReturnValue = true;
+                        break;
+                    }
+                    if (string.IsNullOrWhiteSpace(Dr["Password"].ToString()))
+                    {
+                        boolReturnValue = false;
+                    }
+                }
+                Dr.Close();
+            }
+            catch (SqlException ex)
+            {
+                SACCOFactory.ShowAlert("Authentication failed!" + ex.Message);
+
+            }
+            return boolReturnValue;
+        }
+
+        protected void ddlUserType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string usertype = ddlUserType.SelectedItem.Text;
+            switch (usertype)
+            {
+                case "Individual":
+                    MultiView1.SetActiveView(individualLogin);             
+                    break;
+                case "Joint/Corporate":
+                    MultiView1.SetActiveView(jointLogin);
+                    break;
+            }
+        }
+
+        protected void lnkBtnSign_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RegistrationForm.aspx");
+        }
+
+        protected void notregistered_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RegisterMemberForm.aspx");
+        }
     }
 }

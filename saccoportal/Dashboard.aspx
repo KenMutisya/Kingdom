@@ -10,7 +10,6 @@
 						<div class="title">Share Capital</div>						
 					</div><!--/.info-box-->			
 				</div><!--/.col-->
-
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<div class="info-box blue-bg">
 						<i class="fa fa-bank"></i>
@@ -27,13 +26,13 @@
 					</div><!--/.info-box-->			
 				</div><!--/.col-->	
 				
-				<%--<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<div class="info-box brown-bg">
 						<i class="fa fa-suitcase"></i>
-						<div class="count">KES. <%= Member.interest %></div>
+						<div class="count">KES. <%= Member.interest%></div>
 						<div class="title">Interest Paid</div>						
 					</div><!--/.info-box-->			
-				</div><!--/.col-->--%>
+				</div><!--/.col-->
 				
 				
 				

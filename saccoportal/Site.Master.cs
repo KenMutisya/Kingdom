@@ -98,30 +98,30 @@ namespace SACCOPortal
 
         protected void loadProfPic()
         {
-            try
-            {
-                var pic =
-                nav.profile_Pics.ToList()
-                    .Where(sn => sn.Customer_Number == Session["username"].ToString())
-                    .Select(l => l.Pic_Name)
-                    .SingleOrDefault();
+            //try
+            //{
+            //    var pic =
+            //    nav.profile_Pics.ToList()
+            //        .Where(sn => sn.Customer_Number == Session["username"].ToString())
+            //        .Select(l => l.Pic_Name)
+            //        .SingleOrDefault();
 
-                if (pic == null)
-                {
-                    // SACCOFactory.ShowAlert("Upload a profile picture");
-                }
-                else
-                {
-                    profPic.ImageUrl = "ProfilePics/" + pic;
-                    profPic1.ImageUrl = "ProfilePics/" + pic;
-                    HttpResponse.RemoveOutputCacheItem("/Dashboard.aspx");
-                }
-            }
-            catch (Exception ex)
-            {
+            //    if (pic == null)
+            //    {
+            //        // SACCOFactory.ShowAlert("Upload a profile picture");
+            //    }
+            //    else
+            //    {
+            //        profPic.ImageUrl = "ProfilePics/" + pic;
+            //        profPic1.ImageUrl = "ProfilePics/" + pic;
+            //        HttpResponse.RemoveOutputCacheItem("/Dashboard.aspx");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
 
 
-            }
+            //}
 
         }
     }

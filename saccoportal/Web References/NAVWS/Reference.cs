@@ -89,10 +89,6 @@ namespace SACCOPortal.NAVWS {
         
         private System.Threading.SendOrPostCallback FnSaveGuarantorOperationCompleted;
         
-        private System.Threading.SendOrPostCallback FnSaveProfPOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FnSaveSignatureOperationCompleted;
-        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -220,12 +216,6 @@ namespace SACCOPortal.NAVWS {
         
         /// <remarks/>
         public event FnSaveGuarantorCompletedEventHandler FnSaveGuarantorCompleted;
-        
-        /// <remarks/>
-        public event FnSaveProfPCompletedEventHandler FnSaveProfPCompleted;
-        
-        /// <remarks/>
-        public event FnSaveSignatureCompletedEventHandler FnSaveSignatureCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/Portals:FnUpdatePassword", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/Portals", ResponseElementName="FnUpdatePassword_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/Portals", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -1352,70 +1342,6 @@ namespace SACCOPortal.NAVWS {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/Portals:FnSaveProfP", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/Portals", ResponseElementName="FnSaveProfP_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/Portals", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void FnSaveProfP(string username, string link, string filename) {
-            this.Invoke("FnSaveProfP", new object[] {
-                        username,
-                        link,
-                        filename});
-        }
-        
-        /// <remarks/>
-        public void FnSaveProfPAsync(string username, string link, string filename) {
-            this.FnSaveProfPAsync(username, link, filename, null);
-        }
-        
-        /// <remarks/>
-        public void FnSaveProfPAsync(string username, string link, string filename, object userState) {
-            if ((this.FnSaveProfPOperationCompleted == null)) {
-                this.FnSaveProfPOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnSaveProfPOperationCompleted);
-            }
-            this.InvokeAsync("FnSaveProfP", new object[] {
-                        username,
-                        link,
-                        filename}, this.FnSaveProfPOperationCompleted, userState);
-        }
-        
-        private void OnFnSaveProfPOperationCompleted(object arg) {
-            if ((this.FnSaveProfPCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FnSaveProfPCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/Portals:FnSaveSignature", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/Portals", ResponseElementName="FnSaveSignature_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/Portals", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void FnSaveSignature(string member_No, string sign_Filename, string sign_Link) {
-            this.Invoke("FnSaveSignature", new object[] {
-                        member_No,
-                        sign_Filename,
-                        sign_Link});
-        }
-        
-        /// <remarks/>
-        public void FnSaveSignatureAsync(string member_No, string sign_Filename, string sign_Link) {
-            this.FnSaveSignatureAsync(member_No, sign_Filename, sign_Link, null);
-        }
-        
-        /// <remarks/>
-        public void FnSaveSignatureAsync(string member_No, string sign_Filename, string sign_Link, object userState) {
-            if ((this.FnSaveSignatureOperationCompleted == null)) {
-                this.FnSaveSignatureOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnSaveSignatureOperationCompleted);
-            }
-            this.InvokeAsync("FnSaveSignature", new object[] {
-                        member_No,
-                        sign_Filename,
-                        sign_Link}, this.FnSaveSignatureOperationCompleted, userState);
-        }
-        
-        private void OnFnSaveSignatureOperationCompleted(object arg) {
-            if ((this.FnSaveSignatureCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FnSaveSignatureCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -1751,14 +1677,6 @@ namespace SACCOPortal.NAVWS {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void FnSaveGuarantorCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
-    public delegate void FnSaveProfPCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
-    public delegate void FnSaveSignatureCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591

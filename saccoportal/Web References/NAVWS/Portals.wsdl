@@ -458,34 +458,6 @@
           <sequence />
         </complexType>
       </element>
-      <element name="FnSaveProfP">
-        <complexType>
-          <sequence>
-            <element minOccurs="1" maxOccurs="1" name="username" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="link" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="filename" type="string" />
-          </sequence>
-        </complexType>
-      </element>
-      <element name="FnSaveProfP_Result">
-        <complexType>
-          <sequence />
-        </complexType>
-      </element>
-      <element name="FnSaveSignature">
-        <complexType>
-          <sequence>
-            <element minOccurs="1" maxOccurs="1" name="member_No" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="sign_Filename" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="sign_Link" type="string" />
-          </sequence>
-        </complexType>
-      </element>
-      <element name="FnSaveSignature_Result">
-        <complexType>
-          <sequence />
-        </complexType>
-      </element>
     </schema>
   </types>
   <message name="FnUpdatePassword">
@@ -668,18 +640,6 @@
   <message name="FnSaveGuarantor_Result">
     <part name="parameters" element="tns:FnSaveGuarantor_Result" />
   </message>
-  <message name="FnSaveProfP">
-    <part name="parameters" element="tns:FnSaveProfP" />
-  </message>
-  <message name="FnSaveProfP_Result">
-    <part name="parameters" element="tns:FnSaveProfP_Result" />
-  </message>
-  <message name="FnSaveSignature">
-    <part name="parameters" element="tns:FnSaveSignature" />
-  </message>
-  <message name="FnSaveSignature_Result">
-    <part name="parameters" element="tns:FnSaveSignature_Result" />
-  </message>
   <portType name="Portals_Port">
     <operation name="FnUpdatePassword">
       <input name="FnUpdatePassword" message="tns:FnUpdatePassword" />
@@ -800,14 +760,6 @@
     <operation name="FnSaveGuarantor">
       <input name="FnSaveGuarantor" message="tns:FnSaveGuarantor" />
       <output name="FnSaveGuarantor_Result" message="tns:FnSaveGuarantor_Result" />
-    </operation>
-    <operation name="FnSaveProfP">
-      <input name="FnSaveProfP" message="tns:FnSaveProfP" />
-      <output name="FnSaveProfP_Result" message="tns:FnSaveProfP_Result" />
-    </operation>
-    <operation name="FnSaveSignature">
-      <input name="FnSaveSignature" message="tns:FnSaveSignature" />
-      <output name="FnSaveSignature_Result" message="tns:FnSaveSignature_Result" />
     </operation>
   </portType>
   <binding name="Portals_Binding" type="tns:Portals_Port">
@@ -1082,28 +1034,10 @@
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </output>
     </operation>
-    <operation name="FnSaveProfP">
-      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnSaveProfP" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
-      <input name="FnSaveProfP">
-        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
-      </input>
-      <output name="FnSaveProfP_Result">
-        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
-      </output>
-    </operation>
-    <operation name="FnSaveSignature">
-      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Portals:FnSaveSignature" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
-      <input name="FnSaveSignature">
-        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
-      </input>
-      <output name="FnSaveSignature_Result">
-        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
-      </output>
-    </operation>
   </binding>
   <service name="Portals">
     <port name="Portals_Port" binding="tns:Portals_Binding">
-      <address location="http://192.168.9.210:7047/DynamicsNAV100/WS/Nafaka%20Sacco%20Ltd/Codeunit/Portals" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <address location="http://mutinda-19:7047/DynamicsNAV110/WS/Kingdom%20Sacco%20Ltd./Codeunit/Portals" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
     </port>
   </service>
 </definitions>

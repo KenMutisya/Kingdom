@@ -3,7 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="SACCOPortal_NAVWS_Portals" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://sngutu:4812/NAFAKA/WS/Nafaka%20Sacco%20Ltd/Codeunit/Portals</Value>
+      <Value Profile="(Default)">http://mutinda-19:7047/DynamicsNAV110/WS/Kingdom%20Sacco%20Ltd./Codeunit/Portals</Value>
+    </Setting>
+    <Setting Name="IPRS_Photo_File" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">D:\portals\Kingdom\saccoportal\IPRS\Passport\</Value>
+    </Setting>
+    <Setting Name="IPRS_Signature_File" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">D:\portals\Kingdom\saccoportal\IPRS\Signature\</Value>
     </Setting>
   </Settings>
 </SettingsFile>

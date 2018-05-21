@@ -3678,8 +3678,8 @@
         </Key>
         <Property Name="Member_No" Type="Edm.String" Nullable="false" />
         <Property Name="Loan_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
         <Property Name="Loanees_No" Type="Edm.String" />
-        <Property Name="Loanees_Name" Type="Edm.String" />
         <Property Name="AuxiliaryIndex1" Type="Edm.String" Nullable="false" />
         <Property Name="AuxiliaryIndex2" Type="Edm.Int32" Nullable="false" />
       </EntityType>

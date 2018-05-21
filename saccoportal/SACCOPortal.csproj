@@ -328,6 +328,7 @@
     <Content Include="kinsdata.aspx" />
     <Content Include="FosaStats.aspx" />
     <Content Include="LoanApplication.aspx" />
+    <Content Include="LoanCalculator.aspx" />
     <Content Include="Loans.aspx" />
     <Content Include="Loans_BOSA.aspx" />
     <Content Include="Loans_FOSA.aspx" />
@@ -872,6 +873,13 @@
     </Compile>
     <Compile Include="LoanApplication.aspx.designer.cs">
       <DependentUpon>LoanApplication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoanCalculator.aspx.cs">
+      <DependentUpon>LoanCalculator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoanCalculator.aspx.designer.cs">
+      <DependentUpon>LoanCalculator.aspx</DependentUpon>
     </Compile>
     <Compile Include="Loans.aspx.cs">
       <DependentUpon>Loans.aspx</DependentUpon>

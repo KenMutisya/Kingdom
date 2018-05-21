@@ -59,10 +59,10 @@
                                  <li class="divider"></li>
                                 <li><a href="Settings.aspx"><i class="fa fa-edit"></i> Change Password</a></li>
                                  <li class="divider"></li>
-                                 <li><a href="#"><i class="fa fa-edit"></i> Other Accounts</a></li>
+                                 <%--<li><a href="#"><i class="fa fa-edit"></i> Other Accounts</a></li>
                                  <li class="divider"></li>
                                  <li><a href="#"><i class="fa fa-edit"></i> Create New Account</a></li>
-                                 <li class="divider"></li>
+                                 <li class="divider"></li>--%>
                                 <li><a href="/Logout.aspx"><i class="icon_key_alt"></i>Log Out</a></li>
                                 <li class="divider"></li>                                
                               
@@ -125,8 +125,7 @@
                           <li><a class="" href="Loans_List_Approved.aspx" >Approved Loans</a></li>
                           <li><a class="" href="Loans_List_Running.aspx" >Running Loans</a></li>
                           <li><a class="" href="Loans_List_Cleared.aspx" >Cleared Loans</a></li>
-                          <li><a class="" href="#">Apply for Loan</a></li>
-
+                          <li><a class="" href="NewLoanApplication.aspx">Apply for Loan</a></li>
                           <li><a class="" href="LoanCalculator.aspx" >Loans Calculator</a></li>
                       </ul>
                   </li>   

@@ -33,9 +33,9 @@ namespace SACCOPortal
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //MultiView1.SetActiveView(View1);
+            MultiViewLoadLogins.SetActiveView(LoginTabs);
             btnBack.Visible = false;
-           // btnSubmit.Visible = false;
+           //btnSubmit.Visible = false;
             if (!IsPostBack)
             {
                 NAV nav = new Config().ReturnNav();
@@ -95,9 +95,9 @@ namespace SACCOPortal
         {
             //btnSignup.Visible = false;
             btnLogin.Visible = false;
-            MultiView1.SetActiveView(View2);
+            MultiViewLoadLogins.SetActiveView(View2);
            
-           // btnSubmit.Visible = true;
+           //btnSubmit.Visible = true;
             btnBack.Visible = true;
             lblError.Text = "";
         }
@@ -129,7 +129,7 @@ namespace SACCOPortal
                 btnBack.Visible = true;
                 //btnSignup.Visible = false;
                 btnLogin.Visible = false;
-                MultiView1.SetActiveView(View2);
+                MultiViewLoadLogins.SetActiveView(View2);
                 return;
             
             }
@@ -161,7 +161,7 @@ namespace SACCOPortal
                         btnBack.Visible = true;
                         //btnSignup.Visible = false;
                         btnLogin.Visible = false;
-                        MultiView1.SetActiveView(View2);
+                        MultiViewLoadLogins.SetActiveView(View2);
                     }
                     else if (string.IsNullOrEmpty(emalcheck) && phonecheck!=null)
                     {
@@ -187,7 +187,7 @@ namespace SACCOPortal
             btnBack.Visible = true;
             //btnSignup.Visible = false;
             btnLogin.Visible = false;
-            MultiView1.SetActiveView(View2);
+            MultiViewLoadLogins.SetActiveView(View2);
 
         }
 
@@ -311,19 +311,19 @@ namespace SACCOPortal
             return boolReturnValue;
         }
 
-        protected void ddlUserType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string usertype = ddlUserType.SelectedItem.Text;
-            switch (usertype)
-            {
-                case "Individual":
-                    MultiView1.SetActiveView(individualLogin);             
-                    break;
-                case "Joint/Corporate":
-                    MultiView1.SetActiveView(jointLogin);
-                    break;
-            }
-        }
+        //protected void ddlUserType_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    string usertype = ddlUserType.SelectedItem.Text;
+        //    switch (usertype)
+        //    {
+        //        case "Individual":
+        //            MultiViewLoadLogins.SetActiveView(individualLogin);             
+        //            break;
+        //        case "Joint/Corporate":
+        //            MultiViewLoadLogins.SetActiveView(jointLogin);
+        //            break;
+        //    }
+        //}
 
         protected void lnkBtnSign_Click(object sender, EventArgs e)
         {
@@ -333,6 +333,14 @@ namespace SACCOPortal
         protected void notregistered_Click(object sender, EventArgs e)
         {
             Response.Redirect("RegisterMemberForm.aspx");
+        }
+
+        protected void LoginMenu_MenuItemClick(object sender, MenuEventArgs e)
+        {
+
+            int index = Int32.Parse(e.Item.Value);
+
+            MultiViewLoadLogins.ActiveViewIndex = index;
         }
     }
 }

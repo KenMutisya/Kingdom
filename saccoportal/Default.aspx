@@ -14,9 +14,9 @@
 
 	<div class="section">
         <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-4">
-                <img class="img img-circle login-img" style="background-color:#fff;" src="siteimages/kingdomlogo.ico" />
+            <div class="col-md-4"></div>
+            <div class="col-md-3">
+                <img class="img img-circle login-img" style="background-color:#fff;" src="siteimages/kingdomlogo.ico"/>
             </div>
             <div class="col-md-4"></div>
         </div>
@@ -31,33 +31,22 @@
                     </div>                                          
                 </div>
     		</div>
-	   </div>
+	   </div> 
         <br />
-       <div class="row">
-            <div class="col-md-6">
-              <div class="form-horizontal">
-                <div class="form-group">
-                    <asp:Label runat="server"  CssClass="col-md-4 control-label">Login As:</asp:Label>
-                        <div class="col-md-8">
-                            <asp:DropDownList ID="ddlUserType" runat="server"  class="selectpicker form-control" data-live-search-style="begins"
-                                    data-live-search="true" AppendDataBoundItems="true" OnSelectedIndexChanged ="ddlUserType_SelectedIndexChanged"  AutoPostBack="True">
-                                <asp:ListItem Selected="True">..Select Account Type..</asp:ListItem>
-                                <asp:ListItem>Individual</asp:ListItem>
-                                <asp:ListItem>Joint/Corporate</asp:ListItem>
-                            </asp:DropDownList>
-                    </div> 
-                </div>
-              </div>
-              <br/>
-            </div>
-             <div class="col-md-6">
-                 <span class="pull-right"><asp:LinkButton runat="server" ID="lnkBtnSign" OnClick="lnkBtnSign_Click" CausesValidation="False">Create an Account</asp:LinkButton></span>
-             </div>
-          </div>
+         <asp:Menu ID="LoginMenu" Orientation="Horizontal"  StaticMenuItemStyle-CssClass="tab" StaticSelectedStyle-CssClass="selectedtab" CssClass="tabs" runat="server" OnMenuItemClick="LoginMenu_MenuItemClick">
+            <Items>
+                <asp:MenuItem Text="Individual Account |" Value="0" Selected="true" runat="server"/>
+                <asp:MenuItem Text="Joint Account" Value="1" runat="server"/>                 
+            </Items>
+        </asp:Menu>                     
+      <asp:MultiView ID="MultiViewLoadLogins" runat="server"> 
 
-                     
-      <asp:MultiView ID="MultiView1" runat="server">
                 <asp:View ID="individualLogin" runat="server">
+                    <div class="form-horizontal">
+                         <div class="input-group">
+                            <label style="color:#bd202f;font-family:'Trebuchet MS'">Individual Login Panel</label>
+                        </div>
+                    <br />                   
                     <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user"></i> Member No:</span>
                     <asp:TextBox ID="txtStaffNo" runat="server" CssClass="form-control" placeholder="Member number"></asp:TextBox>
@@ -68,26 +57,29 @@
                         <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" placeholder="Enter Password" TextMode="Password"></asp:TextBox>
                     </div>
                     <br />
-                    
-                    <label class="checkbox">
-                        <input type="checkbox" value="remember-me"> First Login?
-                        <span class="pull-Right"> <asp:LinkButton ID="forgotPass" runat="server" OnClick="btnPassword_Click">Reset Password?</asp:LinkButton></span>
-                    </label>
-                    &nbsp;&nbsp;&nbsp;<br />
-                    <%--<div style="transform:scale(0.95); width: 100% !important; -webkit-transform:scale(0.95);transform-origin:0 0;-webkit-transform-origin:0 0;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span class="pull-Right"> <asp:LinkButton ID="forgotPass" runat="server" OnClick="btnPassword_Click">Reset Password?</asp:LinkButton></span>
+                         </div>
+                        <div class="col-md-6">
+                            <span class="pull-right"><asp:LinkButton runat="server" ID="lnkBtnSign" OnClick="lnkBtnSign_Click" CausesValidation="False">Create an Account</asp:LinkButton></span>
+                        </div>
+                    </div>
+                    <br />
+                    <div style="transform:scale(0.95); width: 100% !important; -webkit-transform:scale(0.95);transform-origin:0 0;-webkit-transform-origin:0 0;">
                     <cc1:CaptchaControl ID="cptCaptcha" runat="server" 
                         CaptchaBackgroundNoise="Low" CaptchaLength="5" 
                         CaptchaHeight="60" CaptchaWidth="250" 
                         CaptchaLineNoise="None" CaptchaMinTimeout="5" 
                         CaptchaMaxTimeout="240" FontColor = "#529E00" />
-                    </div>--%>
+                    </div>
                     <br />
-                    <%--<div class="input-group">
+                    <div class="input-group">
                          <asp:TextBox ID="txtCaptcha" runat="server" CssClass="form-control" placeholder="Enter the above Text"></asp:TextBox>
                        <br />
                          <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*Required!" ControlToValidate = "txtCaptcha" ForeColor="yellow"></asp:RequiredFieldValidator>
                     </div>
-                    <div class="input-group" style="transform:scale(0.90); width: 100% !important; -webkit-transform:scale(0.90);transform-origin:0 0;-webkit-transform-origin:0 0;">                       
+                   <%-- <div class="input-group" style="transform:scale(0.90); width: 100% !important; -webkit-transform:scale(0.90);transform-origin:0 0;-webkit-transform-origin:0 0;">                       
                        <cc1:GoogleReCaptcha ID="ctrlGoogleReCaptcha" runat="server" PublicKey="6LdK7j4UAAAAAJaWiKryMXWxVcwuDAyjEb_Kr204" PrivateKey="6LdK7j4UAAAAAC1ovoMUpMxXODnYYsWaebjMbbf0" />  
                     </div>--%>
 
@@ -96,20 +88,14 @@
                             <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-primary btn-lg btn-block" OnClick="btnLogin_Click"/>&nbsp;&nbsp;
                         </div>
                     </div>
-                </asp:View>
-                <asp:View ID="View2" runat="server">
-                    <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-user"></i> Member  No:</span>
-                    <asp:TextBox ID="txtEmployeeNo" runat="server" CssClass="form-control" placeholder="Enter Member Number" ></asp:TextBox>
-                    </div>
-                    <br />
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-id-card"></i> National ID:</span>
-                        <asp:TextBox ID="idNo" runat="server" CssClass="form-control" placeholder="Enter ID Number" ></asp:TextBox>
-                    </div>
-                </asp:View>
+                    </div>                   
+                </asp:View>               
 
                 <asp:View ID="jointLogin" runat="server">
+                    <div class="input-group">
+                       <label style="color:#bd202f; font-family:'Trebuchet MS'">Joint Login Panel</label>
+                    </div>
+                    <br />                   
                     <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user"></i> Member No:</span>
                     <asp:TextBox ID="TextMemberno" runat="server" CssClass="form-control" placeholder="Member number"></asp:TextBox>
@@ -156,6 +142,22 @@
 
                 </asp:View>
 
+                <asp:View runat="server" ID="LoginTabs">
+                    <asp:Label ID="InfoLbl" runat="server"><h3 style="text-align:left; font-family:'Trebuchet MS';color:#bd202f;">Please select login tab</h3></asp:Label>
+                </asp:View>
+
+                <asp:View ID="View2" runat="server">
+                    <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user"></i> Member  No:</span>
+                    <asp:TextBox ID="txtEmployeeNo" runat="server" CssClass="form-control" placeholder="Enter Member Number" ></asp:TextBox>
+                    </div>
+                    <br />
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-id-card"></i> National ID:</span>
+                        <asp:TextBox ID="idNo" runat="server" CssClass="form-control" placeholder="Enter ID Number" ></asp:TextBox>
+                    </div>
+                </asp:View>
+
             </asp:MultiView>
            
        
@@ -163,7 +165,7 @@
             <div class="col-md-12">
                 <%--<asp:Button ID="btnSignup" runat="server" Text="Signup" CssClass="btn btn-info btn-lg btn-block" OnClick="btnSignup_Click"/>--%>
                 <asp:Button ID="btnBack" runat="server" Text="Back to Login" CssClass="btn btn-primary btn-lg btn-block" OnClick="btnBack_Click"/>
-                <span class="pull-Right"> <asp:LinkButton ID="notregistered" runat="server" OnClick ="notregistered_Click" >New User Sign Up</asp:LinkButton></span>
+                <%--<span class="pull-Right"> <asp:LinkButton ID="notregistered" runat="server" OnClick ="notregistered_Click" >New User Sign Up</asp:LinkButton></span>--%>
             </div>
         </div>
 

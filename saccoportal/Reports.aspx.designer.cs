@@ -31,6 +31,33 @@ namespace SACCOPortal {
         protected global::System.Web.UI.WebControls.Button btnView;
         
         /// <summary>
+        /// txtSelStartD control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtSelStartD;
+        
+        /// <summary>
+        /// txtSelEndD control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtSelEndD;
+        
+        /// <summary>
+        /// btnviewmbstat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnviewmbstat;
+        
+        /// <summary>
         /// pdfReport control.
         /// </summary>
         /// <remarks>

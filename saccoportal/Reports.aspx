@@ -29,6 +29,24 @@
     </asp:UpdatePanel>
 
     <asp:Button runat="server" ID="btnClickTimer" Text="View Statement" CssClass="btn btn-primary btn-sm" OnClick="btnClickTimer_OnClick"/>--%>
+    <table style="width:100%" class="table table-condensed table-bordered">
+                <tr><td>Date From:
+                       <div class="input-group date">
+                           <input type="text" id="txtSelStartD" runat="server" class="form-control" placeholder="From which date?"/><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                       </div> 
+                    </td>
+                    <td>To:
+                         <div class="input-group date">
+                           <input type="text" id="txtSelEndD" runat="server" class="form-control" placeholder="To which date?" /><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                       </div> 
+                       </td>
+                    <td><asp:Button ID="btnviewmbstat" runat="server" Text="View Statement" CssClass="btn btn-primary btn-sm" OnClick="btnviewmbstat_Click"/></td>
+                </tr>
+
+            </table>
+    <div class="row">
+        <iframe runat="server" id="pdfReport" width="100%" height="500" src=""></iframe>
+    </div>
    
-   <iframe runat="server" id="pdfReport" width="100%" height="500" src=""></iframe>
+   
  </asp:Content>

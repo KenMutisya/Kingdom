@@ -29,8 +29,8 @@
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<div class="info-box brown-bg">
 						<i class="fa fa-suitcase"></i>
-						<div class="count">KES. <%= Member.interest%></div>
-						<div class="title">Interest Paid</div>						
+						<div class="count">KES. <%= Member.FOSAbal%></div>
+						<div class="title">Fosa Shares</div>						
 					</div><!--/.info-box-->			
 				</div><!--/.col-->
 				

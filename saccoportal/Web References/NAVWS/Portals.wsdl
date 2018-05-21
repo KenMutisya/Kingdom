@@ -217,26 +217,17 @@
       <element name="FnMemberApply">
         <complexType>
           <sequence>
-            <element minOccurs="1" maxOccurs="1" name="first_Name" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="mid_Name" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="last_Name" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="pO_Box" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="residence" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="postal_Code" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="town" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="full_Name" type="string" />
             <element minOccurs="1" maxOccurs="1" name="phone_Number" type="string" />
             <element minOccurs="1" maxOccurs="1" name="email" type="string" />
             <element minOccurs="1" maxOccurs="1" name="iD_Number" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="branch_Code" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="branch_Name" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="account_Number" type="string" />
             <element minOccurs="1" maxOccurs="1" name="gender" type="int" />
-            <element minOccurs="1" maxOccurs="1" name="marital_Status" type="int" />
-            <element minOccurs="1" maxOccurs="1" name="account_Category" type="int" />
-            <element minOccurs="1" maxOccurs="1" name="application_Category" type="int" />
-            <element minOccurs="1" maxOccurs="1" name="customer_Group" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="employer_Name" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="kRA_Pin" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="activity_Code" type="int" />
             <element minOccurs="1" maxOccurs="1" name="date_of_Birth" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="identification_Document" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="country" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="town" type="string" />
           </sequence>
         </complexType>
       </element>

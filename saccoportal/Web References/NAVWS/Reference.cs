@@ -692,123 +692,44 @@ namespace SACCOPortal.NAVWS {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/Portals:FnMemberApply", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/Portals", ResponseElementName="FnMemberApply_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/Portals", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
-        public string FnMemberApply(
-                    string first_Name, 
-                    string mid_Name, 
-                    string last_Name, 
-                    string pO_Box, 
-                    string residence, 
-                    string postal_Code, 
-                    string town, 
-                    string phone_Number, 
-                    string email, 
-                    string iD_Number, 
-                    string branch_Code, 
-                    string branch_Name, 
-                    string account_Number, 
-                    int gender, 
-                    int marital_Status, 
-                    int account_Category, 
-                    int application_Category, 
-                    string customer_Group, 
-                    string employer_Name, 
-                    [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime date_of_Birth) {
+        public string FnMemberApply(string full_Name, string phone_Number, string email, string iD_Number, int gender, string kRA_Pin, int activity_Code, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime date_of_Birth, int identification_Document, string country, string town) {
             object[] results = this.Invoke("FnMemberApply", new object[] {
-                        first_Name,
-                        mid_Name,
-                        last_Name,
-                        pO_Box,
-                        residence,
-                        postal_Code,
-                        town,
+                        full_Name,
                         phone_Number,
                         email,
                         iD_Number,
-                        branch_Code,
-                        branch_Name,
-                        account_Number,
                         gender,
-                        marital_Status,
-                        account_Category,
-                        application_Category,
-                        customer_Group,
-                        employer_Name,
-                        date_of_Birth});
+                        kRA_Pin,
+                        activity_Code,
+                        date_of_Birth,
+                        identification_Document,
+                        country,
+                        town});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void FnMemberApplyAsync(
-                    string first_Name, 
-                    string mid_Name, 
-                    string last_Name, 
-                    string pO_Box, 
-                    string residence, 
-                    string postal_Code, 
-                    string town, 
-                    string phone_Number, 
-                    string email, 
-                    string iD_Number, 
-                    string branch_Code, 
-                    string branch_Name, 
-                    string account_Number, 
-                    int gender, 
-                    int marital_Status, 
-                    int account_Category, 
-                    int application_Category, 
-                    string customer_Group, 
-                    string employer_Name, 
-                    System.DateTime date_of_Birth) {
-            this.FnMemberApplyAsync(first_Name, mid_Name, last_Name, pO_Box, residence, postal_Code, town, phone_Number, email, iD_Number, branch_Code, branch_Name, account_Number, gender, marital_Status, account_Category, application_Category, customer_Group, employer_Name, date_of_Birth, null);
+        public void FnMemberApplyAsync(string full_Name, string phone_Number, string email, string iD_Number, int gender, string kRA_Pin, int activity_Code, System.DateTime date_of_Birth, int identification_Document, string country, string town) {
+            this.FnMemberApplyAsync(full_Name, phone_Number, email, iD_Number, gender, kRA_Pin, activity_Code, date_of_Birth, identification_Document, country, town, null);
         }
         
         /// <remarks/>
-        public void FnMemberApplyAsync(
-                    string first_Name, 
-                    string mid_Name, 
-                    string last_Name, 
-                    string pO_Box, 
-                    string residence, 
-                    string postal_Code, 
-                    string town, 
-                    string phone_Number, 
-                    string email, 
-                    string iD_Number, 
-                    string branch_Code, 
-                    string branch_Name, 
-                    string account_Number, 
-                    int gender, 
-                    int marital_Status, 
-                    int account_Category, 
-                    int application_Category, 
-                    string customer_Group, 
-                    string employer_Name, 
-                    System.DateTime date_of_Birth, 
-                    object userState) {
+        public void FnMemberApplyAsync(string full_Name, string phone_Number, string email, string iD_Number, int gender, string kRA_Pin, int activity_Code, System.DateTime date_of_Birth, int identification_Document, string country, string town, object userState) {
             if ((this.FnMemberApplyOperationCompleted == null)) {
                 this.FnMemberApplyOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFnMemberApplyOperationCompleted);
             }
             this.InvokeAsync("FnMemberApply", new object[] {
-                        first_Name,
-                        mid_Name,
-                        last_Name,
-                        pO_Box,
-                        residence,
-                        postal_Code,
-                        town,
+                        full_Name,
                         phone_Number,
                         email,
                         iD_Number,
-                        branch_Code,
-                        branch_Name,
-                        account_Number,
                         gender,
-                        marital_Status,
-                        account_Category,
-                        application_Category,
-                        customer_Group,
-                        employer_Name,
-                        date_of_Birth}, this.FnMemberApplyOperationCompleted, userState);
+                        kRA_Pin,
+                        activity_Code,
+                        date_of_Birth,
+                        identification_Document,
+                        country,
+                        town}, this.FnMemberApplyOperationCompleted, userState);
         }
         
         private void OnFnMemberApplyOperationCompleted(object arg) {

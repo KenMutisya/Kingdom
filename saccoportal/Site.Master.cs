@@ -12,7 +12,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using SACCOPortal.NavOData;
-
+using System.IO;
+using System.Drawing;
 
 namespace SACCOPortal
 {
@@ -83,7 +84,7 @@ namespace SACCOPortal
           if (Session["username"] != null)
             {
                 ReturnMember();
-                loadProfPic();
+                LoadProfPic();
             }
             HttpContext.Current.Response.Cache.SetExpires(DateTime.UtcNow.AddMinutes(-1));
             HttpContext.Current.Response.Cache.SetValidUntilExpires(false);
@@ -96,10 +97,49 @@ namespace SACCOPortal
             return new Member(Session["username"].ToString());
         }
 
-        protected void loadProfPic()
+        protected void LoadProfPic()
         {
+            //string mystr = "";
+            //WSConfig.ObjNav.Fngetpicture(Session["username"].ToString(), ref mystr);
+
+            //byte[] bytes = Convert.FromBase64String(mystr);
+
+            //Image image;
+            //using (System.IO.MemoryStream ms = new MemoryStream(bytes))
+            //{
+            //    profPic.  = System.Drawing.Image.FromStream(ms);
+            //}
+                       
+            try
+            {
+                string mystr = "";
+                WSConfig.ObjNav.Fngetpicture(Session["username"].ToString(), ref mystr);
+
+                byte[] buffer = Convert.FromBase64String(mystr);
+                FileStream file = File.Create("D:\\portals\\Kingdom\\saccoportal\\ProfilePics\\" + Session["username"].ToString() + ".jpg");
+                file.Write(buffer, 0, buffer.Length);
+                file.Close();
+
+
+                if (mystr == null)
+                {
+                    SACCOFactory.ShowAlert("Upload a profile picture");
+                }
+                else
+                {
+                    profPic1.ImageUrl = "ProfilePics/" + Session["username"].ToString()+".jpg";
+                    profPic.ImageUrl = "ProfilePics/" + Session["username"].ToString()+".jpg";                   
+                    HttpResponse.RemoveOutputCacheItem("/Dashboard.aspx");
+                }
+            }
+            catch (Exception ex)
+            { 
+                ex.Data.Clear();
+            }
+
             //try
             //{
+            //var pic  = WSConfig.ObjNav.FnSavePics(Session["username"].ToString(), "");
             //    var pic =
             //    nav.profile_Pics.ToList()
             //        .Where(sn => sn.Customer_Number == Session["username"].ToString())

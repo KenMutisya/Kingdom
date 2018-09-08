@@ -1,0 +1,378 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="JointMaster.master.cs" Inherits="SACCOPortal.JointMaster" %>
+
+<!DOCTYPE html>
+
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Kingdom Internet Banking</title>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/elegant-icons-style.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-fullcalendar.css" rel="stylesheet" />
+    <link href="~/Content/jquery.easy-pie-chart.css" rel="stylesheet" />
+    <link href="~/Content/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Content/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
+    <link href="~/Content/fullcalendar.css" rel="stylesheet" />
+    <link href="~/Content/widgets.css" rel="stylesheet" />
+    <link href="Content/charts.css" rel="stylesheet" />
+
+    <link href="Content/animate.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/line-icons.css" rel="stylesheet" />
+    <link href="~/Content/xcharts.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery-ui.min.css" rel="stylesheet">
+    
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css" />
+
+    <link href="~/DatePicker/bootstrap/css/bootstrap-datepicker3.css" rel="stylesheet" />
+    
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/navbar.css" rel="stylesheet">
+    
+    <meta name="description" content="The description of my page" />
+</head>
+<html lang="en">
+<body>
+    <form runat="server">  
+        <header class="header dark-bg">
+            <div class="toggle-nav">
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="fa fa-navicon"></i></div>
+            </div>
+            <!--logo start-->
+            <a href="Dashboard" class="logo" style="font-weight:bold">Kingdom Sacco<span class="lite" style="font-weight:bold"> Internet Banking</span></a>
+            <!--logo end-->            
+
+            <div class="top-nav notification-row pull-right">                
+                <!-- notificatoin dropdown start-->
+                <ul class="nav pull-right top-menu">
+                     <li>
+                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="profile-ava">
+                                <asp:Image ID="profPic" runat="server"  class="img-circle img-responsive" />
+                            </span>
+                            <%--<span class="username"><%=JointMember.Name %></span>--%>
+                             <asp:Label ID="username" runat="server" ForeColor="#ffffff" CssClass="text-left hidden"></asp:Label>  
+                            <span class="username"><%=username.Text %></span> 
+                            <b class="caret"></b>
+                        </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../Joint_Dashboard.aspx">My Dashboard</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/profile.aspx"><i class="icon_profile"></i> My Profile</a></li>
+                                 <li class="divider"></li>
+                                <li><a href="SettingsJoint.aspx"><i class="fa fa-edit"></i> Change Password</a></li>
+                                 <li class="divider"></li>
+                                 <%--<li><a href="#"><i class="fa fa-edit"></i> Other Accounts</a></li>
+                                 <li class="divider"></li>
+                                 <li><a href="#"><i class="fa fa-edit"></i> Create New Account</a></li>
+                                 <li class="divider"></li>--%>
+                                <li><a href="/Logout.aspx"><i class="icon_key_alt"></i>Log Out</a></li>
+                                <li class="divider"></li>                                
+                              
+                            </ul>
+                        </li>
+                  
+                    <!-- user login dropdown end -->
+                </ul>
+                <!-- notificatoin dropdown end-->
+            </div>
+      </header>      
+      <!--header end-->
+        <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu">
+                  <li> <asp:Image ID="profPic1" runat="server"  class="img-circle img-responsive" AlternateText="No Picture" /></li>                
+                  <li class="active">
+                      <a class="" href="Joint_Dashboard.aspx">
+                          <i class="icon_house_alt"></i>
+                          <span>Dashboard</span>
+                      </a>
+                  </li>
+                  <li>
+                  </li>
+                  
+                 <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="fa fa-book"></i>
+                          <span>Statements</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                     <ul class="sub">
+                          <%--<li><a class="" href="Reports.aspx?r=ms">Member Statement</a></li> 
+                         <li><a class="" href="Reports.aspx?r=ds">Deposit Statement</a></li>--%>
+                         <li><a class="" href="FosaStatementsJoint.aspx">Account Statement</a></li> 
+                         <li><a class="" href="Loans_FOSA_Joint.aspx">Loan Statements</a></li>
+                      </ul>
+                  </li> 
+
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="fa fa-money"></i>
+                          <span>Loans Center</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                      <ul class="sub">
+                            <li><a class="" href="LoansJoint.aspx" >Our Loans</a></li>
+                            <li><a class="" href="RepaymentScheduleJoint.aspx">Repayment Schedule</a></li>
+                            
+                      </ul>
+                  </li>  
+
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="fa fa-globe"></i>
+                          <span>Online Requests</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="FundsTransferJointown.aspx">Transfer To my Acc</a></li>
+                          <li><a class="" href="FundsTransferJointFosa.aspx">Funds Transfer</a></li>
+                          <li><a  href="StandingOrdersJoint.aspx" >Standing orders</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu"> 
+                      <a class="">
+                          <i class="fa fa-comments"></i>
+                          <span>Online Approvals</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="TransferApprovalsJoint.aspx" >Approve Funds Transfer </a></li>
+                      </ul>
+                  </li>    
+                  
+                   <li class="sub-menu">
+                      <a class="">
+                          <i class="fa fa-comments"></i>
+                          <span>Add ons</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="FeedbackJoint.aspx" >send comment/feedback </a></li>
+                      </ul>
+                  </li>           
+                 
+                  <%--<li>
+                      <a class="" href="FeedBack.aspx">
+                          <i class="fa fa-comments"></i>
+                          <span>Feed Backs</span>
+                      </a>
+                  </li>  --%>              
+
+                  <li>
+                      <a class="" href="Default">
+                          <i class="fa fa-sign-out"></i>
+                          <span>Log Out</span>
+                      </a>
+                  </li>
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+        <section id="main-content">
+          <section class="wrapper">
+		    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+          </section>    
+                        
+           <footer>
+            <p align="center"><span>Copyright &copy; <%: DateTime.Now.Year %> <a target="_blank" href="http://www.kingdomsacco.com/" style="padding-left:5px"> Kingdom Sacco Society </a></span><span> | </span>
+            <span> Powered by: <a target ="_blank" href="http://surestep.co.ke" style="padding-right:5px">Surestep Systems and Solutions</a></span></p>
+           </footer>
+
+      </section>
+
+             <!-- javascripts -->
+    <script src="Scripts/jquery.js"></script>
+	<script src="Scripts/jquery-ui-1.10.4.min.js"></script>
+    <script src="Scripts/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.9.2.custom.min.js"></script>
+    <!-- bootstrap -->
+    <script src="Scripts/bootstrap.min.js"></script>
+    <!-- nice scroll -->
+    <script src="Scripts/jquery.scrollTo.min.js"></script>
+    <script src="Scripts/jquery.nicescroll.js" type="text/javascript"></script>
+    <%--<script src="https://nicescroll.areaaperta.com/wp-content/plugins/jnicescroll/js/jquery.nicescroll.min.js"></script>
+	<script>
+		$(document).ready(function(){
+		    $(".do-nicescrol").niceScroll();
+		    $(selector).getNiceScroll().hide();
+		});
+	</script>--%>
+       <!-- charts scripts -->
+    <script src="Scripts/jquery.knob.js"></script>
+    <script src="Scripts/jquery.sparkline.js" type="text/javascript"></script>
+    <script src="Scripts/jquery.easy-pie-chart.js"></script>
+    <script src="Scripts/owl.carousel.js" ></script>
+    <!-- jQuery full calendar -->
+    <<script src="Scripts/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+	<script src="Scripts/fullcalendar.js"></script>
+        <!-- custom select -->
+    <script src="Scripts/jquery.customSelect.min.js" ></script>
+	
+    <!--custome script for all page-->
+     <script src="Scripts/scripts.js"></script>
+     <script src="Scripts/Chart.min.js"></script>
+     <script src="Scripts/Chart.bundle.min.js"></script>
+        
+    <%-- DropdownMenu JS --%>
+    <script src="Scripts/navbar.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
+
+    <!-- Bootstrap Dropdown Hover JS -->
+   <%-- <script src="Scripts/bootstrap-dropdownhover.min.js"></script>--%>
+
+     <!-- Datepicker  -->
+    <script type="text/javascript" src="/DatePicker/bootstrap/js/bootstrap-datepicker.js" charset="UTF-8"></script>
+
+    <script type="text/javascript">
+        $('.input-group.date').datepicker({
+            format: "mm/dd/yy",
+            maxViewMode: 3,
+            todayBtn: true,
+            clearBtn: true,
+            autoclose: true,
+            calendarWeeks: true,
+            toggleActive: true
+        });
+    </script>
+
+ <script>
+     $(function() {
+         $('.txtSelStartDT2').datepicker({
+             dateFormat: 'mm/dd/yy',
+             numberOfMonths:2,
+             changeMonth: true,
+             changeYear: true,
+             yearRange: '1990:2100'
+         });
+
+         $('.txtSelEndDT2').datepicker({
+             dateFormat: 'mm/dd/yy',
+             numberOfMonths: 2,
+             changeMonth: true,
+             changeYear: true,
+             yearRange: '1990:2100'
+         });
+     });
+</script>
+
+        <script>
+            var data = {
+                labels: ["Share Capital", "Total Deposits", "Loan Balance"],
+                datasets: [
+                    {
+                        data: [<% =JointMember.currentshare%>, <%=JointMember.currentshare_d%>,<%=JointMember.Oustandandingbal_d%>],
+                        backgroundColor: ['#0B87CA', '#5D9A27', '8F44AD']
+                    }
+                ]
+            };
+            var ctx = document.getElementById("pie");
+            var myLineChart = new Chart(ctx, {
+                type: 'pie',
+                data: data
+            });
+        </script>
+ 
+<script type="text/javascript">
+    var numberWithCommas = function (x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    };
+
+            
+    var Deposits2017 = function () {
+        <%--return <%=JointMember.totaldeposits17%>;--%>
+    };
+           
+    var Shares2017 = function () {
+       <%-- return <%=JointMember.currentshares17%>;--%>
+    };
+
+    var canvas = document.getElementById('bar');
+    var data = {
+        labels: ["2017"],
+        datasets: [
+            {
+                label: "Current Shares",
+                backgroundColor: "rgba(39,174,97,0.5)",
+                borderColor: "rgba(255,99,132,1)",
+                borderWidth: 2,
+                hoverBackgroundColor: "rgba(112,31,133,0.5)",
+                hoverBorderColor: "rgba(255,99,132,1)",
+                data: [Deposits2017()],
+            },
+            {
+                label: "Total Shares",
+                backgroundColor: "rgba(112,31,133,0.5)",
+                borderColor: "rgba(255,99,132,1)",
+                borderWidth: 2,
+                hoverBackgroundColor: "rgba(39,174,97,0.5)",
+                hoverBorderColor: "rgba(255,99,132,1)",
+                data: [Shares2017()],
+            }
+        ]
+    };
+    var option = {
+        scales: {
+            yAxes: [{
+                stacked: false,
+                gridLines: {
+                    display: true,
+                    color: "rgba(255,99,132,0.2)"
+                }
+            }],
+            xAxes: [{
+                gridLines: {
+                    display: false
+                }
+            }]
+        }
+    };
+
+    var myBarChart = Chart.Bar(canvas, {
+        data: data,
+        options: option
+    });
+
+</script>
+    
+  <%--  <script>  
+        $(document).ready(function () {  
+            $('#exportexcel').bind('click', function (e) {             
+                $('#tblshareStats').tableExport({ type: 'excel', escape: 'false' });
+            });  
+            $('#exportpdf1').bind('click', function (e) {             
+                $('#tblshareStats').tableExport({ type: 'pdf', escape: 'false' });
+            });  
+            $('#exportimage').bind('click', function (e) {  
+                $('#tblshareStats').tableExport({ type: 'png', escape: 'false' });
+            });  
+            $('#exportcsv').bind('click', function (e) {  
+                $('#tblshareStats').tableExport({ type: 'csv', escape: 'false' });
+            });  
+            $('#exportppt').bind('click', function (e) {  
+                $('#tblshareStats').tableExport({ type: 'powerpoint', escape: 'false' });
+            });  
+            $('#exportxml').bind('click', function (e) {  
+                $('#tblshareStats').tableExport({ type: 'xml', escape: 'false' });
+            });  
+            $('#exportword').bind('click', function (e) {  
+                $('#tblshareStats').tableExport({ type: 'doc', escape: 'false' });
+            });  
+            $('#exporttxt').bind('click', function (e) {  
+                $('#tblshareStats').tableExport({ type: 'txt', escape: 'false' });
+            });  
+  
+        });  
+    </script> --%> 
+        
+</form>
+</body>
+</html>

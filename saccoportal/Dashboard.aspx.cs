@@ -27,11 +27,11 @@ namespace SACCOPortal
           if(!IsPostBack){ 
             if (Session["username"] == null)
             {
-                Response.Redirect("~/Default");
+                Response.Redirect("~/Default.aspx");
 
             }  
             ReturnMember();
-            LoadMinistatement();
+            //LoadMinistatement();
             totalLoansBal();
           }
         }
@@ -41,7 +41,7 @@ namespace SACCOPortal
 
             return new Member(Session["username"].ToString());
         }
-        
+
         protected void LoadMinistatement()
         {
             var finalList = new List<Statement>();
@@ -50,9 +50,9 @@ namespace SACCOPortal
                 string[] ministmtArray = item.Split(new string[] { ":::" }, StringSplitOptions.None);
                 finalList.Add(new Statement { Date = ministmtArray[0], Description = ministmtArray[1], Amount = ministmtArray[2] });
             }
-            gvMinistatement.DataSource = finalList;
-            gvMinistatement.AutoGenerateColumns = true;
-            gvMinistatement.DataBind();
+            //gvMinistatement.DataSource = finalList;
+            //gvMinistatement.AutoGenerateColumns = true;
+            //gvMinistatement.DataBind();
         }
 
         public List<string> MiniStatement()
@@ -60,7 +60,7 @@ namespace SACCOPortal
             var ministmtList = new List<string>();
             try
             {
-                string ministmt = WSConfig.ObjNav.MiniStatement(Session["username"].ToString());
+                string ministmt = WSConfig.ObjNav.FnGetResponse(Session["username"].ToString());
                 string[] ministmtArray = ministmt.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
                 ministmtList = ministmtArray.ToList();
                 
@@ -75,7 +75,7 @@ namespace SACCOPortal
         protected void totalLoansBal()
         {
             decimal loanBal = WSConfig.ObjNav.Fnloanbalances(Session["username"].ToString());
-            lblLoanBal.Text = loanBal.ToString("N2");
+            //lblLoanBal.Text = loanBal.ToString("N2");
         }
 
         //protected void dispLoans_DataBound(object sender, EventArgs e)

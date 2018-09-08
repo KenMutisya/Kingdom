@@ -1,6 +1,16 @@
-﻿<head runat="server">
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SACCOPortal.SiteMaster" %>
+
+<%
+    Response.Cache.SetNoStore();
+    //Response.Write (DateTime.Now.ToLongTimeString ());
+%>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%--<meta name="viewport" content="initial-scale=1, maximum-scale=1">--%>
     <title><%: Page.Title %> - Kingdom Internet Banking</title>
 
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
@@ -24,13 +34,84 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css" />
 
     <link href="~/DatePicker/bootstrap/css/bootstrap-datepicker3.css" rel="stylesheet" />
-    
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
     <link href="~/Content/jquery-ui.css" rel="stylesheet" />
     <link href="~/Content/navbar.css" rel="stylesheet">
-    
+    <script type="text/javascript">
+        $(document.ready(function() {
+                var amount = $('.money').val();
+
+                function CommaFormatted(amount) {
+                    var delimiter = ","; // replace comma if desired
+                    var a = amount.split('.', 2);
+                    var d = a[1];
+                    var i = parseInt(a[0]);
+                    if (isNaN(i)) {
+                        return '';
+                    }
+                    var minus = '';
+                    if (i < 0) {
+                        minus = '-';
+                    }
+                    i = Math.abs(i);
+                    var n = new String(i);
+                    a = [];
+                    while (n.length > 3) {
+                        var nn = n.substr(n.length - 3);
+                        a.unshift(nn);
+                        n = n.substr(0, n.length - 3);
+                    }
+                    if (n.length > 0) {
+                        a.unshift(n);
+                    }
+                    n = a.join(delimiter);
+                    if (d.length < 1) {
+                        amount = n;
+                    } else {
+                        amount = n + '.' + d;
+                    }
+                    amount = minus + amount;
+                    return amount;
+                }
+            })
+        );
+
+
+      function CurrencyFormatted(amount) {
+          var i = parseFloat(amount);
+          if (isNaN(i)) { i = 0.00; }
+          var minus = '';
+          if (i < 0) { minus = '-'; }
+          i = Math.abs(i);
+          i = parseInt((i + .005) * 100);
+          i = i / 100;
+          var s = new String(i);
+          if (s.indexOf('.') < 0) { s += '.00'; }
+          if (s.indexOf('.') === (s.length - 2)) { s += '0'; }
+          s = minus + s;
+          return s;
+      }
+      function isDecimal(money) {
+          var charCode = (money.which) ? money.which : event.keyCode;
+          var parts = money.srcElement.value.split('.');
+       if(parts.length > 1 && charCode === 46)
+          return false;
+       else
+       {
+          if (charCode === 46 || (charCode >= 48 && charCode <= 57))
+             return true;
+          return false;
+       }
+    }
+    </script>
     <meta name="description" content="The description of my page" />
+    <%--<style>
+        @viewport{
+    zoom: 1.0;
+    width: extend-to-zoom;
+}
+    </style>--%>
 </head>
-<html lang="en">
 <body>
     <form runat="server">  
         <header class="header dark-bg">
@@ -60,9 +141,9 @@
                                 <li><a href="Settings.aspx"><i class="fa fa-edit"></i> Change Password</a></li>
                                  <li class="divider"></li>
                                  <%--<li><a href="#"><i class="fa fa-edit"></i> Other Accounts</a></li>
-                                 <li class="divider"></li>
-                                 <li><a href="#"><i class="fa fa-edit"></i> Create New Account</a></li>
                                  <li class="divider"></li>--%>
+                                 <%--<li><a href="../NewAccountOpen.aspx"><i class="fa fa-edit"></i> Create New Account</a></li>--%>
+                                 <li class="divider"></li>
                                 <li><a href="/Logout.aspx"><i class="icon_key_alt"></i>Log Out</a></li>
                                 <li class="divider"></li>                                
                               
@@ -93,68 +174,45 @@
                  <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="fa fa-book"></i>
-                          <span>Member Reports</span>
+                          <span>Statements</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                      <ul class="sub">
-                         <li><a class="" href="Reports.aspx?r=ms">Member Statement</a></li> 
-                         <li><a class="" href="Reports.aspx?r=ds">Deposit statement</a></li>
-                         <li><a class="" href="Reports.aspx?r=lo">Guarantors Report</a></li>
-                         <li><a class="" href="Reports.aspx?r=lg">Guaranteed Loans</a></li>
+                          <li><a class="" href="Reports.aspx?r=ms">Member Statement</a></li> 
+                         <li><a class="" href="Reports.aspx?r=ds">Deposit Statement</a></li>
+                         <li><a class="" href="FosaStatement.aspx">FOSA Statements</a></li> 
+                         <li><a class="" href="Loans_FOSA.aspx">Loan Statements</a></li>
+
+
+                         <%--<li><a class="" href="MyLoansList.aspx">Loan Statements</a></li>--%>
+
+                         <%--<li><a class="" href="Reports.aspx?r=ls">BOSA Loans Statement</a></li>
+                         <li><a class="" href="FosaStatement.aspx">FOSA Loans Statement</a></li>--%>
                       </ul>
-                  </li>
-                  
-                  <li class="sub-menu">
-                      <a href="FosaStatement.aspx" class="">
-                          <i class="fa fa-tablet"></i>
-                          <span>FOSA Statements</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                     
-                  </li>
-                 
+                  </li> 
 
                   <li class="sub-menu">
-                      <a href="javascript:;" class="">
+                      <a class="">
                           <i class="fa fa-money"></i>
                           <span>Loans Center</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="Loans_List_New.aspx" >New Loans</a></li>
-                          <li><a class="" href="Loans_List_Approved.aspx" >Approved Loans</a></li>
-                          <li><a class="" href="Loans_List_Running.aspx" >Running Loans</a></li>
-                          <li><a class="" href="Loans_List_Cleared.aspx" >Cleared Loans</a></li>
-                          <li><a class="" href="NewLoanApplication.aspx">Apply for Loan</a></li>
-                          <li><a class="" href="LoanCalculator.aspx" >Loans Calculator</a></li>
-                      </ul>
-                  </li>   
-                 
-                   <li class="sub-menu">
-                      <a href="javascript:;" class="">
-                          <i class="fa fa-file-pdf-o"></i>
-                          <span>Loan Statements</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">      
-                          <li><a class="" href="Reports.aspx?r=ls">Bosa Loans</a></li>
-                          <%--<li><a class="" href="Reports.aspx?r=fl">Fosa Loans</a></li>--%>
+                            <li><a class="" href="Loans.aspx" >My Loans</a></li>
+                            <li><a class="" href="Reports.aspx?r=lo">Guarantors Report</a></li>
+                            <li><a class="" href="Reports.aspx?r=lg">Guaranteed Report</a></li>
+                            <li><a class="" href="Loans_BOSA.aspx">Repayment Schedule</a></li>                                                      
+                            <li><a class="" href="GuarantorshipForm.aspx">Guarantee Loans</a></li>
+                            <li><a class="" href="NewLoanapply.aspx" >Normal Loan Apply</a></li>
+
+                           <%--<li><a class="" href="NewLoanApplication.aspx">Apply for New Loan</a></li>--%> 
+                           <%-- <li><a class="" href="LoanApplication.aspx">Another loan app</a></li>--%>
+                            <li><a class="" href="RegisterMemberForm.aspx" >Register</a></li> 
+                           <%--<li><a class="" href="Register.aspx" >formwiz</a></li>--%>
+                          <%--<li><a  href="Loans_FOSA.aspx" >FOSA loan repay</a></li>--%>
                       </ul>
                   </li>  
-                  
-                  <li class="sub-menu">
-                      <a href="javascript:;" class="">
-                          <i class="fa fa-bank"></i>
-                          <span>Loan Repayment</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="Loans_BOSA.aspx" >BOSA Loans</a></li>
-                          <li><a class="" href="Loans_FOSA.aspx" >FOSA Loans</a></li>
-                         <%-- <li><a class="" href="Loans_Microfinace.aspx" >Microfinance Loans</a></li>--%>
-                      </ul>
-                  </li>  
-                  
+
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="fa fa-globe"></i>
@@ -162,28 +220,28 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <%--<li><a class="" href="Atm.aspx" >ATMs</a></li>--%>
-                          <li><a class="" href="FundsTransfer.aspx">Funds Transfer</a></li>
+                          <%--<li><a class="" href="AtmApp.aspx" >ATMs</a></li>--%>
+                          <li><a class="" href="NewAccountOpen.aspx">Create New Account</a></li>
+                          <li><a class="" href="FundsTransfer.aspx">Transfer To my Acc</a></li>
+                          <li><a class="" href="EXTERNALFunds Transfer.aspx">Transfer to other Acc</a></li>
                           <li><a  href="StandingOrders.aspx" >Standing orders</a></li>
-                         <%-- <li><a class="" href="Deposits.aspx" >Adjust Deposits</a></li>--%>
+                          <li><a  href="LoanRepayment.aspx" >Loan Repayment</a></li>
+
+                          <%--<li><a class="" href="Atm.aspx" >ATMs</a></li>--%> 
+                          <%-- <li><a class="" href="Deposits.aspx" >Adjust Deposits</a></li>--%>
                       </ul>
                   </li>           
                  
-                  <li>
-                      <a class="" href="FeedBack.aspx">
+                  <li class="sub-menu">
+                      <a class="">
                           <i class="fa fa-comments"></i>
-                          <span>Feed Backs</span>
-                      </a>
-                  </li>
-
-                  <%--<li class="sub-menu">
-                      <a href="Archived_Data.aspx" class="">
-                          <i class="fa fa-archive"></i>
-                          <span>Archived Statements</span>
+                          <span>Add ons</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
-                     
-                  </li>--%>
+                      <ul class="sub">
+                          <li><a  href="FeedBack.aspx" >send comment/feedback </a></li>
+                      </ul>
+                  </li>                
 
                   <li>
                       <a class="" href="Default">
@@ -216,23 +274,29 @@
     <script type="text/javascript" src="Scripts/jquery-ui-1.9.2.custom.min.js"></script>
     <!-- bootstrap -->
     <script src="Scripts/bootstrap.min.js"></script>
+
     <!-- nice scroll -->
     <script src="Scripts/jquery.scrollTo.min.js"></script>
     <script src="Scripts/jquery.nicescroll.js" type="text/javascript"></script>
-    <%--<script src="https://nicescroll.areaaperta.com/wp-content/plugins/jnicescroll/js/jquery.nicescroll.min.js"></script>
+    <%--<script src="https://nicescroll.areaaperta.com/wp-content/plugins/jnicescroll/js/jquery.nicescroll.min.js"></script>--%>    
 	<script>
-		$(document).ready(function(){
-		    $(".do-nicescrol").niceScroll();
-		    $(selector).getNiceScroll().hide();
-		});
-	</script>--%>
+		//$(document).ready(function(){
+		//    $(".do-nicescrol").niceScroll();
+		//    $(selector).getNiceScroll().hide();
+		//});		
+	</script>
+    <%--<script type="text/javascript">
+          $(document).ready(
+            $("html").niceScroll());
+ 
+    </script>--%>
        <!-- charts scripts -->
     <script src="Scripts/jquery.knob.js"></script>
     <script src="Scripts/jquery.sparkline.js" type="text/javascript"></script>
     <script src="Scripts/jquery.easy-pie-chart.js"></script>
     <script src="Scripts/owl.carousel.js" ></script>
     <!-- jQuery full calendar -->
-    <<script src="Scripts/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+    <script src="Scripts/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
 	<script src="Scripts/fullcalendar.js"></script>
         <!-- custom select -->
     <script src="Scripts/jquery.customSelect.min.js" ></script>

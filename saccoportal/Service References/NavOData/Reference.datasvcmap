@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="70365e8c-ec8e-4f06-84b4-8cd87faa93c5" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2cb26478-6c83-422c-a881-c78c0121e489" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
   <MetadataSources>
     <MetadataSource Address="http://mutinda-19:7048/DynamicsNAV110/OData/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="52206311-b499-44a5-b3c5-0404f53ff73f" SourceId="1" SourceUrl="http://mutinda-19:7048/DynamicsNAV110/OData/" />
+    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="7d08dff1-1847-487d-9158-7433a229e53a" SourceId="1" SourceUrl="http://mutinda-19:7048/DynamicsNAV110/OData/" />
   </Metadata>
   <Extensions />
   <Parameters>

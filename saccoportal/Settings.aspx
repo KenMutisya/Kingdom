@@ -11,7 +11,7 @@
                   
                                  <table style="width: 100%;">
                                 <tr>
-                                    <td><small>Old Password</small></td>
+                                    <td><small>Current Password</small></td>
                                     <td><asp:TextBox ID="txtPasswordOld" runat="server" CssClass="form-control" placeholder="Enter Old Password" TextMode="Password"></asp:TextBox></td>
                                 </tr>
                                 

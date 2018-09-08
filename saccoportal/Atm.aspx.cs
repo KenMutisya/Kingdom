@@ -19,7 +19,7 @@ namespace SACCOPortal
         {
             if (Session["username"] == null)
             {
-                Response.Redirect("~/Default");
+                Response.Redirect("~/Default.aspx");
 
             }
 
@@ -28,7 +28,7 @@ namespace SACCOPortal
             {
                 LoadFosaAccounts(nav,ddFosaAccount);
                 LoadFosaAccounts(nav,ddFosaAccount_);
-                ATMstatusData(nav);
+                AtMstatusData(nav);
                 
             }
 
@@ -61,7 +61,7 @@ namespace SACCOPortal
             }
         }
 
-        protected void ATMstatusData(NAV navData)
+        protected void AtMstatusData(NAV navData)
         {
             //var objAtm = navData.UpdateAtmStatus.Where(r => r.Account_No == ddFosaAccount_.SelectedValue).ToList();
             //AtmStatus.DataSource = objAtm;
@@ -74,8 +74,7 @@ namespace SACCOPortal
 
         protected void LoadFosaAccounts(NAV navData,DropDownList ddList)
         {
-            var objFosaAccount =
-                navData.FosaAccounts.Where(r => r.BOSA_Account_No == Session["username"].ToString() && r.Account_Type=="SAVINGS").ToList();
+            var objFosaAccount =navData.FosaAccounts.Where(r => r.BOSA_Account_No == Session["username"].ToString()).ToList();
             ddList.DataSource = objFosaAccount;
             ddList.DataTextField = "No";
             ddList.DataValueField = "No";

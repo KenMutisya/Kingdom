@@ -26,24 +26,59 @@ namespace SACCOPortal
             }
             if (!IsPostBack)
             {
-                LoadApprovedLoans(nav);
+                LoansMultiView.SetActiveView(loansView);
+                LoadLoans(nav);
+                LoadLoansIssued(nav);
             }
 
         }
 
-        protected void LoadApprovedLoans(NAV navData)
+        protected void LoadLoans(NAV navData)
         {
-            var objRecords = navData.LoansR.Where(r=>r.Client_Code==Session["username"].ToString()).ToList();
+            var objRecords = navData.LoansR.Where(r => r.Client_Code == Session["username"].ToString() && r.Posted == false).ToList();
+            
             gvLoans.DataSource = objRecords;
             gvLoans.AutoGenerateColumns = false;
             gvLoans.DataBind();
+        }
 
+        protected void LoadLoansIssued(NAV navData)
+        {
+            var loansIs = navData.LoansR.Where(r => r.Client_Code == Session["username"].ToString() && r.Posted == true && r.Outstanding_Balance >0).ToList();
+
+            gvLoansIssued.DataSource = loansIs;
+            gvLoansIssued.AutoGenerateColumns = false;
+            gvLoansIssued.DataBind();
 
         }
 
         protected void gvLoans_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Session["Loan_no"] = gvLoans.SelectedRow.Cells[1].Text;
 
+
+            var loanNo = Session["Loan_no"].ToString();
+            LoansMultiView.SetActiveView(gureentedLoans);
+            lblLoanNo.Text = loanNo;
+            ViewGuarantorStatus();
+        }
+
+        protected void gvLoansIssued_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ViewGuarantorStatus()
+        {
+            var chkguarantorship = nav.myGuarantorsRequest.Where(n => n.Loanees_No == Session["username"].ToString() && n.Loan_No== Session["Loan_no"].ToString()).ToList();
+            GridViewMyguaranteedloans.AutoGenerateColumns = false;
+            GridViewMyguaranteedloans.DataSource = chkguarantorship;
+            GridViewMyguaranteedloans.DataBind();
+        }
+
+        protected void btnOkay_Click(object sender, EventArgs e)
+        {
+            LoansMultiView.SetActiveView(loansView);
         }
     }
 }

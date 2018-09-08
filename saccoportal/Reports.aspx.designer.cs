@@ -58,6 +58,51 @@ namespace SACCOPortal {
         protected global::System.Web.UI.WebControls.Button btnviewmbstat;
         
         /// <summary>
+        /// btnviewguarantorsrep control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnviewguarantorsrep;
+        
+        /// <summary>
+        /// btnviewloanguarantedrep control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnviewloanguarantedrep;
+        
+        /// <summary>
+        /// btnviewdepostat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnviewdepostat;
+        
+        /// <summary>
+        /// btnviewloanstat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnviewloanstat;
+        
+        /// <summary>
+        /// btnviewfosastat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnviewfosastat;
+        
+        /// <summary>
         /// pdfReport control.
         /// </summary>
         /// <remarks>

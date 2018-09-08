@@ -15,14 +15,14 @@
                  EmptyDataText="No Accounts Found!" OnSelectedIndexChanged="tblFosaAccs_SelectedIndexChanged">
                 <Columns>
                     <asp:BoundField DataField="No" HeaderText="FOSA No:" />
-                    <asp:BoundField DataField="Account_Type" HeaderText="Account Type:" />
                     <asp:BoundField DataField="Name" HeaderText="Account Name:" />
-                    <asp:TemplateField HeaderText="Actions">
+                    <asp:BoundField DataField="Account_Type" HeaderText="Account Type:" />                    
+                    <%--<asp:TemplateField HeaderText="Actions">
                         <ItemTemplate>
                            <asp:LinkButton runat="server" ID="lnkViewStats" OnClick="lnkViewStats_Click" >View
                            </asp:LinkButton>
                         </ItemTemplate>                        
-                    </asp:TemplateField>
+                    </asp:TemplateField>--%>
                 </Columns>
                 <SelectedRowStyle BackColor="#259EFF" BorderColor="#FF9966" /> 
                  </asp:GridView>

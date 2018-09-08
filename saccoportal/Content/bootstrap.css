@@ -676,23 +676,23 @@ blockquote small:before {
   content: '\2014 \00A0';
 }
 
-blockquote.pull-right {
+blockquote.pull-Right {
   padding-right: 15px;
   padding-left: 0;
   border-right: 5px solid #eeeeee;
   border-left: 0;
 }
 
-blockquote.pull-right p,
-blockquote.pull-right small {
+blockquote.pull-Right p,
+blockquote.pull-Right small {
   text-align: right;
 }
 
-blockquote.pull-right small:before {
+blockquote.pull-Right small:before {
   content: '';
 }
 
-blockquote.pull-right small:after {
+blockquote.pull-Right small:after {
   content: '\00A0 \2014';
 }
 
@@ -3253,7 +3253,7 @@ input[type="button"].btn-block {
   background-clip: padding-box;
 }
 
-.dropdown-menu.pull-right {
+.dropdown-menu.pull-Right {
   right: 0;
   left: auto;
 }
@@ -3331,7 +3331,7 @@ input[type="button"].btn-block {
   z-index: 990;
 }
 
-.pull-right > .dropdown-menu {
+.pull-Right > .dropdown-menu {
   right: 0;
   left: auto;
 }
@@ -4360,8 +4360,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
   border-bottom-left-radius: 0;
 }
 
-.navbar-nav.pull-right > li > .dropdown-menu,
-.navbar-nav > li > .dropdown-menu.pull-right {
+.navbar-nav.pull-Right > li > .dropdown-menu,
+.navbar-nav > li > .dropdown-menu.pull-Right {
   right: 0;
   left: auto;
 }
@@ -5239,7 +5239,7 @@ a.thumbnail:focus {
   margin-right: 10px;
 }
 
-.media > .pull-right {
+.media > .pull-Right {
   margin-left: 10px;
 }
 
@@ -6213,7 +6213,7 @@ body.modal-open,
   clear: both;
 }
 
-.pull-right {
+.pull-Right {
   float: right !important;
 }
 

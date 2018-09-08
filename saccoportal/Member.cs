@@ -69,7 +69,7 @@ public class Member
         string year16 = Convert.ToString(2016).ToString();
         string year17 = Convert.ToString(2017).ToString();
 
-        var fosaloan = nav.LoansR.Where(r=>r.BOSA_No ==user);
+        var fosaloan = nav.LoansR.Where(r=>r.BOSA_No == user);
         foreach (var fsbal in fosaloan) {
           FOSAloan = Convert.ToDecimal(fsbal.Loan_Amount).ToString("n");
             if (FOSAloan.StartsWith("-"))
@@ -87,7 +87,7 @@ public class Member
             PersonalNumber = objMember.Personal_No;
             Accountcategory = objMember.Account_Category;
             Idnumber = objMember.ID_No;
-            MobileNo = objMember.Phone_No;
+            MobileNo = objMember.Mobile_Phone_No;
             BankAccount = objMember.Bank_Account_No;         
             FosaACNO = objMember.FOSA_Account_No;
             CurrrentLoan = Convert.ToDecimal(objMember.Current_Loan).ToString("N");
@@ -139,8 +139,6 @@ public class Member
             totaldeposits15 = (Convert.ToDecimal(WSConfig.ObjNav.FnTotalDepositsGraph(user, year15)));
             totaldeposits16 = (Convert.ToDecimal(WSConfig.ObjNav.FnTotalDepositsGraph(user, year16)));
             totaldeposits17 = (Convert.ToDecimal(WSConfig.ObjNav.FnTotalDepositsGraph(user, year17)));
-
-
         }
 
     }

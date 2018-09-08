@@ -3402,6 +3402,46 @@
         <Property Name="enabled" Type="Edm.Boolean" />
         <Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed" />
       </EntityType>
+      <EntityType Name="accountTypes">
+        <Key>
+          <PropertyRef Name="Code" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="AccountTypesIbanking">
+        <Key>
+          <PropertyRef Name="Code" />
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="Bank_Details">
+        <Key>
+          <PropertyRef Name="No" />
+        </Key>
+        <Property Name="No" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Search_Name" Type="Edm.String" />
+        <Property Name="Name_2" Type="Edm.String" />
+        <Property Name="Address" Type="Edm.String" />
+        <Property Name="Address_2" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="Contact" Type="Edm.String" />
+        <Property Name="Phone_No" Type="Edm.String" />
+        <Property Name="Telex_No" Type="Edm.String" />
+        <Property Name="Bank_Account_No" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="Feedback">
+        <Key>
+          <PropertyRef Name="No" />
+        </Key>
+        <Property Name="No" Type="Edm.String" Nullable="false" />
+        <Property Name="Member_No" Type="Edm.String" />
+        <Property Name="Action_Date" Type="Edm.DateTime" />
+        <Property Name="FeedBack_Type" Type="Edm.String" />
+        <Property Name="Message" Type="Edm.String" />
+      </EntityType>
       <EntityType Name="FosaAccounts">
         <Key>
           <PropertyRef Name="No" />
@@ -3562,6 +3602,82 @@
         <Property Name="Gen_Prod_Posting_Group" Type="Edm.String" />
         <Property Name="AuxiliaryIndex1" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <EntityType Name="JointAccountLogin">
+        <Key>
+          <PropertyRef Name="Account_No" />
+          <PropertyRef Name="Names" />
+        </Key>
+        <Property Name="Account_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Names" Type="Edm.String" Nullable="false" />
+        <Property Name="Date_Of_Birth" Type="Edm.DateTime" />
+        <Property Name="ID_No" Type="Edm.String" />
+        <Property Name="Signatory" Type="Edm.Boolean" />
+        <Property Name="Must_Sign" Type="Edm.Boolean" />
+        <Property Name="BOSA_No" Type="Edm.String" />
+        <Property Name="Email_Address" Type="Edm.String" />
+        <Property Name="Mobile_Phone_No" Type="Edm.String" />
+        <Property Name="Password" Type="Edm.String" />
+        <Property Name="Password_Reset_Date" Type="Edm.DateTime" />
+      </EntityType>
+      <EntityType Name="JointLogin">
+        <Key>
+          <PropertyRef Name="Account_No" />
+          <PropertyRef Name="Names" />
+        </Key>
+        <Property Name="Account_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Names" Type="Edm.String" Nullable="false" />
+        <Property Name="ID_No" Type="Edm.String" />
+        <Property Name="Signatory" Type="Edm.Boolean" />
+        <Property Name="Must_Sign" Type="Edm.Boolean" />
+        <Property Name="Must_be_Present" Type="Edm.Boolean" />
+        <Property Name="BOSA_No" Type="Edm.String" />
+        <Property Name="Email_Address" Type="Edm.String" />
+        <Property Name="Mobile_No" Type="Edm.String" />
+        <Property Name="Limit_Amount" Type="Edm.Decimal" />
+        <Property Name="Password" Type="Edm.String" />
+        <Property Name="Password_Reset_Date" Type="Edm.DateTime" />
+      </EntityType>
+      <EntityType Name="JointMemberList">
+        <Key>
+          <PropertyRef Name="No" />
+        </Key>
+        <Property Name="No" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Phone_No" Type="Edm.String" />
+        <Property Name="Our_Account_No" Type="Edm.String" />
+        <Property Name="ID_No" Type="Edm.String" />
+        <Property Name="E_Mail" Type="Edm.String" />
+        <Property Name="Current_Shares" Type="Edm.Decimal" />
+        <Property Name="Outstanding_Balance" Type="Edm.Decimal" />
+        <Property Name="Account_Category" Type="Edm.String" />
+        <Property Name="Personal_No" Type="Edm.String" />
+        <Property Name="BOSA_Account_No" Type="Edm.String" />
+        <Property Name="Current_Account_Balance" Type="Edm.Decimal" />
+        <Property Name="Outstanding_Interest" Type="Edm.Decimal" />
+        <Property Name="Account_Book_Balance" Type="Edm.Decimal" />
+      </EntityType>
+      <EntityType Name="JointSignatoryApprovals">
+        <Key>
+          <PropertyRef Name="AuxiliaryIndex1" />
+          <PropertyRef Name="AuxiliaryIndex2" />
+        </Key>
+        <Property Name="Signatory_Name" Type="Edm.String" />
+        <Property Name="Mobile_No" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" />
+        <Property Name="Transaction_No" Type="Edm.String" />
+        <Property Name="Token" Type="Edm.String" />
+        <Property Name="Transaction_Type" Type="Edm.String" />
+        <Property Name="ID_Number" Type="Edm.String" />
+        <Property Name="Destination_Account" Type="Edm.String" />
+        <Property Name="Transaction_Amount" Type="Edm.Decimal" />
+        <Property Name="Transaction_Date" Type="Edm.DateTime" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Source_Account" Type="Edm.String" />
+        <Property Name="Source_Account_Type" Type="Edm.String" />
+        <Property Name="Destination_Account_Name" Type="Edm.String" />
+        <Property Name="AuxiliaryIndex1" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AuxiliaryIndex2" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="KeensDetails">
         <Key>
           <PropertyRef Name="Account_No" />
@@ -3582,6 +3698,30 @@
         <Property Name="AuxiliaryIndex1" Type="Edm.Int32" Nullable="false" />
         <Property Name="AuxiliaryIndex2" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <EntityType Name="Kinrelationship">
+        <Key>
+          <PropertyRef Name="code" />
+        </Key>
+        <Property Name="code" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="Loan_lists">
+        <Key>
+          <PropertyRef Name="Loan_No" />
+        </Key>
+        <Property Name="Loan_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Application_Date" Type="Edm.DateTime" />
+        <Property Name="Loan_Product_Type" Type="Edm.String" />
+        <Property Name="Client_Code" Type="Edm.String" />
+        <Property Name="Approved_Amount" Type="Edm.Decimal" />
+        <Property Name="BOSA_No" Type="Edm.String" />
+        <Property Name="Loan_Status" Type="Edm.String" />
+        <Property Name="Repayment_Method" Type="Edm.String" />
+        <Property Name="Requested_Amount" Type="Edm.Decimal" />
+        <Property Name="Source" Type="Edm.String" />
+        <Property Name="Outstanding_Balance" Type="Edm.Decimal" />
+        <Property Name="Loan_Amount" Type="Edm.Decimal" />
+      </EntityType>
       <EntityType Name="LoansProductSetup">
         <Key>
           <PropertyRef Name="Code" />
@@ -3593,7 +3733,6 @@
         <Property Name="Interest_rate" Type="Edm.Decimal" />
         <Property Name="Max_Loan_Amount" Type="Edm.Decimal" />
         <Property Name="Repayment_Method" Type="Edm.String" />
-        <Property Name="Recovery_Priority" Type="Edm.Int32" />
       </EntityType>
       <EntityType Name="LoansPurpose">
         <Key>
@@ -3625,6 +3764,8 @@
         <Property Name="Client_Code" Type="Edm.String" />
         <Property Name="BOSA_No" Type="Edm.String" />
         <Property Name="Source" Type="Edm.String" />
+        <Property Name="Posted" Type="Edm.Boolean" />
+        <Property Name="Account_No" Type="Edm.String" />
         <Property Name="Outstanding_Balance" Type="Edm.Decimal" />
         <Property Name="Loan_Amount" Type="Edm.Decimal" />
       </EntityType>
@@ -3636,13 +3777,13 @@
         <Property Name="Name" Type="Edm.String" />
         <Property Name="Address" Type="Edm.String" />
         <Property Name="Phone_No" Type="Edm.String" />
+        <Property Name="Mobile_Phone_No" Type="Edm.String" />
         <Property Name="Personal_No" Type="Edm.String" />
         <Property Name="Account_Category" Type="Edm.String" />
         <Property Name="E_Mail_Personal" Type="Edm.String" />
         <Property Name="ID_No" Type="Edm.String" />
         <Property Name="Bank_Account_No" Type="Edm.String" />
         <Property Name="E_Mail" Type="Edm.String" />
-        <Property Name="Group_Account_No" Type="Edm.String" />
         <Property Name="Old_Account_No" Type="Edm.String" />
         <Property Name="FOSA_Account_No" Type="Edm.String" />
         <Property Name="Total_Repayments" Type="Edm.Decimal" />
@@ -3650,6 +3791,8 @@
         <Property Name="Password" Type="Edm.String" />
         <Property Name="BOSA_Account_No" Type="Edm.String" />
         <Property Name="Monthly_Contribution" Type="Edm.Decimal" />
+        <Property Name="Member_Risk_Level" Type="Edm.String" />
+        <Property Name="Password_Reset_Date" Type="Edm.DateTime" />
         <Property Name="Total_Loans_Outstanding" Type="Edm.Decimal" />
         <Property Name="Shares_Retained" Type="Edm.Decimal" />
         <Property Name="Current_Shares" Type="Edm.Decimal" />
@@ -3661,13 +3804,31 @@
         <Property Name="Current_Savings" Type="Edm.Decimal" />
         <Property Name="Accrued_Interest" Type="Edm.Decimal" />
       </EntityType>
-      <EntityType Name="myCountyIs">
+      <EntityType Name="Ministatement">
         <Key>
           <PropertyRef Name="AuxiliaryIndex1" />
+          <PropertyRef Name="Entry_No" />
         </Key>
+        <Property Name="Debit_Amount" Type="Edm.Decimal" />
+        <Property Name="Credit_Amount" Type="Edm.Decimal" />
+        <Property Name="Amount" Type="Edm.Decimal" />
+        <Property Name="Vendor_No" Type="Edm.String" />
+        <Property Name="Vendor_Ledger_Entry_No" Type="Edm.Int32" />
+        <Property Name="Posting_Date" Type="Edm.DateTime" />
+        <Property Name="Document_No" Type="Edm.String" />
+        <Property Name="Entry_No" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="External_Document_No" Type="Edm.String" />
+        <Property Name="AuxiliaryIndex1" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="myCountyIs">
+        <Key>
+          <PropertyRef Name="No" />
+        </Key>
+        <Property Name="No" Type="Edm.String" Nullable="false" />
         <Property Name="County_Code" Type="Edm.String" />
         <Property Name="County_Name" Type="Edm.String" />
-        <Property Name="AuxiliaryIndex1" Type="Edm.String" Nullable="false" />
+        <Property Name="No_Series" Type="Edm.String" />
       </EntityType>
       <EntityType Name="myGuarantors">
         <Key>
@@ -3682,6 +3843,31 @@
         <Property Name="Loanees_No" Type="Edm.String" />
         <Property Name="AuxiliaryIndex1" Type="Edm.String" Nullable="false" />
         <Property Name="AuxiliaryIndex2" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="myGuarantorsRequest">
+        <Key>
+          <PropertyRef Name="AuxiliaryIndex1" />
+          <PropertyRef Name="AuxiliaryIndex2" />
+          <PropertyRef Name="AuxiliaryIndex3" />
+          <PropertyRef Name="AuxiliaryIndex4" />
+          <PropertyRef Name="Loan_No" />
+          <PropertyRef Name="Member_No" />
+        </Key>
+        <Property Name="Loan_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Amont_Guaranteed" Type="Edm.Decimal" />
+        <Property Name="Acceptance_Status" Type="Edm.String" />
+        <Property Name="Member_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Loanees_Name" Type="Edm.String" />
+        <Property Name="Loan_Application_Date" Type="Edm.DateTime" />
+        <Property Name="Loanees_No" Type="Edm.String" />
+        <Property Name="Requested_Amount" Type="Edm.Decimal" />
+        <Property Name="Loan_Product_Type_Name" Type="Edm.String" />
+        <Property Name="LoanPurpose" Type="Edm.String" />
+        <Property Name="AuxiliaryIndex1" Type="Edm.String" Nullable="false" />
+        <Property Name="AuxiliaryIndex2" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AuxiliaryIndex3" Type="Edm.String" Nullable="false" />
+        <Property Name="AuxiliaryIndex4" Type="Edm.String" Nullable="false" />
       </EntityType>
       <EntityType Name="SalesDashboard">
         <Key>
@@ -3778,7 +3964,7 @@
         <Property Name="Frequency" Type="Edm.String" />
         <Property Name="Status" Type="Edm.String" />
         <Property Name="Amount" Type="Edm.Decimal" />
-        <Property Name="Remarks" Type="Edm.String" />
+        <Property Name="Standing_Order_Description" Type="Edm.String" />
       </EntityType>
       <EntityType Name="TopCustomerOverview">
         <Key>
@@ -3800,11 +3986,28 @@
         <Property Name="AuxiliaryIndex1" Type="Edm.String" Nullable="false" />
         <Property Name="AuxiliaryIndex2" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <EntityType Name="TransferLogs">
+        <Key>
+          <PropertyRef Name="Document_No" />
+        </Key>
+        <Property Name="Document_No" Type="Edm.String" Nullable="false" />
+        <Property Name="Source_Account" Type="Edm.String" />
+        <Property Name="Destination_Account" Type="Edm.String" />
+        <Property Name="Transaction_Amount" Type="Edm.Decimal" />
+        <Property Name="Transaction_Date" Type="Edm.DateTime" />
+        <Property Name="Member_No" Type="Edm.String" />
+        <Property Name="No_Series" Type="Edm.String" />
+        <Property Name="External_Transfer" Type="Edm.Boolean" />
+        <Property Name="Transaction_Code" Type="Edm.String" />
+        <Property Name="Recipient_ID_Number" Type="Edm.String" />
+        <Property Name="Transfer_Verified" Type="Edm.Boolean" />
+      </EntityType>
       <EntityType Name="Chart_of_Accounts">
         <Key>
           <PropertyRef Name="No" />
         </Key>
         <Property Name="No" Type="Edm.String" Nullable="false" />
+        <Property Name="Old_No" Type="Edm.String" />
         <Property Name="Name" Type="Edm.String" />
         <Property Name="Income_Balance" Type="Edm.String" />
         <Property Name="Account_Category" Type="Edm.String" />
@@ -3831,6 +4034,7 @@
         <Property Name="Consol_Translation_Method" Type="Edm.String" />
         <Property Name="Default_IC_Partner_G_L_Acc_No" Type="Edm.String" />
         <Property Name="Default_Deferral_Template_Code" Type="Edm.String" />
+        <Property Name="Created_By" Type="Edm.String" />
         <Property Name="Business_Unit_Filter" Type="Edm.String" />
         <Property Name="Global_Dimension_1_Filter" Type="Edm.String" />
         <Property Name="Global_Dimension_2_Filter" Type="Edm.String" />
@@ -4595,6 +4799,39 @@
         <Property Name="Item_Description" Type="Edm.String" />
         <Property Name="AuxiliaryIndex1" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <EntityType Name="VendorLedgerEntries">
+        <Key>
+          <PropertyRef Name="AuxiliaryIndex1" />
+          <PropertyRef Name="Entry_No" />
+        </Key>
+        <Property Name="Entry_No" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Transaction_No" Type="Edm.Int32" />
+        <Property Name="Vendor_No" Type="Edm.String" />
+        <Property Name="Posting_Date" Type="Edm.DateTime" />
+        <Property Name="Due_Date" Type="Edm.DateTime" />
+        <Property Name="Pmt_Discount_Date" Type="Edm.DateTime" />
+        <Property Name="Document_Date" Type="Edm.DateTime" />
+        <Property Name="Document_Type" Type="Edm.String" />
+        <Property Name="Document_No" Type="Edm.String" />
+        <Property Name="Purchaser_Code" Type="Edm.String" />
+        <Property Name="Source_Code" Type="Edm.String" />
+        <Property Name="Reason_Code" Type="Edm.String" />
+        <Property Name="IC_Partner_Code" Type="Edm.String" />
+        <Property Name="Open" Type="Edm.Boolean" />
+        <Property Name="Currency_Code" Type="Edm.String" />
+        <Property Name="Dimension_Set_ID" Type="Edm.Int32" />
+        <Property Name="Amount" Type="Edm.Decimal" />
+        <Property Name="Debit_Amount" Type="Edm.Decimal" />
+        <Property Name="Credit_Amount" Type="Edm.Decimal" />
+        <Property Name="Remaining_Amount" Type="Edm.Decimal" />
+        <Property Name="Amount_LCY" Type="Edm.Decimal" />
+        <Property Name="Debit_Amount_LCY" Type="Edm.Decimal" />
+        <Property Name="Credit_Amount_LCY" Type="Edm.Decimal" />
+        <Property Name="Remaining_Amt_LCY" Type="Edm.Decimal" />
+        <Property Name="Original_Amt_LCY" Type="Edm.Decimal" />
+        <Property Name="Vendor_Name" Type="Edm.String" />
+        <Property Name="AuxiliaryIndex1" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="Company">
         <Key>
           <PropertyRef Name="Name" />
@@ -4633,21 +4870,34 @@
         <NavigationProperty Name="workflowSalesDocumentsworkflowSalesDocumentLines" Relationship="NAV.Company_workflowSalesDocumentsworkflowSalesDocumentLines" ToRole="workflowSalesDocumentsworkflowSalesDocumentLines" FromRole="Company" />
         <NavigationProperty Name="workflowVendors" Relationship="NAV.Company_workflowVendors" ToRole="workflowVendors" FromRole="Company" />
         <NavigationProperty Name="workflowWebhookSubscriptions" Relationship="NAV.Company_workflowWebhookSubscriptions" ToRole="workflowWebhookSubscriptions" FromRole="Company" />
+        <NavigationProperty Name="accountTypes" Relationship="NAV.Company_accountTypes" ToRole="accountTypes" FromRole="Company" />
+        <NavigationProperty Name="AccountTypesIbanking" Relationship="NAV.Company_AccountTypesIbanking" ToRole="AccountTypesIbanking" FromRole="Company" />
+        <NavigationProperty Name="Bank_Details" Relationship="NAV.Company_Bank_Details" ToRole="Bank_Details" FromRole="Company" />
+        <NavigationProperty Name="Feedback" Relationship="NAV.Company_Feedback" ToRole="Feedback" FromRole="Company" />
         <NavigationProperty Name="FosaAccounts" Relationship="NAV.Company_FosaAccounts" ToRole="FosaAccounts" FromRole="Company" />
         <NavigationProperty Name="ItemSalesAndProfit" Relationship="NAV.Company_ItemSalesAndProfit" ToRole="ItemSalesAndProfit" FromRole="Company" />
         <NavigationProperty Name="ItemSalesByCustomer" Relationship="NAV.Company_ItemSalesByCustomer" ToRole="ItemSalesByCustomer" FromRole="Company" />
+        <NavigationProperty Name="JointAccountLogin" Relationship="NAV.Company_JointAccountLogin" ToRole="JointAccountLogin" FromRole="Company" />
+        <NavigationProperty Name="JointLogin" Relationship="NAV.Company_JointLogin" ToRole="JointLogin" FromRole="Company" />
+        <NavigationProperty Name="JointMemberList" Relationship="NAV.Company_JointMemberList" ToRole="JointMemberList" FromRole="Company" />
+        <NavigationProperty Name="JointSignatoryApprovals" Relationship="NAV.Company_JointSignatoryApprovals" ToRole="JointSignatoryApprovals" FromRole="Company" />
         <NavigationProperty Name="KeensDetails" Relationship="NAV.Company_KeensDetails" ToRole="KeensDetails" FromRole="Company" />
+        <NavigationProperty Name="Kinrelationship" Relationship="NAV.Company_Kinrelationship" ToRole="Kinrelationship" FromRole="Company" />
+        <NavigationProperty Name="Loan_lists" Relationship="NAV.Company_Loan_lists" ToRole="Loan_lists" FromRole="Company" />
         <NavigationProperty Name="LoansProductSetup" Relationship="NAV.Company_LoansProductSetup" ToRole="LoansProductSetup" FromRole="Company" />
         <NavigationProperty Name="LoansPurpose" Relationship="NAV.Company_LoansPurpose" ToRole="LoansPurpose" FromRole="Company" />
         <NavigationProperty Name="LoansR" Relationship="NAV.Company_LoansR" ToRole="LoansR" FromRole="Company" />
         <NavigationProperty Name="MemberList" Relationship="NAV.Company_MemberList" ToRole="MemberList" FromRole="Company" />
+        <NavigationProperty Name="Ministatement" Relationship="NAV.Company_Ministatement" ToRole="Ministatement" FromRole="Company" />
         <NavigationProperty Name="myCountyIs" Relationship="NAV.Company_myCountyIs" ToRole="myCountyIs" FromRole="Company" />
         <NavigationProperty Name="myGuarantors" Relationship="NAV.Company_myGuarantors" ToRole="myGuarantors" FromRole="Company" />
+        <NavigationProperty Name="myGuarantorsRequest" Relationship="NAV.Company_myGuarantorsRequest" ToRole="myGuarantorsRequest" FromRole="Company" />
         <NavigationProperty Name="SalesDashboard" Relationship="NAV.Company_SalesDashboard" ToRole="SalesDashboard" FromRole="Company" />
         <NavigationProperty Name="SalesOpportunities" Relationship="NAV.Company_SalesOpportunities" ToRole="SalesOpportunities" FromRole="Company" />
         <NavigationProperty Name="SalesOrdersBySalesPerson" Relationship="NAV.Company_SalesOrdersBySalesPerson" ToRole="SalesOrdersBySalesPerson" FromRole="Company" />
         <NavigationProperty Name="StandingOrders" Relationship="NAV.Company_StandingOrders" ToRole="StandingOrders" FromRole="Company" />
         <NavigationProperty Name="TopCustomerOverview" Relationship="NAV.Company_TopCustomerOverview" ToRole="TopCustomerOverview" FromRole="Company" />
+        <NavigationProperty Name="TransferLogs" Relationship="NAV.Company_TransferLogs" ToRole="TransferLogs" FromRole="Company" />
         <NavigationProperty Name="Chart_of_Accounts" Relationship="NAV.Company_Chart_of_Accounts" ToRole="Chart_of_Accounts" FromRole="Company" />
         <NavigationProperty Name="Job_List" Relationship="NAV.Company_Job_List" ToRole="Job_List" FromRole="Company" />
         <NavigationProperty Name="Job_Planning_Lines" Relationship="NAV.Company_Job_Planning_Lines" ToRole="Job_Planning_Lines" FromRole="Company" />
@@ -4687,6 +4937,7 @@
         <NavigationProperty Name="Power_BI_Vendor_List" Relationship="NAV.Company_Power_BI_Vendor_List" ToRole="Power_BI_Vendor_List" FromRole="Company" />
         <NavigationProperty Name="Res_LedgerEntries" Relationship="NAV.Company_Res_LedgerEntries" ToRole="Res_LedgerEntries" FromRole="Company" />
         <NavigationProperty Name="ValueEntries" Relationship="NAV.Company_ValueEntries" ToRole="ValueEntries" FromRole="Company" />
+        <NavigationProperty Name="VendorLedgerEntries" Relationship="NAV.Company_VendorLedgerEntries" ToRole="VendorLedgerEntries" FromRole="Company" />
       </EntityType>
       <Association Name="purchaseDocumentLines_jobNumber_Link">
         <End Type="NAV.purchaseDocumentLines" Role="purchaseDocumentLines" Multiplicity="*" />
@@ -4928,6 +5179,22 @@
         <End Type="NAV.workflowWebhookSubscriptions" Role="workflowWebhookSubscriptions" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_accountTypes">
+        <End Type="NAV.accountTypes" Role="accountTypes" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_AccountTypesIbanking">
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+        <End Type="NAV.AccountTypesIbanking" Role="AccountTypesIbanking" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_Bank_Details">
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+        <End Type="NAV.Bank_Details" Role="Bank_Details" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_Feedback">
+        <End Type="NAV.Feedback" Role="Feedback" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_FosaAccounts">
         <End Type="NAV.FosaAccounts" Role="FosaAccounts" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
@@ -4940,8 +5207,32 @@
         <End Type="NAV.ItemSalesByCustomer" Role="ItemSalesByCustomer" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_JointAccountLogin">
+        <End Type="NAV.JointAccountLogin" Role="JointAccountLogin" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_JointLogin">
+        <End Type="NAV.JointLogin" Role="JointLogin" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_JointMemberList">
+        <End Type="NAV.JointMemberList" Role="JointMemberList" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_JointSignatoryApprovals">
+        <End Type="NAV.JointSignatoryApprovals" Role="JointSignatoryApprovals" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_KeensDetails">
         <End Type="NAV.KeensDetails" Role="KeensDetails" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_Kinrelationship">
+        <End Type="NAV.Kinrelationship" Role="Kinrelationship" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_Loan_lists">
+        <End Type="NAV.Loan_lists" Role="Loan_lists" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_LoansProductSetup">
@@ -4960,12 +5251,20 @@
         <End Type="NAV.MemberList" Role="MemberList" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_Ministatement">
+        <End Type="NAV.Ministatement" Role="Ministatement" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <Association Name="Company_myCountyIs">
         <End Type="NAV.myCountyIs" Role="myCountyIs" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_myGuarantors">
         <End Type="NAV.myGuarantors" Role="myGuarantors" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_myGuarantorsRequest">
+        <End Type="NAV.myGuarantorsRequest" Role="myGuarantorsRequest" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_SalesDashboard">
@@ -4986,6 +5285,10 @@
       </Association>
       <Association Name="Company_TopCustomerOverview">
         <End Type="NAV.TopCustomerOverview" Role="TopCustomerOverview" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
+      <Association Name="Company_TransferLogs">
+        <End Type="NAV.TransferLogs" Role="TransferLogs" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
       <Association Name="Company_Chart_of_Accounts">
@@ -5144,6 +5447,10 @@
         <End Type="NAV.ValueEntries" Role="ValueEntries" Multiplicity="*" />
         <End Type="NAV.Company" Role="Company" Multiplicity="*" />
       </Association>
+      <Association Name="Company_VendorLedgerEntries">
+        <End Type="NAV.VendorLedgerEntries" Role="VendorLedgerEntries" Multiplicity="*" />
+        <End Type="NAV.Company" Role="Company" Multiplicity="*" />
+      </Association>
       <EntityContainer Name="NAV" m:IsDefaultEntityContainer="true">
         <EntitySet Name="AccountantPortalActivityCues" EntityType="NAV.AccountantPortalActivityCues" />
         <EntitySet Name="AccountantPortalFinanceCues" EntityType="NAV.AccountantPortalFinanceCues" />
@@ -5178,21 +5485,34 @@
         <EntitySet Name="workflowSalesDocumentsworkflowSalesDocumentLines" EntityType="NAV.workflowSalesDocumentsworkflowSalesDocumentLines" />
         <EntitySet Name="workflowVendors" EntityType="NAV.workflowVendors" />
         <EntitySet Name="workflowWebhookSubscriptions" EntityType="NAV.workflowWebhookSubscriptions" />
+        <EntitySet Name="accountTypes" EntityType="NAV.accountTypes" />
+        <EntitySet Name="AccountTypesIbanking" EntityType="NAV.AccountTypesIbanking" />
+        <EntitySet Name="Bank_Details" EntityType="NAV.Bank_Details" />
+        <EntitySet Name="Feedback" EntityType="NAV.Feedback" />
         <EntitySet Name="FosaAccounts" EntityType="NAV.FosaAccounts" />
         <EntitySet Name="ItemSalesAndProfit" EntityType="NAV.ItemSalesAndProfit" />
         <EntitySet Name="ItemSalesByCustomer" EntityType="NAV.ItemSalesByCustomer" />
+        <EntitySet Name="JointAccountLogin" EntityType="NAV.JointAccountLogin" />
+        <EntitySet Name="JointLogin" EntityType="NAV.JointLogin" />
+        <EntitySet Name="JointMemberList" EntityType="NAV.JointMemberList" />
+        <EntitySet Name="JointSignatoryApprovals" EntityType="NAV.JointSignatoryApprovals" />
         <EntitySet Name="KeensDetails" EntityType="NAV.KeensDetails" />
+        <EntitySet Name="Kinrelationship" EntityType="NAV.Kinrelationship" />
+        <EntitySet Name="Loan_lists" EntityType="NAV.Loan_lists" />
         <EntitySet Name="LoansProductSetup" EntityType="NAV.LoansProductSetup" />
         <EntitySet Name="LoansPurpose" EntityType="NAV.LoansPurpose" />
         <EntitySet Name="LoansR" EntityType="NAV.LoansR" />
         <EntitySet Name="MemberList" EntityType="NAV.MemberList" />
+        <EntitySet Name="Ministatement" EntityType="NAV.Ministatement" />
         <EntitySet Name="myCountyIs" EntityType="NAV.myCountyIs" />
         <EntitySet Name="myGuarantors" EntityType="NAV.myGuarantors" />
+        <EntitySet Name="myGuarantorsRequest" EntityType="NAV.myGuarantorsRequest" />
         <EntitySet Name="SalesDashboard" EntityType="NAV.SalesDashboard" />
         <EntitySet Name="SalesOpportunities" EntityType="NAV.SalesOpportunities" />
         <EntitySet Name="SalesOrdersBySalesPerson" EntityType="NAV.SalesOrdersBySalesPerson" />
         <EntitySet Name="StandingOrders" EntityType="NAV.StandingOrders" />
         <EntitySet Name="TopCustomerOverview" EntityType="NAV.TopCustomerOverview" />
+        <EntitySet Name="TransferLogs" EntityType="NAV.TransferLogs" />
         <EntitySet Name="Chart_of_Accounts" EntityType="NAV.Chart_of_Accounts" />
         <EntitySet Name="Job_List" EntityType="NAV.Job_List" />
         <EntitySet Name="Job_Planning_Lines" EntityType="NAV.Job_Planning_Lines" />
@@ -5232,6 +5552,7 @@
         <EntitySet Name="Power_BI_Vendor_List" EntityType="NAV.Power_BI_Vendor_List" />
         <EntitySet Name="Res_LedgerEntries" EntityType="NAV.Res_LedgerEntries" />
         <EntitySet Name="ValueEntries" EntityType="NAV.ValueEntries" />
+        <EntitySet Name="VendorLedgerEntries" EntityType="NAV.VendorLedgerEntries" />
         <EntitySet Name="Company" EntityType="NAV.Company" />
         <AssociationSet Name="purchaseDocumentLines_jobNumber_Link_Job_List" Association="NAV.purchaseDocumentLines_jobNumber_Link">
           <End Role="purchaseDocumentLines" EntitySet="purchaseDocumentLines" />
@@ -5473,6 +5794,22 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="workflowWebhookSubscriptions" EntitySet="workflowWebhookSubscriptions" />
         </AssociationSet>
+        <AssociationSet Name="Company_accountTypes_accountTypes" Association="NAV.Company_accountTypes">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="accountTypes" EntitySet="accountTypes" />
+        </AssociationSet>
+        <AssociationSet Name="Company_AccountTypesIbanking_AccountTypesIbanking" Association="NAV.Company_AccountTypesIbanking">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="AccountTypesIbanking" EntitySet="AccountTypesIbanking" />
+        </AssociationSet>
+        <AssociationSet Name="Company_Bank_Details_Bank_Details" Association="NAV.Company_Bank_Details">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="Bank_Details" EntitySet="Bank_Details" />
+        </AssociationSet>
+        <AssociationSet Name="Company_Feedback_Feedback" Association="NAV.Company_Feedback">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="Feedback" EntitySet="Feedback" />
+        </AssociationSet>
         <AssociationSet Name="Company_FosaAccounts_FosaAccounts" Association="NAV.Company_FosaAccounts">
           <End Role="Company" EntitySet="Company" />
           <End Role="FosaAccounts" EntitySet="FosaAccounts" />
@@ -5485,9 +5822,33 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="ItemSalesByCustomer" EntitySet="ItemSalesByCustomer" />
         </AssociationSet>
+        <AssociationSet Name="Company_JointAccountLogin_JointAccountLogin" Association="NAV.Company_JointAccountLogin">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="JointAccountLogin" EntitySet="JointAccountLogin" />
+        </AssociationSet>
+        <AssociationSet Name="Company_JointLogin_JointLogin" Association="NAV.Company_JointLogin">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="JointLogin" EntitySet="JointLogin" />
+        </AssociationSet>
+        <AssociationSet Name="Company_JointMemberList_JointMemberList" Association="NAV.Company_JointMemberList">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="JointMemberList" EntitySet="JointMemberList" />
+        </AssociationSet>
+        <AssociationSet Name="Company_JointSignatoryApprovals_JointSignatoryApprovals" Association="NAV.Company_JointSignatoryApprovals">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="JointSignatoryApprovals" EntitySet="JointSignatoryApprovals" />
+        </AssociationSet>
         <AssociationSet Name="Company_KeensDetails_KeensDetails" Association="NAV.Company_KeensDetails">
           <End Role="Company" EntitySet="Company" />
           <End Role="KeensDetails" EntitySet="KeensDetails" />
+        </AssociationSet>
+        <AssociationSet Name="Company_Kinrelationship_Kinrelationship" Association="NAV.Company_Kinrelationship">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="Kinrelationship" EntitySet="Kinrelationship" />
+        </AssociationSet>
+        <AssociationSet Name="Company_Loan_lists_Loan_lists" Association="NAV.Company_Loan_lists">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="Loan_lists" EntitySet="Loan_lists" />
         </AssociationSet>
         <AssociationSet Name="Company_LoansProductSetup_LoansProductSetup" Association="NAV.Company_LoansProductSetup">
           <End Role="Company" EntitySet="Company" />
@@ -5505,6 +5866,10 @@
           <End Role="Company" EntitySet="Company" />
           <End Role="MemberList" EntitySet="MemberList" />
         </AssociationSet>
+        <AssociationSet Name="Company_Ministatement_Ministatement" Association="NAV.Company_Ministatement">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="Ministatement" EntitySet="Ministatement" />
+        </AssociationSet>
         <AssociationSet Name="Company_myCountyIs_myCountyIs" Association="NAV.Company_myCountyIs">
           <End Role="Company" EntitySet="Company" />
           <End Role="myCountyIs" EntitySet="myCountyIs" />
@@ -5512,6 +5877,10 @@
         <AssociationSet Name="Company_myGuarantors_myGuarantors" Association="NAV.Company_myGuarantors">
           <End Role="Company" EntitySet="Company" />
           <End Role="myGuarantors" EntitySet="myGuarantors" />
+        </AssociationSet>
+        <AssociationSet Name="Company_myGuarantorsRequest_myGuarantorsRequest" Association="NAV.Company_myGuarantorsRequest">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="myGuarantorsRequest" EntitySet="myGuarantorsRequest" />
         </AssociationSet>
         <AssociationSet Name="Company_SalesDashboard_SalesDashboard" Association="NAV.Company_SalesDashboard">
           <End Role="Company" EntitySet="Company" />
@@ -5532,6 +5901,10 @@
         <AssociationSet Name="Company_TopCustomerOverview_TopCustomerOverview" Association="NAV.Company_TopCustomerOverview">
           <End Role="Company" EntitySet="Company" />
           <End Role="TopCustomerOverview" EntitySet="TopCustomerOverview" />
+        </AssociationSet>
+        <AssociationSet Name="Company_TransferLogs_TransferLogs" Association="NAV.Company_TransferLogs">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="TransferLogs" EntitySet="TransferLogs" />
         </AssociationSet>
         <AssociationSet Name="Company_Chart_of_Accounts_Chart_of_Accounts" Association="NAV.Company_Chart_of_Accounts">
           <End Role="Company" EntitySet="Company" />
@@ -5688,6 +6061,10 @@
         <AssociationSet Name="Company_ValueEntries_ValueEntries" Association="NAV.Company_ValueEntries">
           <End Role="Company" EntitySet="Company" />
           <End Role="ValueEntries" EntitySet="ValueEntries" />
+        </AssociationSet>
+        <AssociationSet Name="Company_VendorLedgerEntries_VendorLedgerEntries" Association="NAV.Company_VendorLedgerEntries">
+          <End Role="Company" EntitySet="Company" />
+          <End Role="VendorLedgerEntries" EntitySet="VendorLedgerEntries" />
         </AssociationSet>
       </EntityContainer>
     </Schema>

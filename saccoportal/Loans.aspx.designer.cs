@@ -13,6 +13,24 @@ namespace SACCOPortal {
     public partial class Loans {
         
         /// <summary>
+        /// LoansMultiView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.MultiView LoansMultiView;
+        
+        /// <summary>
+        /// loansView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View loansView;
+        
+        /// <summary>
         /// gvLoans control.
         /// </summary>
         /// <remarks>
@@ -22,12 +40,57 @@ namespace SACCOPortal {
         protected global::System.Web.UI.WebControls.GridView gvLoans;
         
         /// <summary>
-        /// GridView1 control.
+        /// gvLoansIssued control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView gvLoansIssued;
+        
+        /// <summary>
+        /// gureentedLoans control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View gureentedLoans;
+        
+        /// <summary>
+        /// txtF control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtF;
+        
+        /// <summary>
+        /// lblLoanNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLoanNo;
+        
+        /// <summary>
+        /// GridViewMyguaranteedloans control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewMyguaranteedloans;
+        
+        /// <summary>
+        /// btnOkay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOkay;
     }
 }

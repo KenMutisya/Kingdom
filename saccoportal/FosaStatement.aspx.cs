@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using SACCOPortal.NavOData;
 using System.Drawing;
+using System.ServiceModel.Security;
 using SACCOPortal.NAVWS;
 
 namespace SACCOPortal
@@ -47,7 +48,7 @@ namespace SACCOPortal
            
             try
             {
-                var fosaAcs = nav.FosaAccounts.ToList().Where(r => r.BOSA_Account_No==Session["username"].ToString() );
+                var fosaAcs = nav.FosaAccounts.Where(r => r.BOSA_Account_No==Session["username"].ToString() ).ToList();
                 tblFosaAccs.AutoGenerateColumns = false;
                 tblFosaAccs.DataSource = fosaAcs;
                 tblFosaAccs.DataBind();
@@ -56,7 +57,7 @@ namespace SACCOPortal
             }
             catch (Exception exception)
             {
-                //  exception.Data.Clear();// && r.Account_Type=="SAVINGS"
+              exception.Data.Clear();// && r.Account_Type=="SAVINGS"
             }
 
 
@@ -67,6 +68,12 @@ namespace SACCOPortal
         protected void tblFosaAccs_SelectedIndexChanged(object sender, EventArgs e)
         {
             Session["Fosa_no"] = tblFosaAccs.SelectedRow.Cells[1].Text;
+
+                       
+            var fosaNo = Session["Fosa_no"].ToString();
+            FosaMultiview.SetActiveView(viewStatement);
+            lblFosaAc.Text = fosaNo;
+            
         }
 
         protected void btnCal_Click(object sender, EventArgs e)
@@ -79,20 +86,22 @@ namespace SACCOPortal
           //  viewEndDate.Visible = true;
         }
 
-        protected void lnkViewStats_Click(object sender, EventArgs e)
-        {
+        //protected void lnkViewStats_Click(object sender, EventArgs e)
+        //{
 
-            try {
-                var fosaNO = Session["Fosa_no"].ToString();
-                FosaMultiview.SetActiveView(viewStatement);
-                lblFosaAc.Text = fosaNO;
-            }
-            catch (Exception ex) {
-                SACCOFactory.ShowAlert("Nothing selected!");
-                return;
-            }
+        //    try
+        //    {
+        //        var fosaNO = Session["Fosa_no"].ToString();
+        //        FosaMultiview.SetActiveView(viewStatement);
+        //        lblFosaAc.Text = fosaNO;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        SACCOFactory.ShowAlert("Nothing selected!");
+        //        return;
+        //    }
 
-        }
+        //}
 
         protected void viewStartDate_DayRender(object sender, DayRenderEventArgs e)
         {

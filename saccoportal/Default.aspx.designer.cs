@@ -76,13 +76,13 @@ namespace SACCOPortal {
         protected global::System.Web.UI.WebControls.LinkButton forgotPass;
         
         /// <summary>
-        /// lnkBtnSign control.
+        /// lnkbtnCreateAcc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkBtnSign;
+        protected global::System.Web.UI.WebControls.LinkButton lnkbtnCreateAcc;
         
         /// <summary>
         /// cptCaptcha control.
@@ -121,6 +121,15 @@ namespace SACCOPortal {
         protected global::System.Web.UI.WebControls.Button btnLogin;
         
         /// <summary>
+        /// btnFirstLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFirstLogin;
+        
+        /// <summary>
         /// jointLogin control.
         /// </summary>
         /// <remarks>
@@ -130,13 +139,13 @@ namespace SACCOPortal {
         protected global::System.Web.UI.WebControls.View jointLogin;
         
         /// <summary>
-        /// TextMemberno control.
+        /// TextAccountno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextMemberno;
+        protected global::System.Web.UI.WebControls.TextBox TextAccountno;
         
         /// <summary>
         /// TextID control.
@@ -157,22 +166,58 @@ namespace SACCOPortal {
         protected global::System.Web.UI.WebControls.TextBox TextPassword;
         
         /// <summary>
-        /// LinkButton1 control.
+        /// LnkbtnPassJoint control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        protected global::System.Web.UI.WebControls.LinkButton LnkbtnPassJoint;
         
         /// <summary>
-        /// Button1 control.
+        /// CaptchaControl1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::MSCaptcha.CaptchaControl CaptchaControl1;
+        
+        /// <summary>
+        /// txtCatchaJ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCatchaJ;
+        
+        /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        
+        /// <summary>
+        /// btnJlogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnJlogin;
+        
+        /// <summary>
+        /// btnFirstJlogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFirstJlogin;
         
         /// <summary>
         /// LoginTabs control.
@@ -220,6 +265,15 @@ namespace SACCOPortal {
         protected global::System.Web.UI.WebControls.TextBox idNo;
         
         /// <summary>
+        /// btnSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        
+        /// <summary>
         /// btnBack control.
         /// </summary>
         /// <remarks>
@@ -229,12 +283,48 @@ namespace SACCOPortal {
         protected global::System.Web.UI.WebControls.Button btnBack;
         
         /// <summary>
-        /// calculations control.
+        /// JointResetView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl calculations;
+        protected global::System.Web.UI.WebControls.View JointResetView;
+        
+        /// <summary>
+        /// txtAccountno control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAccountno;
+        
+        /// <summary>
+        /// txtidNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtidNo;
+        
+        /// <summary>
+        /// btnResetJpass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnResetJpass;
+        
+        /// <summary>
+        /// btnbackJointL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnbackJointL;
     }
 }

@@ -1,0 +1,245 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Registration.master.cs" Inherits="SACCOPortal.Registration" %>
+<!DOCTYPE html>
+
+    <html lang="en">
+
+    <head runat="server">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            <%: Page.Title %> - Kingdom Internet Banking</title>
+
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+        <link href="~/Content/elegant-icons-style.css" rel="stylesheet" />
+        <link href="~/Content/font-awesome.css" rel="stylesheet" />
+        <%--<link href="~/Content/style.css" rel="stylesheet" />--%>
+        <link href="~/Content/line-icons.css" rel="stylesheet" />
+        <%--<link href="~/Content/style-responsive.css" rel="stylesheet" />--%>
+        <link href="Content/HomepageCss/main.css" rel="stylesheet" />
+        <link href="Content/HomepageCss/template.css" rel="stylesheet" />
+        <link href="Content/HomepageCss/system.css" rel="stylesheet" />
+        <link href="Content/HomepageCss/general.css" rel="stylesheet" />
+         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <style type="text/css">
+            .auto-style1 {
+                height: 15px;
+                width: 19px;
+            }
+            body, html {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-color: rgb(190,32,46);
+    /*background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+}
+
+.card-container.card {
+    max-width: 400px;
+    padding: 40px 40px;
+}
+
+.btn {
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/*
+ * Card component
+ */
+.card {
+    background-color: #f7f7f7;
+    /* just in case there no content*/
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+/*
+ * Form styles
+ */
+.profile-name-card {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}
+
+.reauth-email {
+    display: block;
+    color: #404040;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin #inputEmail,
+.form-signin #inputPassword {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+}
+
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text],
+.form-signin button {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+     border-radius: 0px;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+.btn.btn-signin {
+    /*background-color: #4d90fe; */
+    background-color: #bd202f;
+    /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 0px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+.btn.btn-signin:hover,
+.btn.btn-signin:active,
+.btn.btn-signin:focus {
+    background-color: rgb(12, 97, 33);
+}
+
+.forgot-password {
+    color: rgb(104, 145, 162);
+}
+
+.forgot-password:hover,
+.forgot-password:active,
+.forgot-password:focus{
+    color: rgb(12, 97, 33);
+}
+         
+    </style>
+        
+
+    </head>
+
+    <body class="corporate_template home">
+        <form class="form-signin" runat="server">
+            <!-- main_menu -->
+            <div id="main_menu">
+                 <!-- main_menu -->
+       <%-- <div id="main_menu">
+                <!-- ultra-top-bar -->
+            
+            <!-- ultra-top-bar end-->
+            <!-- top-bar -->
+            <div class="top-bar clearfix">
+                <a href="Dashboard" class="logo">Kingdom Sacco<span class="lite">Internet Banking</span></a> 
+            </div>
+        </div>--%>
+                <!-- ultra-top-bar -->
+            </div>
+            <!-- main_menu end -->
+            <div id="main_wrapper">
+
+                <div class="content-wrapper home-content-wrapper">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                        <div class="top-bar clearfix">
+                            <asp:Label ID="Lbl" runat="server">KINGDOM SACCO MEMBER REGISTRATION</asp:Label>
+                        </div>
+                    </asp:ContentPlaceHolder>
+                    <hr />
+
+                    <footer class="footer">
+                        <p><span>Copyright &copy; <%: DateTime.Now.Year %> <a target="_blank" href="http://www.kingdomsacco.com/" style="padding-left:5px"> Kingdom Sacco Society </a></span><span> | </span>
+            <span> Powered by: <a target ="_blank" href="http://surestep.co.ke" style="padding-right:5px">Surestep Systems and Solutions</a></span></p>
+                    </footer>
+                </div>
+            </div>
+                        
+            <script src="Scripts/HomepageJS/jquery.min.js" type="text/javascript"></script>
+             <%-- AngularJS --%>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+            <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+            <script>
+                var $j = jQuery.noConflict();
+            </script>
+            <script src="Scripts/HomepageJS/jquery-noconflict.js" type="text/javascript"></script>
+            <script src='https://www.google.com/recaptcha/api.js'></script>
+
+
+            <script src="Scripts/HomepageJS/jquery-migrate.min.js"></script>
+            <script src="Scripts/HomepageJS/caption.js"></script>
+            <script src="Scripts/HomepageJS/html5fallback.js"></script>
+
+
+
+            <script src="Scripts/HomepageJS/modernizr.custom.js"></script>
+            <script src="Scripts/HomepageJS/jquery-ui.min.js"></script>
+            <script src="Scripts/HomepageJS/jquery.cycle2.min.js"></script>
+            <script src="Scripts/HomepageJS/jquery.placeholder.min.js"></script>
+            <script src="Scripts/HomepageJS/jquery.responsiveTabs.min.js"></script>
+            <script src="Scripts/HomepageJS/jquery.webticker.min.js"></script>
+            <script src="Scripts/HomepageJS/jquery.selectric.min.js"></script>
+            <script src="Scripts/HomepageJS/rangeslider.min.js"></script>
+            <script src="Scripts/HomepageJS/masonry.pkgd.min.js"></script>
+            <script src="Scripts/HomepageJS/imagesloaded.pkgd.min.js"></script>
+            <script src="Scripts/HomepageJS/classie.js"></script>
+            <script src="Scripts/HomepageJS/subscribe.js"></script>
+            <script src="Scripts/HomepageJS/AnimOnScroll.js"></script>
+            <script src="Scripts/HomepageJS/common.js"></script>
+
+                       
+        <%-- '<%=rdbtn1.ClientID%>'--%>
+        </form>
+    </body>
+
+    </html>
